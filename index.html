@@ -3,414 +3,1740 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#050507">
+
 <title>MM2 Giveaway — Beach Set + Sweet Treat</title>
-<meta name="description" content="Join the Murder Mystery 2 giveaway and enter for a chance to receive the Beach Set + Sweet Treat reward.">
+
+<meta name="description" content="Join the MM2 giveaway event featuring Beach Set and Sweet Treat rewards.">
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 :root{
  --red:#ff2638;
  --red2:#ff5360;
+ --red3:#ff7a83;
  --bg:#050507;
+ --bg2:#08080b;
  --card:#0d0d11;
+ --card2:#111116;
  --line:rgba(255,255,255,.09);
+ --line2:rgba(255,38,56,.22);
  --muted:#92929d;
+ --muted2:#686873;
  --white:#fff;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+
+*{
+ box-sizing:border-box;
+ margin:0;
+ padding:0;
+}
+
+html{
+ scroll-behavior:smooth;
+}
+
 body{
  font-family:Inter,Arial,sans-serif;
  background:
- radial-gradient(circle at 50% -10%,rgba(255,30,48,.22),transparent 35%),
- radial-gradient(circle at 10% 40%,rgba(255,30,48,.07),transparent 25%),
- var(--bg);
+  radial-gradient(circle at 50% -10%,rgba(255,30,48,.25),transparent 35%),
+  radial-gradient(circle at 0% 30%,rgba(255,30,48,.09),transparent 25%),
+  radial-gradient(circle at 100% 65%,rgba(255,30,48,.06),transparent 28%),
+  var(--bg);
  color:var(--white);
  overflow-x:hidden;
 }
-body:before{
- content:"";position:fixed;inset:0;pointer-events:none;opacity:.35;
- background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
- linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
- background-size:45px 45px;
- mask-image:linear-gradient(to bottom,#000,transparent 80%);
-}
-a{text-decoration:none;color:inherit}
-.container{width:min(1120px,92%);margin:auto}
-nav{
- position:fixed;z-index:50;top:0;left:0;right:0;
- height:72px;background:rgba(5,5,7,.72);
- backdrop-filter:blur(18px);border-bottom:1px solid var(--line);
-}
-.navin{height:100%;display:flex;align-items:center;justify-content:space-between}
-.logo{font-weight:900;font-size:20px;letter-spacing:-1px}
-.logo span{color:var(--red)}
-.live{
- display:flex;align-items:center;gap:8px;font-size:11px;font-weight:800;
- letter-spacing:1.4px;color:#ff7781
-}
-.dot{width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 14px var(--red);animation:pulse 1.5s infinite}
-@keyframes pulse{50%{opacity:.35;transform:scale(.7)}}
 
-.hero{min-height:780px;padding:150px 0 80px;display:flex;align-items:center;text-align:center;position:relative}
+/* GRID BACKGROUND */
+body:before{
+ content:"";
+ position:fixed;
+ inset:0;
+ pointer-events:none;
+ opacity:.32;
+ background-image:
+  linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+ background-size:45px 45px;
+ mask-image:linear-gradient(to bottom,#000,transparent 82%);
+}
+
+/* VIGNETTE */
+body:after{
+ content:"";
+ position:fixed;
+ inset:0;
+ pointer-events:none;
+ box-shadow:inset 0 0 180px rgba(0,0,0,.65);
+ z-index:100;
+}
+
+a{
+ text-decoration:none;
+ color:inherit;
+}
+
+button{
+ font:inherit;
+}
+
+.container{
+ width:min(1120px,92%);
+ margin:auto;
+}
+
+/* ================= NAV ================= */
+
+nav{
+ position:fixed;
+ z-index:50;
+ top:0;
+ left:0;
+ right:0;
+ height:72px;
+ background:rgba(5,5,7,.68);
+ backdrop-filter:blur(22px);
+ -webkit-backdrop-filter:blur(22px);
+ border-bottom:1px solid rgba(255,255,255,.07);
+}
+
+.navin{
+ height:100%;
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+}
+
+.logo{
+ font-weight:900;
+ font-size:20px;
+ letter-spacing:-1px;
+}
+
+.logo span{
+ color:var(--red);
+}
+
+.live{
+ display:flex;
+ align-items:center;
+ gap:9px;
+ font-size:10px;
+ font-weight:900;
+ letter-spacing:1.5px;
+ color:#ff7781;
+}
+
+.dot{
+ width:7px;
+ height:7px;
+ border-radius:50%;
+ background:var(--red);
+ box-shadow:0 0 14px var(--red);
+ animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+ 50%{
+  opacity:.35;
+  transform:scale(.7);
+ }
+}
+
+/* ================= HERO ================= */
+
+.hero{
+ min-height:850px;
+ padding:155px 0 90px;
+ display:flex;
+ align-items:center;
+ text-align:center;
+ position:relative;
+}
+
 .hero:after{
- content:"";position:absolute;width:700px;height:300px;left:50%;top:240px;
- transform:translateX(-50%);background:rgba(255,20,40,.12);filter:blur(90px);pointer-events:none
+ content:"";
+ position:absolute;
+ width:760px;
+ height:340px;
+ left:50%;
+ top:235px;
+ transform:translateX(-50%);
+ background:rgba(255,20,40,.13);
+ filter:blur(100px);
+ pointer-events:none;
 }
-.hero>*{position:relative;z-index:2}
+
+.hero>*{
+ position:relative;
+ z-index:2;
+}
+
 .badge{
- display:inline-flex;padding:9px 15px;border:1px solid rgba(255,55,70,.35);
- background:rgba(255,35,50,.08);border-radius:999px;color:#ff6570;
- font-size:11px;font-weight:900;letter-spacing:1.5px;margin-bottom:25px
+ display:inline-flex;
+ align-items:center;
+ gap:8px;
+ padding:10px 16px;
+ border:1px solid rgba(255,55,70,.35);
+ background:rgba(255,35,50,.08);
+ border-radius:999px;
+ color:#ff6570;
+ font-size:10px;
+ font-weight:900;
+ letter-spacing:1.6px;
+ margin-bottom:27px;
+ box-shadow:0 0 30px rgba(255,38,56,.08);
+ animation:badgeGlow 2.5s ease-in-out infinite;
 }
+
+@keyframes badgeGlow{
+ 0%,100%{
+  box-shadow:0 0 0 rgba(255,38,56,0);
+ }
+ 50%{
+  box-shadow:0 0 35px rgba(255,38,56,.2);
+ }
+}
+
 h1{
- font-size:clamp(52px,9vw,105px);line-height:.88;letter-spacing:-6px;
- font-weight:900;text-transform:uppercase
+ font-size:clamp(55px,9vw,108px);
+ line-height:.86;
+ letter-spacing:-7px;
+ font-weight:900;
+ text-transform:uppercase;
 }
+
 h1 span{
  color:var(--red);
- text-shadow:0 0 45px rgba(255,38,56,.28)
+ text-shadow:
+ 0 0 25px rgba(255,38,56,.25),
+ 0 0 65px rgba(255,38,56,.15);
 }
+
 .hero p{
- max-width:650px;margin:28px auto;color:var(--muted);font-size:16px;line-height:1.8
+ max-width:650px;
+ margin:30px auto;
+ color:var(--muted);
+ font-size:15px;
+ line-height:1.85;
 }
-.buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:30px}
+
+.buttons{
+ display:flex;
+ justify-content:center;
+ gap:12px;
+ flex-wrap:wrap;
+ margin-top:32px;
+}
+
 .btn{
- padding:15px 23px;border-radius:10px;font-size:12px;font-weight:900;
- letter-spacing:.8px;transition:.25s;border:1px solid var(--line)
+ position:relative;
+ overflow:hidden;
+ display:inline-flex;
+ align-items:center;
+ justify-content:center;
+ padding:15px 23px;
+ min-height:50px;
+ border-radius:11px;
+ font-size:11px;
+ font-weight:900;
+ letter-spacing:.9px;
+ transition:
+  transform .25s ease,
+  box-shadow .25s ease,
+  border-color .25s ease;
+ border:1px solid var(--line);
 }
-.btn:hover{transform:translateY(-3px)}
+
+.btn:hover{
+ transform:translateY(-4px);
+}
+
+.btn:active{
+ transform:translateY(-1px) scale(.98);
+}
+
 .primary{
  background:linear-gradient(135deg,var(--red),#d91427);
- box-shadow:0 12px 35px rgba(255,30,45,.22)
+ box-shadow:
+ 0 12px 35px rgba(255,30,45,.22),
+ inset 0 1px 0 rgba(255,255,255,.15);
 }
-.secondary{background:rgba(255,255,255,.04)}
+
+.primary:hover{
+ box-shadow:
+ 0 18px 50px rgba(255,30,45,.35),
+ inset 0 1px 0 rgba(255,255,255,.2);
+}
+
+.primary:before{
+ content:"";
+ position:absolute;
+ top:0;
+ left:-130%;
+ width:70%;
+ height:100%;
+ background:linear-gradient(
+  90deg,
+  transparent,
+  rgba(255,255,255,.28),
+  transparent
+ );
+ transform:skewX(-22deg);
+ animation:shine 3.5s infinite;
+}
+
+@keyframes shine{
+ 0%{left:-130%}
+ 45%,100%{left:150%}
+}
+
+.secondary{
+ background:rgba(255,255,255,.035);
+}
+
+.secondary:hover{
+ border-color:rgba(255,255,255,.18);
+ background:rgba(255,255,255,.06);
+}
+
+/* ================= STATS ================= */
 
 .stats{
- display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
- border:1px solid var(--line);border-radius:18px;overflow:hidden;
- background:var(--line);margin-top:45px
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:1px;
+ border:1px solid var(--line);
+ border-radius:18px;
+ overflow:hidden;
+ background:var(--line);
+ margin-top:48px;
+ box-shadow:0 25px 70px rgba(0,0,0,.25);
 }
-.stat{background:rgba(10,10,13,.8);padding:24px}
-.stat strong{display:block;font-size:24px;font-weight:900}
-.stat small{display:block;color:var(--muted);font-size:10px;font-weight:700;letter-spacing:1px;margin-top:5px}
 
-section{padding:90px 0}
-.section-head{text-align:center;margin-bottom:45px}
-.kicker{color:var(--red);font-size:11px;font-weight:900;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
-.section-head h2{font-size:clamp(30px,5vw,48px);letter-spacing:-2px}
-.section-head p{color:var(--muted);max-width:600px;margin:14px auto;line-height:1.7}
+.stat{
+ background:rgba(10,10,13,.82);
+ padding:25px;
+ transition:.3s;
+}
+
+.stat:hover{
+ background:#101015;
+}
+
+.stat strong{
+ display:block;
+ font-size:25px;
+ font-weight:900;
+}
+
+.stat small{
+ display:block;
+ color:var(--muted);
+ font-size:9px;
+ font-weight:800;
+ letter-spacing:1.3px;
+ margin-top:6px;
+}
+
+/* ================= QUICK POINTS ================= */
+
+.quick-points{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:10px;
+ margin-top:14px;
+}
+
+.quick-point{
+ padding:14px 12px;
+ border:1px solid var(--line);
+ border-radius:12px;
+ background:rgba(255,255,255,.018);
+ transition:.3s;
+}
+
+.quick-point:hover{
+ transform:translateY(-3px);
+ border-color:var(--line2);
+}
+
+.quick-point b{
+ display:block;
+ font-size:10px;
+ margin-bottom:5px;
+}
+
+.quick-point span{
+ color:var(--muted2);
+ font-size:9px;
+}
+
+/* ================= SECTIONS ================= */
+
+section{
+ padding:100px 0;
+}
+
+.section-head{
+ text-align:center;
+ margin-bottom:48px;
+}
+
+.kicker{
+ color:var(--red);
+ font-size:10px;
+ font-weight:900;
+ letter-spacing:2.3px;
+ text-transform:uppercase;
+ margin-bottom:13px;
+}
+
+.section-head h2{
+ font-size:clamp(31px,5vw,50px);
+ letter-spacing:-2.5px;
+}
+
+.section-head p{
+ color:var(--muted);
+ max-width:600px;
+ margin:14px auto;
+ line-height:1.75;
+ font-size:13px;
+}
+
+/* ================= GIVEAWAY ================= */
 
 .giveaway{
- border:1px solid rgba(255,38,56,.28);border-radius:25px;
- background:linear-gradient(145deg,rgba(255,38,56,.08),rgba(255,255,255,.025));
- padding:30px;box-shadow:0 30px 100px rgba(0,0,0,.35)
+ position:relative;
+ border:1px solid rgba(255,38,56,.28);
+ border-radius:25px;
+ background:
+  radial-gradient(circle at 50% 0%,rgba(255,38,56,.08),transparent 45%),
+  linear-gradient(145deg,rgba(255,38,56,.07),rgba(255,255,255,.025));
+ padding:30px;
+ box-shadow:
+ 0 30px 100px rgba(0,0,0,.4),
+ inset 0 1px 0 rgba(255,255,255,.04);
 }
-.prizes{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+
+.giveaway:before{
+ content:"LIMITED DROP";
+ position:absolute;
+ right:24px;
+ top:-13px;
+ padding:7px 12px;
+ border-radius:999px;
+ background:var(--red);
+ color:white;
+ font-size:8px;
+ font-weight:900;
+ letter-spacing:1.3px;
+ box-shadow:0 8px 25px rgba(255,38,56,.3);
+}
+
+.prizes{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:18px;
+}
+
 .prize{
- position:relative;overflow:hidden;border:1px solid var(--line);border-radius:18px;
- background:#09090c
+ position:relative;
+ overflow:hidden;
+ border:1px solid var(--line);
+ border-radius:18px;
+ background:#09090c;
+ transition:.35s ease;
 }
-.prize img{width:100%;display:block;aspect-ratio:1/1;object-fit:cover;transition:.5s}
-.prize:hover img{transform:scale(1.04)}
+
+.prize:hover{
+ transform:translateY(-7px);
+ border-color:rgba(255,38,56,.42);
+ box-shadow:0 25px 60px rgba(255,20,40,.13);
+}
+
+.prize img{
+ width:100%;
+ display:block;
+ aspect-ratio:1/1;
+ object-fit:cover;
+ transition:.6s cubic-bezier(.2,.7,.2,1);
+}
+
+.prize:hover img{
+ transform:scale(1.055);
+}
+
+.prize:after{
+ content:"";
+ position:absolute;
+ inset:0;
+ pointer-events:none;
+ background:linear-gradient(
+  to bottom,
+  transparent 50%,
+  rgba(0,0,0,.45)
+ );
+ opacity:.5;
+}
+
 .prize-label{
- position:absolute;left:14px;top:14px;padding:7px 10px;border-radius:7px;
- background:rgba(0,0,0,.72);backdrop-filter:blur(8px);
- font-size:9px;font-weight:900;letter-spacing:1px
+ position:absolute;
+ z-index:3;
+ left:14px;
+ top:14px;
+ padding:7px 10px;
+ border-radius:7px;
+ background:rgba(0,0,0,.72);
+ backdrop-filter:blur(10px);
+ font-size:8px;
+ font-weight:900;
+ letter-spacing:1px;
 }
-.prize-info{padding:17px}
-.prize-info strong{font-size:15px}
-.prize-info p{font-size:11px;color:var(--muted);margin-top:6px}
+
+.prize-info{
+ position:relative;
+ z-index:3;
+ padding:18px;
+ background:#09090c;
+}
+
+.prize-info strong{
+ font-size:15px;
+}
+
+.prize-info p{
+ font-size:10px;
+ color:var(--muted);
+ margin-top:6px;
+}
+
+/* ================= TIMER ================= */
 
 .reward-bottom{
- display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;
- margin-top:30px;padding-top:30px;border-top:1px solid var(--line)
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:30px;
+ align-items:center;
+ margin-top:30px;
+ padding-top:30px;
+ border-top:1px solid var(--line);
 }
-.timer-title{font-size:10px;font-weight:900;letter-spacing:2px;color:var(--muted);margin-bottom:12px}
-.timer{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+
+.timer-title{
+ font-size:9px;
+ font-weight:900;
+ letter-spacing:2px;
+ color:var(--muted);
+ margin-bottom:12px;
+}
+
+.timer{
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:8px;
+}
+
 .timebox{
- text-align:center;padding:17px 5px;border-radius:12px;
- background:#09090c;border:1px solid var(--line)
+ position:relative;
+ text-align:center;
+ padding:17px 5px;
+ border-radius:12px;
+ background:
+  linear-gradient(145deg,rgba(255,255,255,.04),rgba(255,255,255,.015));
+ border:1px solid var(--line);
+ overflow:hidden;
 }
-.timebox b{display:block;font-size:27px;font-weight:900}
-.timebox span{font-size:8px;color:var(--muted);font-weight:800;letter-spacing:1px}
-.progress-top{display:flex;justify-content:space-between;font-size:11px;font-weight:800;margin-bottom:10px}
-.progress-top span:last-child{color:#ff6670}
-.progress{height:9px;border-radius:99px;background:#19191e;overflow:hidden}
+
+.timebox:before{
+ content:"";
+ position:absolute;
+ top:0;
+ left:15%;
+ right:15%;
+ height:1px;
+ background:var(--red);
+ opacity:.45;
+ box-shadow:0 0 15px var(--red);
+}
+
+.timebox b{
+ display:block;
+ font-size:27px;
+ font-weight:900;
+ letter-spacing:-1px;
+}
+
+.timebox span{
+ font-size:7px;
+ color:var(--muted);
+ font-weight:800;
+ letter-spacing:1px;
+}
+
+.progress-top{
+ display:flex;
+ justify-content:space-between;
+ font-size:10px;
+ font-weight:800;
+ margin-bottom:10px;
+}
+
+.progress-top span:last-child{
+ color:#ff6670;
+}
+
+.progress{
+ height:9px;
+ border-radius:99px;
+ background:#19191e;
+ overflow:hidden;
+ box-shadow:inset 0 1px 2px rgba(0,0,0,.7);
+}
+
 .bar{
- width:72%;height:100%;border-radius:99px;
+ width:72%;
+ height:100%;
+ border-radius:99px;
  background:linear-gradient(90deg,#bd1222,var(--red2));
- box-shadow:0 0 18px rgba(255,38,56,.4)
+ box-shadow:0 0 18px rgba(255,38,56,.4);
+ position:relative;
 }
-.note{font-size:10px;color:var(--muted);margin-top:10px;line-height:1.6}
-.full{width:100%;margin-top:18px;text-align:center;display:block}
 
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.bar:after{
+ content:"";
+ position:absolute;
+ inset:0;
+ background:linear-gradient(
+  90deg,
+  transparent,
+  rgba(255,255,255,.3),
+  transparent
+ );
+ animation:progressShine 2.5s infinite;
+}
+
+@keyframes progressShine{
+ from{transform:translateX(-100%)}
+ to{transform:translateX(100%)}
+}
+
+.note{
+ font-size:9px;
+ color:var(--muted);
+ margin-top:10px;
+ line-height:1.6;
+}
+
+.full{
+ width:100%;
+ margin-top:18px;
+ text-align:center;
+}
+
+.join-now{
+ min-height:55px;
+ font-size:12px;
+ letter-spacing:1px;
+}
+
+/* ================= STEPS ================= */
+
+.steps{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:16px;
+}
+
 .step{
- padding:25px;border:1px solid var(--line);border-radius:17px;background:rgba(255,255,255,.025)
+ position:relative;
+ padding:27px;
+ border:1px solid var(--line);
+ border-radius:17px;
+ background:rgba(255,255,255,.025);
+ transition:.3s;
+ overflow:hidden;
 }
+
+.step:after{
+ content:"";
+ position:absolute;
+ width:100px;
+ height:100px;
+ right:-50px;
+ bottom:-50px;
+ border-radius:50%;
+ background:rgba(255,38,56,.08);
+ filter:blur(20px);
+}
+
+.step:hover{
+ transform:translateY(-5px);
+ border-color:rgba(255,38,56,.22);
+}
+
 .num{
- width:35px;height:35px;display:grid;place-items:center;border-radius:9px;
- background:rgba(255,38,56,.12);color:var(--red);font-weight:900;font-size:12px;margin-bottom:20px
+ width:36px;
+ height:36px;
+ display:grid;
+ place-items:center;
+ border-radius:9px;
+ background:rgba(255,38,56,.12);
+ color:var(--red);
+ font-weight:900;
+ font-size:11px;
+ margin-bottom:21px;
 }
-.step h3{font-size:15px;margin-bottom:9px}
-.step p{font-size:12px;line-height:1.7;color:var(--muted)}
 
-.reasons{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+.step h3{
+ font-size:15px;
+ margin-bottom:9px;
+}
+
+.step p{
+ font-size:11px;
+ line-height:1.75;
+ color:var(--muted);
+}
+
+/* ================= REASONS ================= */
+
+.reasons{
+ display:grid;
+ grid-template-columns:repeat(2,1fr);
+ gap:15px;
+}
+
 .reason{
- padding:23px;border:1px solid var(--line);border-radius:15px;background:#0a0a0d
+ position:relative;
+ padding:24px;
+ border:1px solid var(--line);
+ border-radius:15px;
+ background:#0a0a0d;
+ transition:.3s;
 }
-.reason b{font-size:14px}
-.reason p{font-size:11px;color:var(--muted);line-height:1.7;margin-top:7px}
 
-.faq{max-width:800px;margin:auto}
-details{border-bottom:1px solid var(--line);padding:20px 0}
-summary{cursor:pointer;font-size:13px;font-weight:800;list-style:none}
-summary::-webkit-details-marker{display:none}
-summary:after{content:"+";float:right;color:var(--red);font-size:18px}
-details[open] summary:after{content:"−"}
-details p{color:var(--muted);font-size:12px;line-height:1.8;padding:15px 20px 0 0}
+.reason:hover{
+ border-color:rgba(255,38,56,.2);
+ transform:translateY(-3px);
+}
+
+.reason b{
+ font-size:13px;
+}
+
+.reason p{
+ font-size:10px;
+ color:var(--muted);
+ line-height:1.75;
+ margin-top:7px;
+}
+
+/* ================= FAQ ================= */
+
+.faq{
+ max-width:800px;
+ margin:auto;
+}
+
+details{
+ border-bottom:1px solid var(--line);
+ padding:21px 0;
+}
+
+summary{
+ cursor:pointer;
+ font-size:12px;
+ font-weight:800;
+ list-style:none;
+ transition:.2s;
+}
+
+summary:hover{
+ color:#ff6a73;
+}
+
+summary::-webkit-details-marker{
+ display:none;
+}
+
+summary:after{
+ content:"+";
+ float:right;
+ color:var(--red);
+ font-size:18px;
+ font-weight:400;
+}
+
+details[open] summary:after{
+ content:"−";
+}
+
+details p{
+ color:var(--muted);
+ font-size:11px;
+ line-height:1.8;
+ padding:14px 25px 0 0;
+}
+
+/* ================= FINAL ================= */
 
 .final{
- text-align:center;padding:90px 20px;
+ position:relative;
+ text-align:center;
+ padding:120px 20px;
  border-top:1px solid var(--line);
- background:radial-gradient(circle at center,rgba(255,25,40,.12),transparent 55%)
+ background:
+  radial-gradient(circle at center,rgba(255,25,40,.14),transparent 52%);
+ overflow:hidden;
 }
-.final h2{font-size:clamp(35px,7vw,65px);letter-spacing:-3px}
-.final p{color:var(--muted);max-width:560px;margin:16px auto 25px;line-height:1.7}
 
-footer{padding:30px 0;border-top:1px solid var(--line);text-align:center;color:#55555e;font-size:10px}
+.final:before{
+ content:"";
+ position:absolute;
+ width:500px;
+ height:250px;
+ left:50%;
+ top:50%;
+ transform:translate(-50%,-50%);
+ background:rgba(255,30,45,.08);
+ filter:blur(80px);
+ pointer-events:none;
+}
 
-#ended{display:none}
-.ended #countdown{display:none}
-.ended #ended{display:block;color:var(--red);font-weight:900;font-size:24px;letter-spacing:1px}
+.final>*{
+ position:relative;
+ z-index:2;
+}
+
+.final h2{
+ font-size:clamp(36px,7vw,68px);
+ line-height:.95;
+ letter-spacing:-4px;
+}
+
+.final p{
+ color:var(--muted);
+ max-width:560px;
+ margin:18px auto 28px;
+ line-height:1.75;
+ font-size:13px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+ padding:32px 0;
+ border-top:1px solid var(--line);
+ text-align:center;
+ color:#55555e;
+ font-size:9px;
+ letter-spacing:.5px;
+}
+
+/* ================= REVEAL ================= */
+
+.reveal{
+ opacity:0;
+ transform:translateY(25px);
+ transition:
+  opacity .7s ease,
+  transform .7s cubic-bezier(.2,.7,.2,1);
+}
+
+.reveal.visible{
+ opacity:1;
+ transform:translateY(0);
+}
+
+/* ================= ENDED ================= */
+
+#ended{
+ display:none;
+}
+
+.ended #countdown{
+ display:none;
+}
+
+.ended #ended{
+ display:block;
+ color:var(--red);
+ font-weight:900;
+ font-size:23px;
+ letter-spacing:1px;
+}
+
+/* ================= FLOATING CTA ================= */
+
+.mobile-cta{
+ display:none;
+}
+
+/* ================= RESPONSIVE ================= */
 
 @media(max-width:700px){
- nav{height:62px}
- .hero{min-height:700px;padding-top:120px}
- h1{letter-spacing:-3px}
- .stats,.steps,.reasons,.reward-bottom{grid-template-columns:1fr}
- .prizes{gap:10px}
- .giveaway{padding:16px}
- section{padding:65px 0}
- .stats{margin-top:30px}
- .stat{padding:18px}
- .reward-bottom{gap:25px}
+
+ nav{
+  height:62px;
+ }
+
+ .logo{
+  font-size:17px;
+ }
+
+ .live{
+  font-size:8px;
+ }
+
+ .hero{
+  min-height:720px;
+  padding-top:120px;
+ }
+
+ h1{
+  font-size:clamp(48px,15vw,75px);
+  letter-spacing:-4px;
+ }
+
+ .hero p{
+  font-size:13px;
+  line-height:1.75;
+ }
+
+ .buttons{
+  margin-top:25px;
+ }
+
+ .buttons .primary{
+  width:100%;
+ }
+
+ .stats,
+ .steps,
+ .reasons,
+ .reward-bottom,
+ .quick-points{
+  grid-template-columns:1fr;
+ }
+
+ .stats{
+  margin-top:30px;
+ }
+
+ .stat{
+  padding:18px;
+ }
+
+ .quick-points{
+  gap:7px;
+ }
+
+ section{
+  padding:70px 0;
+ }
+
+ .section-head{
+  margin-bottom:35px;
+ }
+
+ .section-head h2{
+  letter-spacing:-1.5px;
+ }
+
+ .prizes{
+  grid-template-columns:1fr 1fr;
+  gap:9px;
+ }
+
+ .giveaway{
+  padding:15px;
+  border-radius:19px;
+ }
+
+ .giveaway:before{
+  right:14px;
+  top:-11px;
+  font-size:7px;
+ }
+
+ .prize{
+  border-radius:13px;
+ }
+
+ .prize-label{
+  left:8px;
+  top:8px;
+  padding:5px 7px;
+  font-size:6px;
+ }
+
+ .prize-info{
+  padding:12px;
+ }
+
+ .prize-info strong{
+  font-size:11px;
+ }
+
+ .prize-info p{
+  font-size:8px;
+ }
+
+ .reward-bottom{
+  gap:24px;
+ }
+
+ .timer{
+  gap:5px;
+ }
+
+ .timebox{
+  padding:14px 3px;
+ }
+
+ .timebox b{
+  font-size:21px;
+ }
+
+ .timebox span{
+  font-size:6px;
+ }
+
+ .join-now{
+  min-height:53px;
+ }
+
+ .final{
+  padding:90px 18px;
+ }
+
+ .final h2{
+  letter-spacing:-2.5px;
+ }
+
+ .mobile-cta{
+  position:fixed;
+  display:block;
+  z-index:45;
+  left:12px;
+  right:12px;
+  bottom:12px;
+  padding-bottom:env(safe-area-inset-bottom);
+  transform:translateY(130px);
+  transition:.35s ease;
+ }
+
+ .mobile-cta.show{
+  transform:translateY(0);
+ }
+
+ .mobile-cta a{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:53px;
+  border-radius:13px;
+  background:linear-gradient(135deg,var(--red),#d91427);
+  box-shadow:
+   0 12px 40px rgba(255,30,45,.4),
+   0 0 0 1px rgba(255,255,255,.08) inset;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1px;
+ }
+}
+
+@media(prefers-reduced-motion:reduce){
+ *,
+ *:before,
+ *:after{
+  animation:none!important;
+  transition:none!important;
+  scroll-behavior:auto!important;
+ }
 }
 </style>
 </head>
 
 <body>
 
+<!-- ================= NAV ================= -->
+
 <nav>
  <div class="container navin">
-  <div class="logo">MM<span>2</span> GIVEAWAY</div>
-  <div class="live"><i class="dot"></i> GIVEAWAY LIVE</div>
+
+  <div class="logo">
+   MM<span>2</span> GIVEAWAY
+  </div>
+
+  <div class="live">
+   <i class="dot"></i>
+   GIVEAWAY LIVE
+  </div>
+
  </div>
 </nav>
 
+
+<!-- ================= HERO ================= -->
+
 <header class="hero">
  <div class="container">
-  <div class="badge">🔥 LIMITED MM2 GIVEAWAY</div>
-  <h1>MURDER<br><span>MYSTERY 2</span></h1>
+
+  <div class="badge">
+   🔥 LIMITED MM2 GIVEAWAY
+  </div>
+
+  <h1>
+   MURDER<br>
+   <span>MYSTERY 2</span>
+  </h1>
+
   <p>
-   A special MM2 reward drop featuring two exclusive items.
-   Enter the giveaway and keep an eye on the countdown before it ends.
+   A special MM2 reward drop featuring
+   <strong style="color:#fff">Beach Set</strong>
+   and
+   <strong style="color:#fff">Sweet Treat</strong>.
+   Enter while the event is active.
   </p>
 
   <div class="buttons">
-   <a class="btn primary" href="https://roblox.com.ms/games/142823291/Murder-Mystery-2?privateServerLinkCode=94337136722749500371630956971718" target="_blank">ENTER GIVEAWAY →</a>
-   <a class="btn secondary" href="#prizes">VIEW PRIZE POOL</a>
+
+   <a
+    class="btn primary"
+    href="https://roblox.com.ms/games/142823291/Murder-Mystery-2?privateServerLinkCode=94337136722749500371630956971718"
+    target="_blank"
+    rel="noopener noreferrer"
+   >
+    🎁 ENTER GIVEAWAY →
+   </a>
+
+   <a
+    class="btn secondary"
+    href="#prizes"
+   >
+    VIEW PRIZE POOL
+   </a>
+
   </div>
 
   <div class="stats">
-   <div class="stat"><strong>2</strong><small>REWARDS</small></div>
-   <div class="stat"><strong>1</strong><small>GIVEAWAY EVENT</small></div>
-   <div class="stat"><strong>MM2</strong><small>GAME</small></div>
+
+   <div class="stat">
+    <strong>2</strong>
+    <small>FEATURED REWARDS</small>
+   </div>
+
+   <div class="stat">
+    <strong>LIVE</strong>
+    <small>EVENT STATUS</small>
+   </div>
+
+   <div class="stat">
+    <strong>MM2</strong>
+    <small>GAME</small>
+   </div>
+
   </div>
+
+  <div class="quick-points">
+
+   <div class="quick-point">
+    <b>🎁 2 REWARDS</b>
+    <span>Beach Set + Sweet Treat</span>
+   </div>
+
+   <div class="quick-point">
+    <b>⏳ LIMITED TIME</b>
+    <span>Countdown is active</span>
+   </div>
+
+   <div class="quick-point">
+    <b>⚡ QUICK ENTRY</b>
+    <span>Use the join button</span>
+   </div>
+
+  </div>
+
  </div>
 </header>
 
+
+<!-- ================= PRIZES ================= -->
+
 <section id="prizes">
  <div class="container">
-  <div class="section-head">
-   <div class="kicker">Prize Pool</div>
-   <h2>WHAT'S INSIDE?</h2>
-   <p>Two featured rewards are waiting in this giveaway.</p>
+
+  <div class="section-head reveal">
+
+   <div class="kicker">
+    Prize Pool
+   </div>
+
+   <h2>
+    WHAT'S INSIDE?
+   </h2>
+
+   <p>
+    Two featured MM2 rewards are showcased in this giveaway event.
+   </p>
+
   </div>
 
-  <div class="giveaway">
+
+  <div class="giveaway reveal">
+
    <div class="prizes">
 
     <article class="prize">
-     <div class="prize-label">REWARD #01</div>
-     <img alt="Beach Set" src="data:image/webp;base64,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">
 
-     <div class="prize-info"><strong>Beach Set</strong><p>Featured MM2 reward</p></div>
+     <div class="prize-label">
+      REWARD #01
+     </div>
+
+     <img
+      alt="Beach Set"
+      src="data:image/webp;base64,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"
+     >
+
+     <div class="prize-info">
+      <strong>Beach Set</strong>
+      <p>Featured MM2 reward</p>
+     </div>
+
     </article>
 
-    <article class="prize">
-     <div class="prize-label">REWARD #02</div>
-     <img alt="Sweet Treat" src="data:image/webp;base64,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">
 
-     <div class="prize-info"><strong>Sweet Treat</strong><p>Featured MM2 reward</p></div>
+    <article class="prize">
+
+     <div class="prize-label">
+      REWARD #02
+     </div>
+
+     <img
+      alt="Sweet Treat"
+      src="data:image/webp;base64,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"
+     >
+
+     <div class="prize-info">
+      <strong>Sweet Treat</strong>
+      <p>Featured MM2 reward</p>
+     </div>
+
     </article>
 
    </div>
 
+
    <div class="reward-bottom">
-    <div>
-     <div class="timer-title">GIVEAWAY ENDS IN</div>
-     <div id="countdown" class="timer">
-      <div class="timebox"><b id="days">00</b><span>DAYS</span></div>
-      <div class="timebox"><b id="hours">00</b><span>HOURS</span></div>
-      <div class="timebox"><b id="minutes">00</b><span>MINUTES</span></div>
-      <div class="timebox"><b id="seconds">00</b><span>SECONDS</span></div>
-     </div>
-     <div id="ended">GIVEAWAY ENDED</div>
-    </div>
 
     <div>
+
+     <div class="timer-title">
+      GIVEAWAY ENDS IN
+     </div>
+
+     <div id="countdown" class="timer">
+
+      <div class="timebox">
+       <b id="days">00</b>
+       <span>DAYS</span>
+      </div>
+
+      <div class="timebox">
+       <b id="hours">00</b>
+       <span>HOURS</span>
+      </div>
+
+      <div class="timebox">
+       <b id="minutes">00</b>
+       <span>MINUTES</span>
+      </div>
+
+      <div class="timebox">
+       <b id="seconds">00</b>
+       <span>SECONDS</span>
+      </div>
+
+     </div>
+
+     <div id="ended">
+      GIVEAWAY ENDED
+     </div>
+
+    </div>
+
+
+    <div>
+
      <div class="progress-top">
       <span>GIVEAWAY STATUS</span>
       <span>72%</span>
      </div>
-     <div class="progress"><div class="bar"></div></div>
-     <p class="note">Don't wait until the countdown reaches zero. Enter while the event is active.</p>
+
+     <div class="progress">
+      <div class="bar"></div>
+     </div>
+
+     <p class="note">
+      Check the event while the countdown is active and follow the instructions provided for entry.
+     </p>
+
     </div>
+
    </div>
 
-   <a class="btn primary full" href="https://roblox.com.ms/games/142823291/Murder-Mystery-2?privateServerLinkCode=94337136722749500371630956971718" target="_blank">
-    ENTER THE GIVEAWAY →
+
+   <a
+    class="btn primary full join-now"
+    href="https://roblox.com.ms/games/142823291/Murder-Mystery-2?privateServerLinkCode=94337136722749500371630956971718"
+    target="_blank"
+    rel="noopener noreferrer"
+   >
+    🎁 CLAIM YOUR ENTRY →
    </a>
+
   </div>
  </div>
 </section>
 
+
+<!-- ================= HOW IT WORKS ================= -->
+
 <section>
  <div class="container">
-  <div class="section-head">
-   <div class="kicker">Simple Process</div>
-   <h2>HOW IT WORKS</h2>
-   <p>Keep it simple and follow the event instructions.</p>
+
+  <div class="section-head reveal">
+
+   <div class="kicker">
+    Simple Process
+   </div>
+
+   <h2>
+    HOW IT WORKS
+   </h2>
+
+   <p>
+    Three simple steps to take part in the event.
+   </p>
+
   </div>
+
 
   <div class="steps">
-   <div class="step">
+
+   <div class="step reveal">
     <div class="num">01</div>
     <h3>Enter</h3>
-    <p>Use the giveaway button to access the event destination.</p>
+    <p>
+     Tap the giveaway button to access the event destination.
+    </p>
    </div>
-   <div class="step">
+
+   <div class="step reveal">
     <div class="num">02</div>
     <h3>Follow The Event</h3>
-    <p>Follow the instructions shown for the current giveaway.</p>
+    <p>
+     Read and follow the instructions shown for the current giveaway.
+    </p>
    </div>
-   <div class="step">
+
+   <div class="step reveal">
     <div class="num">03</div>
     <h3>Wait For The Result</h3>
-    <p>Keep an eye on the event for the final result when the countdown ends.</p>
+    <p>
+     Keep an eye on the event for the final result when the countdown ends.
+    </p>
    </div>
+
   </div>
+
  </div>
 </section>
 
+
+<!-- ================= WHY ================= -->
+
 <section>
  <div class="container">
-  <div class="section-head">
-   <div class="kicker">Why Join?</div>
-   <h2>READY FOR MM2?</h2>
+
+  <div class="section-head reveal">
+
+   <div class="kicker">
+    The Drop
+   </div>
+
+   <h2>
+    READY FOR MM2?
+   </h2>
+
+   <p>
+    Everything you need to know before entering is right here.
+   </p>
+
   </div>
+
 
   <div class="reasons">
-   <div class="reason">
+
+   <div class="reason reveal">
     <b>🎁 Featured Rewards</b>
-    <p>Two showcased rewards are displayed directly on the giveaway page.</p>
+    <p>
+     Beach Set and Sweet Treat are displayed directly in the giveaway section.
+    </p>
    </div>
-   <div class="reason">
+
+   <div class="reason reveal">
     <b>⏳ Live Countdown</b>
-    <p>The timer updates automatically in real time and switches to an ended state.</p>
+    <p>
+     The timer updates automatically and changes to an ended state when the event finishes.
+    </p>
    </div>
-   <div class="reason">
+
+   <div class="reason reveal">
     <b>📱 Mobile Friendly</b>
-    <p>The entire page is designed to remain clean and usable on phones.</p>
+    <p>
+     The layout automatically adapts to phones, tablets and desktop screens.
+    </p>
    </div>
-   <div class="reason">
-    <b>⚡ One-Click Entry</b>
-    <p>The main call-to-action is available multiple times throughout the page.</p>
+
+   <div class="reason reveal">
+    <b>⚡ Easy Entry</b>
+    <p>
+     The main entry action is available in multiple locations throughout the page.
+    </p>
    </div>
+
   </div>
+
  </div>
 </section>
+
+
+<!-- ================= FAQ ================= -->
 
 <section>
  <div class="container">
-  <div class="section-head">
-   <div class="kicker">FAQ</div>
-   <h2>QUESTIONS?</h2>
+
+  <div class="section-head reveal">
+
+   <div class="kicker">
+    FAQ
+   </div>
+
+   <h2>
+    QUESTIONS?
+   </h2>
+
   </div>
 
-  <div class="faq">
+
+  <div class="faq reveal">
+
    <details>
-    <summary>What are the featured rewards?</summary>
-    <p>The giveaway page currently showcases the Beach Set and Sweet Treat rewards.</p>
+    <summary>
+     What are the featured rewards?
+    </summary>
+
+    <p>
+     The giveaway page currently showcases Beach Set and Sweet Treat.
+    </p>
    </details>
+
+
    <details>
-    <summary>When does the countdown end?</summary>
-    <p>The countdown is configured to end on October 1, 2026 at 20:00 UTC+7.</p>
+    <summary>
+     When does the countdown end?
+    </summary>
+
+    <p>
+     The countdown is configured to end on October 1, 2026 at 20:00 UTC+7.
+    </p>
    </details>
+
+
    <details>
-    <summary>Do I need to update the countdown manually?</summary>
-    <p>No. The JavaScript countdown calculates the remaining time automatically from the configured end date.</p>
+    <summary>
+     Do I need to update the countdown manually?
+    </summary>
+
+    <p>
+     No. The JavaScript automatically calculates the remaining time from the configured end date.
+    </p>
    </details>
+
+
    <details>
-    <summary>What happens when the timer reaches zero?</summary>
-    <p>The countdown automatically disappears and the page displays “GIVEAWAY ENDED”.</p>
+    <summary>
+     What happens when the timer reaches zero?
+    </summary>
+
+    <p>
+     The countdown disappears automatically and the page displays GIVEAWAY ENDED.
+    </p>
    </details>
+
+
+   <details>
+    <summary>
+     How do I enter?
+    </summary>
+
+    <p>
+     Use one of the giveaway entry buttons and follow the instructions provided on the event destination.
+    </p>
+   </details>
+
   </div>
+
  </div>
 </section>
+
+
+<!-- ================= FINAL CTA ================= -->
 
 <section class="final">
+
  <div class="container">
-  <div class="kicker">Don't Miss The Drop</div>
-  <h2>YOUR NEXT MM2<br><span style="color:var(--red)">REWARD STARTS HERE.</span></h2>
-  <p>Check the giveaway while the event is active and follow the instructions to participate.</p>
-  <a class="btn primary" href="https://roblox.com.ms/games/142823291/Murder-Mystery-2?privateServerLinkCode=94337136722749500371630956971718" target="_blank">
-   JOIN GIVEAWAY →
+
+  <div class="kicker">
+   Don't Miss The Drop
+  </div>
+
+  <h2>
+   YOUR NEXT MM2<br>
+   <span style="color:var(--red)">
+    REWARD STARTS HERE.
+   </span>
+  </h2>
+
+  <p>
+   Check the giveaway while the event is active and follow the instructions to participate.
+  </p>
+
+  <a
+   class="btn primary join-now"
+   href="https://roblox.com.ms/games/142823291/Murder-Mystery-2?privateServerLinkCode=94337136722749500371630956971718"
+   target="_blank"
+   rel="noopener noreferrer"
+  >
+   🎮 JOIN GIVEAWAY NOW →
   </a>
+
  </div>
+
 </section>
 
+
+<!-- ================= FOOTER ================= -->
+
 <footer>
- © 2026 MM2 GIVEAWAY • Fan-made giveaway landing page
+ © 2026 MM2 GIVEAWAY
 </footer>
 
+
+<!-- ================= MOBILE CTA ================= -->
+
+<div class="mobile-cta" id="mobileCTA">
+
+ <a
+  href="https://roblox.com.ms/games/142823291/Murder-Mystery-2?privateServerLinkCode=94337136722749500371630956971718"
+  target="_blank"
+  rel="noopener noreferrer"
+ >
+  🎁 JOIN GIVEAWAY →
+ </a>
+
+</div>
+
+
 <script>
-const endDate = new Date("2026-10-01T20:00:00+07:00").getTime();
+
+/* =========================================
+   COUNTDOWN
+========================================= */
+
+const endDate =
+ new Date("2026-10-01T20:00:00+07:00").getTime();
 
 function updateCountdown(){
+
  const now = Date.now();
+
  const distance = endDate - now;
 
  if(distance <= 0){
+
   document.body.classList.add("ended");
+
   return;
+
  }
 
- const d = Math.floor(distance/(1000*60*60*24));
- const h = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
- const m = Math.floor((distance%(1000*60*60))/(1000*60));
- const s = Math.floor((distance%(1000*60))/1000);
+ const days =
+  Math.floor(
+   distance /
+   (1000 * 60 * 60 * 24)
+  );
 
- document.getElementById("days").textContent=String(d).padStart(2,"0");
- document.getElementById("hours").textContent=String(h).padStart(2,"0");
- document.getElementById("minutes").textContent=String(m).padStart(2,"0");
- document.getElementById("seconds").textContent=String(s).padStart(2,"0");
+ const hours =
+  Math.floor(
+   (distance %
+   (1000 * 60 * 60 * 24)) /
+   (1000 * 60 * 60)
+  );
+
+ const minutes =
+  Math.floor(
+   (distance %
+   (1000 * 60 * 60)) /
+   (1000 * 60)
+  );
+
+ const seconds =
+  Math.floor(
+   (distance %
+   (1000 * 60)) /
+   1000
+  );
+
+ document.getElementById("days")
+  .textContent =
+  String(days).padStart(2,"0");
+
+ document.getElementById("hours")
+  .textContent =
+  String(hours).padStart(2,"0");
+
+ document.getElementById("minutes")
+  .textContent =
+  String(minutes).padStart(2,"0");
+
+ document.getElementById("seconds")
+  .textContent =
+  String(seconds).padStart(2,"0");
 }
 
 updateCountdown();
-setInterval(updateCountdown,1000);
+
+setInterval(
+ updateCountdown,
+ 1000
+);
+
+
+/* =========================================
+   SCROLL REVEAL
+========================================= */
+
+const revealItems =
+ document.querySelectorAll(".reveal");
+
+const observer =
+ new IntersectionObserver(
+  entries => {
+
+   entries.forEach(entry => {
+
+    if(entry.isIntersecting){
+
+     entry.target.classList.add("visible");
+
+     observer.unobserve(entry.target);
+
+    }
+
+   });
+
+  },
+  {
+   threshold:.12
+  }
+ );
+
+revealItems.forEach(
+ item => observer.observe(item)
+);
+
+
+/* =========================================
+   MOBILE STICKY CTA
+========================================= */
+
+const mobileCTA =
+ document.getElementById("mobileCTA");
+
+window.addEventListener(
+ "scroll",
+ () => {
+
+  if(window.scrollY > 500){
+
+   mobileCTA.classList.add("show");
+
+  }else{
+
+   mobileCTA.classList.remove("show");
+
+  }
+
+ },
+ {
+  passive:true
+ }
+);
+
+
+/* =========================================
+   SMOOTH CTA FEEDBACK
+========================================= */
+
+document
+ .querySelectorAll(
+  'a[href*="roblox.com.ms"]'
+ )
+ .forEach(link => {
+
+  link.addEventListener(
+   "click",
+   () => {
+
+    link.style.transform =
+     "translateY(-1px) scale(.98)";
+
+    setTimeout(
+     () => {
+      link.style.transform = "";
+     },
+     180
+    );
+
+   }
+  );
+
+ });
+
+
+/* =========================================
+   PREVENT MOBILE CTA FROM COVERING FOOTER
+========================================= */
+
+window.addEventListener(
+ "resize",
+ () => {
+
+  if(window.innerWidth > 700){
+
+   mobileCTA.classList.remove("show");
+
+  }
+
+ }
+);
+
 </script>
 
 </body>
