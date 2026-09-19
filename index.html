@@ -1,314 +1,756 @@
-<!DOCTYPE html>
-<html lang="id">
+<!DOCTYPE html><html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>MM2 Giveaway — Murder Mystery 2</title>  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
-  <title>Murder Mystery 2</title>
-
-  <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    :root {
+      --red: #ff174d;
+      --red-dark: #a90029;
+      --bg: #050507;
+      --card: rgba(255,255,255,.045);
+      --border: rgba(255,255,255,.09);
+      --text: #fff;
+      --muted: #8e8e99;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
       min-height: 100vh;
       background:
-        radial-gradient(circle at 50% 20%, #3b0710 0%, transparent 35%),
-        linear-gradient(135deg, #050505, #120509 55%, #050505);
-      color: white;
+        radial-gradient(circle at 50% 0%, rgba(255, 0, 60, .18), transparent 32%),
+        radial-gradient(circle at 10% 80%, rgba(115, 0, 255, .08), transparent 28%),
+        var(--bg);
+      color: var(--text);
+      font-family: Inter, Arial, sans-serif;
       overflow-x: hidden;
     }
 
-    /* Background glow */
-    body::before {
-      content: "";
+    /* PARTICLES */
+    .particles {
       position: fixed;
       inset: 0;
+      overflow: hidden;
       pointer-events: none;
-      background:
-        radial-gradient(circle at 20% 80%, rgba(255, 0, 55, .12), transparent 30%),
-        radial-gradient(circle at 80% 30%, rgba(120, 0, 255, .10), transparent 30%);
+      z-index: 0;
+    }
+
+    .particle {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background: #ff315a;
+      border-radius: 50%;
+      opacity: .35;
+      animation: float linear infinite;
+    }
+
+    @keyframes float {
+      from {
+        transform: translateY(110vh);
+      }
+      to {
+        transform: translateY(-10vh);
+      }
     }
 
     .container {
       position: relative;
       z-index: 1;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      width: min(1150px, 92%);
+      margin: auto;
     }
 
     /* NAVBAR */
     nav {
-      width: 100%;
-      padding: 25px 7%;
+      height: 85px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
     }
 
     .logo {
-      font-size: 22px;
+      font-size: 23px;
       font-weight: 900;
       letter-spacing: 3px;
-      color: #ff244c;
-      text-shadow: 0 0 15px rgba(255, 36, 76, .7);
+      color: var(--red);
+      text-shadow: 0 0 20px rgba(255,23,77,.55);
     }
 
-    .status {
-      font-size: 12px;
+    .nav-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 14px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255,255,255,.035);
       color: #aaa;
-      letter-spacing: 2px;
+      font-size: 10px;
+      letter-spacing: 1.5px;
     }
 
-    .status span {
-      color: #32ff76;
+    .online {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #32ff76;
+      box-shadow: 0 0 10px #32ff76;
     }
 
     /* HERO */
     .hero {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       text-align: center;
-      padding: 60px 20px;
+      padding: 95px 0 80px;
     }
 
-    .hero-content {
-      max-width: 900px;
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 8px 16px;
-      border: 1px solid rgba(255,255,255,.15);
-      border-radius: 30px;
-      background: rgba(255,255,255,.04);
-      color: #bbb;
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 16px;
+      border: 1px solid rgba(255,23,77,.25);
+      border-radius: 999px;
+      background: rgba(255,23,77,.06);
+      color: #ff6686;
       font-size: 11px;
-      letter-spacing: 3px;
+      font-weight: 700;
+      letter-spacing: 2px;
       margin-bottom: 25px;
     }
 
-    h1 {
-      font-size: clamp(55px, 11vw, 130px);
-      line-height: .85;
-      font-weight: 1000;
+    .hero h1 {
+      font-size: clamp(48px, 9vw, 105px);
+      line-height: .88;
       letter-spacing: -6px;
+      font-weight: 900;
       text-transform: uppercase;
 
       background: linear-gradient(
         180deg,
-        #ffffff 0%,
-        #ff405f 45%,
-        #790014 100%
+        #fff 0%,
+        #ff4167 45%,
+        #87001d 100%
       );
 
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
 
-      filter: drop-shadow(0 0 25px rgba(255, 0, 55, .25));
+      filter: drop-shadow(0 0 30px rgba(255,0,55,.22));
     }
 
-    .subtitle {
-      margin-top: 25px;
-      color: #aaa;
-      font-size: 15px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
+    .hero p {
+      max-width: 600px;
+      margin: 28px auto 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
     }
 
-    /* BUTTON */
-    .play-btn {
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 35px;
+    }
+
+    .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-
-      margin-top: 45px;
-      padding: 19px 55px;
-
-      color: white;
+      min-width: 190px;
+      padding: 16px 25px;
+      border-radius: 8px;
       text-decoration: none;
-      font-weight: 900;
-      font-size: 15px;
-      letter-spacing: 3px;
-
-      border: 1px solid #ff3155;
-      border-radius: 6px;
-
-      background: linear-gradient(
-        135deg,
-        #ff173f,
-        #9b001c
-      );
-
-      box-shadow:
-        0 0 20px rgba(255, 0, 55, .3),
-        inset 0 0 15px rgba(255,255,255,.08);
-
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
       transition: .25s ease;
     }
 
-    .play-btn:hover {
-      transform: translateY(-4px) scale(1.03);
-      box-shadow:
-        0 0 35px rgba(255, 0, 55, .65),
-        0 10px 30px rgba(0,0,0,.5);
+    .btn-primary {
+      color: white;
+      background: linear-gradient(135deg, #ff174d, #a50027);
+      border: 1px solid #ff315c;
+      box-shadow: 0 0 30px rgba(255,23,77,.25);
     }
 
-    .play-btn:active {
-      transform: scale(.97);
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 45px rgba(255,23,77,.5);
     }
 
-    /* CARDS */
-    .rooms {
+    .btn-secondary {
+      color: #ddd;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.035);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,.08);
+      transform: translateY(-3px);
+    }
+
+    /* GIVEAWAY */
+    .giveaway {
+      margin: 0 auto 70px;
+      max-width: 900px;
+      padding: 35px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,23,77,.22);
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255,23,77,.09),
+          rgba(255,255,255,.025)
+        );
+      box-shadow: 0 25px 80px rgba(0,0,0,.35);
+    }
+
+    .section-label {
+      color: #ff5274;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .giveaway h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .giveaway-desc {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 30px;
+    }
+
+    .prize {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 22px;
+      border-radius: 12px;
+      background: rgba(0,0,0,.28);
+      border: 1px solid rgba(255,255,255,.06);
+    }
+
+    .prize-icon {
+      width: 70px;
+      height: 70px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      font-size: 34px;
+      background: linear-gradient(
+        135deg,
+        rgba(255,23,77,.2),
+        rgba(255,23,77,.05)
+      );
+      border: 1px solid rgba(255,23,77,.2);
+    }
+
+    .prize h3 {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .prize p {
+      color: #777;
+      font-size: 12px;
+    }
+
+    /* COUNTDOWN */
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .time-box {
+      text-align: center;
+      padding: 18px 10px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: rgba(0,0,0,.25);
+    }
+
+    .time-box strong {
+      display: block;
+      font-size: 28px;
+      font-weight: 900;
+      color: white;
+    }
+
+    .time-box span {
+      color: #666;
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* STATS */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 70px;
+    }
+
+    .stat {
+      padding: 25px;
+      text-align: center;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .stat strong {
+      display: block;
+      color: white;
+      font-size: 28px;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+
+    .stat span {
+      color: #666;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* HOW TO JOIN */
+    .join-section {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .join-section h2 {
+      font-size: 32px;
+      margin-bottom: 35px;
+    }
+
+    .steps {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 15px;
-      width: min(900px, 90%);
-      margin: 0 auto 45px;
+      text-align: left;
     }
 
-    .room {
-      padding: 20px;
-      background: rgba(255,255,255,.035);
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 10px;
-      backdrop-filter: blur(10px);
+    .step {
+      padding: 25px;
+      border-radius: 12px;
+      background: var(--card);
+      border: 1px solid var(--border);
       transition: .25s ease;
     }
 
-    .room:hover {
-      border-color: rgba(255, 36, 76, .5);
-      transform: translateY(-4px);
+    .step:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255,23,77,.3);
     }
 
-    .room-title {
-      font-weight: bold;
-      margin-bottom: 8px;
+    .step-number {
+      color: var(--red);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 2px;
     }
 
-    .room-info {
-      font-size: 12px;
+    .step h3 {
+      margin: 15px 0 8px;
+      font-size: 16px;
+    }
+
+    .step p {
       color: #777;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    /* WARNING */
+    .warning {
+      padding: 18px 20px;
+      margin-bottom: 50px;
+      border: 1px solid rgba(255,193,7,.15);
+      border-radius: 10px;
+      background: rgba(255,193,7,.035);
+      color: #888;
+      font-size: 11px;
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    .warning b {
+      color: #ffc107;
     }
 
     footer {
+      padding: 30px 0;
       text-align: center;
-      color: #555;
-      font-size: 11px;
-      padding: 20px;
+      color: #444;
+      font-size: 10px;
       letter-spacing: 2px;
+      border-top: 1px solid rgba(255,255,255,.05);
     }
 
     /* MOBILE */
     @media (max-width: 700px) {
-      nav {
-        padding: 20px;
+      .container {
+        width: 90%;
       }
 
-      .status {
+      nav {
+        height: 70px;
+      }
+
+      .nav-badge {
         display: none;
       }
 
-      .rooms {
-        grid-template-columns: 1fr;
-        max-width: 400px;
+      .hero {
+        padding: 75px 0 60px;
       }
 
-      h1 {
+      .hero h1 {
         letter-spacing: -3px;
       }
 
-      .subtitle {
-        font-size: 11px;
-        letter-spacing: 2px;
+      .hero p {
+        font-size: 13px;
       }
 
-      .play-btn {
-        width: 90%;
-        max-width: 350px;
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 330px;
+      }
+
+      .giveaway {
+        padding: 22px;
+      }
+
+      .giveaway h2 {
+        font-size: 25px;
+      }
+
+      .prize {
+        align-items: flex-start;
+      }
+
+      .countdown {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stats,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .stat {
+        padding: 20px;
       }
     }
-  </style>
-</head>
+  </style></head><body>  <!-- BACKGROUND PARTICLES -->  <div class="particles" id="particles"></div>  <div class="container"><!-- NAVBAR -->
+<nav>
+  <div class="logo">MM2</div>
 
-<body>
+  <div class="nav-badge">
+    <div class="online"></div>
+    GIVEAWAY ACTIVE
+  </div>
+</nav>
 
-  <div class="container">
+<!-- HERO -->
+<main class="hero">
 
-    <nav>
-      <div class="logo">MM2</div>
+  <div class="eyebrow">
+    🎁 LIMITED GIVEAWAY
+  </div>
 
-      <div class="status">
-        <span>●</span> PRIVATE SERVER
-      </div>
-    </nav>
+  <h1>
+    MURDER<br>
+    MYSTERY 2
+  </h1>
 
-    <main class="hero">
-      <div class="hero-content">
+  <p>
+    Join our limited MM2 giveaway and get a chance to win
+    exclusive in-game rewards. No password, no account details,
+    and no payment required.
+  </p>
 
-        <div class="badge">
-          MURDER MYSTERY EXPERIENCE
-        </div>
+  <div class="hero-buttons">
+    <a href="#giveaway" class="btn btn-primary">
+      🎁 JOIN GIVEAWAY
+    </a>
 
-        <h1>
-          MURDER<br>
-          MYSTERY 2
-        </h1>
+    <a href="#how" class="btn btn-secondary">
+      HOW IT WORKS
+    </a>
+  </div>
 
-        <p class="subtitle">
-          Trust no one. Survive the night.
-        </p>
+</main>
 
-        <a
-          class="play-btn"
-          href="https://roblox.com.ms/games/142823291/Murder-Mystery-2?privateServerLinkCode=94337136722749500371630956971718"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          🔪 PLAY NOW
-        </a>
+<!-- GIVEAWAY CARD -->
+<section class="giveaway" id="giveaway">
 
-      </div>
-    </main>
+  <div class="section-label">
+    Current Event
+  </div>
 
-    <section class="rooms">
+  <h2>🔥 MM2 Giveaway</h2>
 
-      <div class="room">
-        <div class="room-title">🔪 Murderer</div>
-        <div class="room-info">
-          Find your targets before they find you.
-        </div>
-      </div>
+  <p class="giveaway-desc">
+    The giveaway ends when the countdown reaches zero.
+  </p>
 
-      <div class="room">
-        <div class="room-title">🔫 Sheriff</div>
-        <div class="room-info">
-          Protect the innocents and stop the murderer.
-        </div>
-      </div>
+  <div class="prize">
 
-      <div class="room">
-        <div class="room-title">👤 Innocent</div>
-        <div class="room-info">
-          Survive, investigate, and trust carefully.
-        </div>
-      </div>
+    <div class="prize-icon">
+      🔪
+    </div>
 
-    </section>
-
-    <footer>
-      MM2 PRIVATE SERVER
-    </footer>
+    <div>
+      <h3>Exclusive MM2 Prize</h3>
+      <p>1 lucky winner • Prize delivered in-game</p>
+    </div>
 
   </div>
 
-</body>
-          </html>
+  <!-- COUNTDOWN -->
+  <div class="countdown">
+
+    <div class="time-box">
+      <strong id="days">00</strong>
+      <span>Days</span>
+    </div>
+
+    <div class="time-box">
+      <strong id="hours">00</strong>
+      <span>Hours</span>
+    </div>
+
+    <div class="time-box">
+      <strong id="minutes">00</strong>
+      <span>Minutes</span>
+    </div>
+
+    <div class="time-box">
+      <strong id="seconds">00</strong>
+      <span>Seconds</span>
+    </div>
+
+  </div>
+
+  <div style="text-align:center;margin-top:25px;">
+    <!-- GANTI LINK INI DENGAN LINK GIVEAWAY KAMU -->
+    <a
+      href="https://example.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn btn-primary"
+    >
+      ENTER NOW →
+    </a>
+  </div>
+
+</section>
+
+<!-- STATS -->
+<section class="stats">
+
+  <div class="stat">
+    <strong id="participants">1,284</strong>
+    <span>Participants</span>
+  </div>
+
+  <div class="stat">
+    <strong>01</strong>
+    <span>Winner</span>
+  </div>
+
+  <div class="stat">
+    <strong>FREE</strong>
+    <span>Entry</span>
+  </div>
+
+</section>
+
+<!-- HOW TO JOIN -->
+<section class="join-section" id="how">
+
+  <div class="section-label">
+    Simple & Free
+  </div>
+
+  <h2>How To Join</h2>
+
+  <div class="steps">
+
+    <div class="step">
+      <div class="step-number">01</div>
+      <h3>Click Enter</h3>
+      <p>
+        Click the Enter Now button above to open
+        the official giveaway entry page.
+      </p>
+    </div>
+
+    <div class="step">
+      <div class="step-number">02</div>
+      <h3>Complete Entry</h3>
+      <p>
+        Follow the giveaway instructions and submit
+        only the information required for entry.
+      </p>
+    </div>
+
+    <div class="step">
+      <div class="step-number">03</div>
+      <h3>Wait For Winner</h3>
+      <p>
+        When the countdown ends, the winner will be
+        announced through the official giveaway channel.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SAFETY NOTICE -->
+<div class="warning">
+  <b>⚠ Safety Notice:</b>
+  Never share your Roblox password, cookie, 2FA code,
+  or recovery information with anyone claiming to be
+  a giveaway administrator.
+</div>
+
+<footer>
+  MM2 GIVEAWAY • COMMUNITY EVENT
+</footer>
+
+  </div>  <script>
+    /* ==========================
+       COUNTDOWN
+       GANTI TANGGAL DI SINI
+       Format: YYYY-MM-DDTHH:MM:SS
+    ========================== */
+
+    const endDate = new Date("2026-10-01T20:00:00").getTime();
+
+    function updateCountdown() {
+
+      const now = new Date().getTime();
+      const distance = endDate - now;
+
+      if (distance <= 0) {
+        document.getElementById("days").textContent = "00";
+        document.getElementById("hours").textContent = "00";
+        document.getElementById("minutes").textContent = "00";
+        document.getElementById("seconds").textContent = "00";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) /
+        (1000 * 60 * 60)
+      );
+
+      const minutes = Math.floor(
+        (distance % (1000 * 60 * 60)) /
+        (1000 * 60)
+      );
+
+      const seconds = Math.floor(
+        (distance % (1000 * 60)) /
+        1000
+      );
+
+      document.getElementById("days").textContent =
+        String(days).padStart(2, "0");
+
+      document.getElementById("hours").textContent =
+        String(hours).padStart(2, "0");
+
+      document.getElementById("minutes").textContent =
+        String(minutes).padStart(2, "0");
+
+      document.getElementById("seconds").textContent =
+        String(seconds).padStart(2, "0");
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+
+    /* ==========================
+       PARTICLES
+    ========================== */
+
+    const particleContainer =
+      document.getElementById("particles");
+
+    for (let i = 0; i < 35; i++) {
+
+      const particle = document.createElement("div");
+
+      particle.className = "particle";
+
+      particle.style.left =
+        Math.random() * 100 + "%";
+
+      particle.style.animationDuration =
+        (8 + Math.random() * 15) + "s";
+
+      particle.style.animationDelay =
+        Math.random() * 10 + "s";
+
+      particle.style.opacity =
+        (0.1 + Math.random() * 0.5);
+
+      particleContainer.appendChild(particle);
+    }
+
+
+    /* ==========================
+       FAKE LIVE PARTICIPANT EFFECT
+       HANYA UNTUK EFEK VISUAL.
+       BUKAN DATA PESERTA SEBENARNYA.
+    ========================== */
+
+    let participants = 1284;
+
+    setInterval(() => {
+
+      if (Math.random() > 0.65) {
+
+        participants += 1;
+
+        document.getElementById("participants")
+          .textContent =
+          participants.toLocaleString("en-US");
+      }
+
+    }, 5000);
+  </script></body>
+</html>
