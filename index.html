@@ -1,27 +1,13 @@
 <!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>MM2 • Ultimate Giveaway</title><meta
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>MM2 Giveaway</title><meta
 name="description"
 content="Enter the ultimate Murder Mystery 2 giveaway."
 
 «»
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
-
-    :root {
-      --red: #ff164f;
-      --red-light: #ff5578;
-      --red-dark: #85001f;
-      --white: #fff;
-      --muted: #858591;
-      --dim: #4f4f59;
-      --bg: #020204;
-      --card: rgba(255,255,255,.045);
-      --line: rgba(255,255,255,.09);
-    }
-
     * {
       margin: 0;
       padding: 0;
@@ -33,45 +19,42 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
     }
 
     body {
-      background: var(--bg);
-      color: var(--white);
-      font-family: Inter, Arial, sans-serif;
+      min-height: 100vh;
+      background: #030305;
+      color: #fff;
+      font-family: Arial, Helvetica, sans-serif;
       overflow-x: hidden;
     }
 
-    /* =========================================
-       CINEMATIC BACKGROUND
-    ========================================= */
+    /* BACKGROUND */
 
     .background {
       position: fixed;
       inset: 0;
+      z-index: 0;
       pointer-events: none;
       overflow: hidden;
-      z-index: 0;
     }
 
     .background::before {
       content: "";
-
       position: absolute;
       inset: 0;
-
       background:
         radial-gradient(
-          circle at 50% 8%,
-          rgba(255, 0, 60, .22),
-          transparent 34%
+          circle at 50% 0%,
+          rgba(255, 0, 55, 0.24),
+          transparent 35%
         ),
         radial-gradient(
-          circle at 10% 60%,
-          rgba(255, 0, 50, .07),
-          transparent 28%
+          circle at 0% 70%,
+          rgba(255, 0, 55, 0.08),
+          transparent 30%
         ),
         radial-gradient(
-          circle at 90% 40%,
-          rgba(100, 0, 255, .06),
-          transparent 28%
+          circle at 100% 50%,
+          rgba(100, 0, 255, 0.07),
+          transparent 30%
         );
     }
 
@@ -81,66 +64,39 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
 
       background-image:
         linear-gradient(
-          rgba(255,255,255,.025) 1px,
+          rgba(255,255,255,0.025) 1px,
           transparent 1px
         ),
         linear-gradient(
           90deg,
-          rgba(255,255,255,.025) 1px,
+          rgba(255,255,255,0.025) 1px,
           transparent 1px
         );
 
-      background-size: 65px 65px;
-
-      mask-image:
-        linear-gradient(
-          to bottom,
-          black,
-          transparent 85%
-        );
-
-      opacity: .35;
-    }
-
-    .noise {
-      position: absolute;
-      inset: 0;
-
-      opacity: .035;
-
-      background-image:
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+      background-size: 60px 60px;
+      opacity: 0.35;
     }
 
     .orb {
       position: absolute;
-
-      width: 500px;
-      height: 500px;
-
+      width: 400px;
+      height: 400px;
       border-radius: 50%;
-
-      filter: blur(120px);
-
-      opacity: .12;
+      filter: blur(100px);
+      opacity: 0.1;
     }
 
     .orb.red {
       background: red;
-      left: -300px;
-      top: 35%;
+      left: -250px;
+      top: 30%;
     }
 
     .orb.purple {
-      background: #6800ff;
-      right: -300px;
+      background: purple;
+      right: -250px;
       top: 55%;
-      opacity: .07;
     }
-
-    /* =========================================
-       PARTICLES
-    ========================================= */
 
     #particles {
       position: absolute;
@@ -149,54 +105,38 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
 
     .particle {
       position: absolute;
-
       width: 2px;
       height: 2px;
-
       border-radius: 50%;
-
-      background: #ff315f;
-
-      box-shadow:
-        0 0 8px #ff315f;
-
-      animation:
-        particleUp linear infinite;
+      background: #ff315d;
+      box-shadow: 0 0 8px #ff315d;
+      animation: particleMove linear infinite;
     }
 
-    @keyframes particleUp {
+    @keyframes particleMove {
       from {
-        transform:
-          translateY(110vh)
-          scale(.5);
+        transform: translateY(105vh);
       }
 
       to {
-        transform:
-          translateY(-10vh)
-          scale(1);
+        transform: translateY(-10vh);
       }
     }
 
-    /* =========================================
-       CONTAINER
-    ========================================= */
+    /* MAIN */
 
     .container {
       position: relative;
       z-index: 2;
 
-      width: min(1160px, 92%);
-
+      width: min(1120px, 92%);
       margin: auto;
     }
 
-    /* =========================================
-       NAVBAR
-    ========================================= */
+    /* NAVBAR */
 
     nav {
-      height: 82px;
+      height: 80px;
 
       display: flex;
       align-items: center;
@@ -204,23 +144,14 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
     }
 
     .logo {
-      font-size: 23px;
+      font-size: 24px;
       font-weight: 900;
-
       letter-spacing: 4px;
     }
 
     .logo span {
-      color: var(--red);
-
-      text-shadow:
-        0 0 20px rgba(255,0,60,.65);
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 12px;
+      color: #ff174d;
+      text-shadow: 0 0 20px rgba(255,23,77,0.6);
     }
 
     .live {
@@ -230,46 +161,42 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
 
       padding: 9px 14px;
 
-      border: 1px solid var(--line);
-      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 50px;
 
-      background: rgba(255,255,255,.035);
+      background: rgba(255,255,255,0.035);
 
       color: #aaa;
 
       font-size: 9px;
-      font-weight: 800;
-
-      letter-spacing: 1.8px;
+      font-weight: bold;
+      letter-spacing: 2px;
     }
 
     .live-dot {
       width: 7px;
       height: 7px;
 
-      background: #37ff7b;
-
       border-radius: 50%;
 
-      box-shadow:
-        0 0 12px #37ff7b;
+      background: #35ff78;
+
+      box-shadow: 0 0 10px #35ff78;
 
       animation: livePulse 1.4s infinite;
     }
 
     @keyframes livePulse {
       50% {
-        opacity: .3;
-        transform: scale(.65);
+        opacity: 0.3;
+        transform: scale(0.7);
       }
     }
 
-    /* =========================================
-       HERO
-    ========================================= */
+    /* HERO */
 
     .hero {
-      min-height: 690px;
+      min-height: 650px;
 
       display: flex;
       align-items: center;
@@ -277,100 +204,45 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
 
       text-align: center;
 
-      position: relative;
-
-      padding: 90px 0 110px;
-    }
-
-    .hero::before {
-      content: "";
-
-      position: absolute;
-
-      width: 500px;
-      height: 500px;
-
-      left: 50%;
-      top: 30%;
-
-      transform: translate(-50%, -50%);
-
-      border-radius: 50%;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(255,0,50,.14),
-          transparent 68%
-        );
-
-      filter: blur(20px);
-
-      z-index: -1;
+      padding: 80px 0 100px;
     }
 
     .event-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
+      display: inline-block;
 
       padding: 10px 18px;
 
-      border-radius: 999px;
+      border: 1px solid rgba(255,30,75,0.3);
+      border-radius: 50px;
 
-      background:
-        linear-gradient(
-          135deg,
-          rgba(255,20,75,.13),
-          rgba(255,255,255,.025)
-        );
+      background: rgba(255,20,70,0.07);
 
-      border: 1px solid
-        rgba(255,30,80,.3);
-
-      color: #ff6583;
+      color: #ff6482;
 
       font-size: 9px;
       font-weight: 900;
 
-      letter-spacing: 2.5px;
-
-      animation:
-        badgeFloat 3s ease-in-out infinite;
-    }
-
-    @keyframes badgeFloat {
-      50% {
-        transform: translateY(-3px);
-      }
-    }
-
-    .event-badge b {
-      color: white;
+      letter-spacing: 2px;
     }
 
     .hero h1 {
-      margin-top: 28px;
+      margin-top: 27px;
 
-      font-size:
-        clamp(58px, 10.5vw, 130px);
+      font-size: clamp(55px, 10vw, 125px);
 
-      line-height: .8;
-
-      letter-spacing: -8px;
+      line-height: 0.82;
 
       font-weight: 900;
 
-      text-transform: uppercase;
+      letter-spacing: -7px;
 
       background:
         linear-gradient(
           180deg,
-          #fff 0%,
-          #fff 12%,
-          #ff718c 39%,
-          #ff174d 61%,
-          #680015 100%
+          #ffffff,
+          #ff6685 42%,
+          #ff174d 65%,
+          #680016
         );
 
       -webkit-background-clip: text;
@@ -381,29 +253,27 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
       filter:
         drop-shadow(
           0 0 35px
-          rgba(255,0,60,.25)
+          rgba(255,0,55,0.25)
         );
     }
 
     .hero-description {
-      max-width: 620px;
+      max-width: 600px;
 
       margin: 30px auto 0;
 
-      color: var(--muted);
+      color: #80808b;
 
       font-size: 13px;
 
-      line-height: 1.9;
+      line-height: 1.8;
     }
 
     .hero-description strong {
       color: #ddd;
     }
 
-    /* =========================================
-       BUTTONS
-    ========================================= */
+    /* BUTTONS */
 
     .actions {
       display: flex;
@@ -412,383 +282,224 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
 
       gap: 12px;
 
-      margin-top: 38px;
+      margin-top: 35px;
     }
 
     .btn {
       position: relative;
-
-      min-width: 205px;
-
-      padding: 17px 28px;
 
       display: inline-flex;
 
       align-items: center;
       justify-content: center;
 
-      border-radius: 9px;
+      min-width: 205px;
+
+      padding: 17px 25px;
+
+      border-radius: 8px;
 
       text-decoration: none;
 
       font-size: 10px;
-
       font-weight: 900;
 
       letter-spacing: 2px;
 
       overflow: hidden;
 
-      transition:
-        transform .25s,
-        box-shadow .25s,
-        border-color .25s;
-    }
-
-    .btn::before {
-      content: "";
-
-      position: absolute;
-
-      top: 0;
-      left: -120%;
-
-      width: 75%;
-      height: 100%;
-
-      transform: skewX(-20deg);
-
-      background:
-        linear-gradient(
-          90deg,
-          transparent,
-          rgba(255,255,255,.25),
-          transparent
-        );
-
-      transition: .65s;
-    }
-
-    .btn:hover::before {
-      left: 150%;
+      transition: 0.25s ease;
     }
 
     .primary {
-      color: white;
+      color: #fff;
 
       background:
         linear-gradient(
           135deg,
           #ff174d,
-          #ad002c
+          #a90029
         );
 
-      border:
-        1px solid #ff3b64;
+      border: 1px solid #ff3d65;
 
       box-shadow:
-        0 12px 45px
-        rgba(255,0,60,.23);
+        0 12px 40px
+        rgba(255,0,55,0.22);
     }
 
     .primary:hover {
-      transform:
-        translateY(-5px)
-        scale(1.02);
+      transform: translateY(-4px);
 
       box-shadow:
-        0 18px 65px
-        rgba(255,0,60,.45);
+        0 18px 55px
+        rgba(255,0,55,0.45);
     }
 
     .secondary {
-      color: #bbb;
+      color: #aaa;
 
-      background:
-        rgba(255,255,255,.035);
+      background: rgba(255,255,255,0.035);
 
-      border:
-        1px solid var(--line);
+      border: 1px solid rgba(255,255,255,0.1);
     }
 
     .secondary:hover {
-      color: white;
+      color: #fff;
 
-      border-color:
-        rgba(255,255,255,.18);
+      background: rgba(255,255,255,0.07);
 
-      transform:
-        translateY(-5px);
+      transform: translateY(-4px);
     }
-
-    /* =========================================
-       TRUST STRIP
-    ========================================= */
 
     .trust-strip {
       display: flex;
 
-      align-items: center;
       justify-content: center;
 
-      gap: 25px;
+      gap: 22px;
 
-      margin-top: 28px;
+      margin-top: 24px;
 
-      color: #4f4f59;
+      color: #555;
 
       font-size: 8px;
-      font-weight: 700;
+      font-weight: bold;
 
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .trust-strip span {
-      display: flex;
-      align-items: center;
-      gap: 6px;
+      letter-spacing: 1.5px;
     }
 
     .check {
-      color: #41ff83;
+      color: #38ff7c;
     }
 
-    /* =========================================
-       GIVEAWAY CARD
-    ========================================= */
+    /* GIVEAWAY */
 
     .giveaway {
-      position: relative;
+      max-width: 950px;
 
-      max-width: 1000px;
+      margin: auto auto 80px;
 
-      margin:
-        0 auto 90px;
+      padding: 35px;
 
-      padding: 38px;
-
-      border-radius: 22px;
+      border-radius: 20px;
 
       background:
         linear-gradient(
           145deg,
-          rgba(255,25,70,.105),
-          rgba(255,255,255,.025)
+          rgba(255,20,70,0.1),
+          rgba(255,255,255,0.025)
         );
 
-      border:
-        1px solid
-        rgba(255,30,75,.23);
+      border: 1px solid rgba(255,30,75,0.22);
 
       box-shadow:
-        0 40px 120px
-        rgba(0,0,0,.5);
-
-      overflow: hidden;
-    }
-
-    .giveaway::before {
-      content: "";
-
-      position: absolute;
-
-      width: 420px;
-      height: 420px;
-
-      right: -230px;
-      top: -230px;
-
-      border-radius: 50%;
-
-      background:
-        rgba(255,0,55,.17);
-
-      filter: blur(90px);
-    }
-
-    .giveaway::after {
-      content: "";
-
-      position: absolute;
-
-      left: 0;
-      right: 0;
-      top: 0;
-
-      height: 1px;
-
-      background:
-        linear-gradient(
-          90deg,
-          transparent,
-          rgba(255,70,100,.8),
-          transparent
-        );
+        0 35px 100px
+        rgba(0,0,0,0.45);
     }
 
     .giveaway-header {
       display: flex;
 
       justify-content: space-between;
-
-      align-items: flex-start;
-
-      gap: 20px;
+      align-items: center;
 
       margin-bottom: 25px;
     }
 
     .eyebrow {
-      color: #ff5a78;
+      color: #ff5576;
 
       font-size: 9px;
       font-weight: 900;
 
       letter-spacing: 3px;
-
-      text-transform: uppercase;
     }
 
     .giveaway h2 {
       margin-top: 8px;
 
-      font-size: 30px;
-
-      letter-spacing: -1.3px;
+      font-size: 29px;
     }
 
-    .status-pill {
+    .status {
       padding: 8px 12px;
 
-      border-radius: 999px;
+      color: #40ff80;
 
-      color: #50ff8a;
+      background: rgba(40,255,120,0.05);
 
-      background:
-        rgba(50,255,120,.05);
+      border: 1px solid rgba(40,255,120,0.15);
 
-      border:
-        1px solid
-        rgba(50,255,120,.15);
+      border-radius: 50px;
 
       font-size: 8px;
-      font-weight: 800;
+      font-weight: bold;
 
-      letter-spacing: 1.5px;
+      letter-spacing: 1px;
     }
 
-    /* =========================================
-       PRIZE DISPLAY
-    ========================================= */
+    /* PRIZE */
 
     .prize {
       display: grid;
 
-      grid-template-columns:
-        145px 1fr auto;
+      grid-template-columns: 140px 1fr 100px;
 
       align-items: center;
 
-      gap: 28px;
+      gap: 25px;
 
-      padding: 25px;
+      padding: 24px;
 
-      border-radius: 15px;
+      background: rgba(0,0,0,0.3);
 
-      background:
-        rgba(0,0,0,.28);
+      border: 1px solid rgba(255,255,255,0.07);
 
-      border:
-        1px solid
-        rgba(255,255,255,.07);
+      border-radius: 14px;
     }
 
     .prize-art {
       position: relative;
 
-      width: 145px;
-      height: 145px;
+      width: 140px;
+      height: 140px;
 
       display: grid;
       place-items: center;
 
-      border-radius: 20px;
+      border-radius: 18px;
 
       background:
         radial-gradient(
           circle,
-          rgba(255,20,70,.3),
-          rgba(255,20,70,.025) 68%
+          rgba(255,20,70,0.3),
+          rgba(255,20,70,0.03)
         );
 
-      border:
-        1px solid
-        rgba(255,30,75,.3);
+      border: 1px solid rgba(255,30,75,0.3);
 
       box-shadow:
-        inset 0 0 40px
-        rgba(255,0,55,.08),
-
-        0 0 45px
-        rgba(255,0,55,.1);
-
-      overflow: hidden;
-    }
-
-    .prize-art::before {
-      content: "";
-
-      position: absolute;
-
-      width: 160px;
-      height: 2px;
-
-      background:
-        linear-gradient(
-          90deg,
-          transparent,
-          #ff315f,
-          transparent
-        );
-
-      transform: rotate(-45deg);
-
-      animation:
-        scan 3s linear infinite;
-    }
-
-    @keyframes scan {
-      from {
-        transform:
-          translate(-120px,-120px)
-          rotate(-45deg);
-      }
-
-      to {
-        transform:
-          translate(120px,120px)
-          rotate(-45deg);
-      }
+        0 0 40px
+        rgba(255,0,55,0.12);
     }
 
     .knife {
-      font-size: 66px;
+      font-size: 60px;
 
       filter:
         drop-shadow(
           0 0 20px
-          rgba(255,0,55,.5)
+          rgba(255,0,55,0.5)
         );
 
-      animation:
-        knifeFloat 3s ease-in-out infinite;
+      animation: knifeFloat 3s ease-in-out infinite;
     }
 
     @keyframes knifeFloat {
       50% {
         transform:
-          translateY(-8px)
+          translateY(-7px)
           rotate(4deg);
       }
     }
@@ -796,43 +507,40 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
     .rarity {
       position: absolute;
 
-      top: 9px;
-      right: 9px;
+      top: 8px;
+      right: 8px;
 
       padding: 5px 7px;
 
       border-radius: 5px;
 
-      color: #ffb3c3;
+      background: rgba(255,20,70,0.12);
 
-      background:
-        rgba(255,20,70,.12);
+      color: #ff9bb0;
 
       font-size: 7px;
       font-weight: 900;
-
-      letter-spacing: 1px;
     }
 
     .prize-info small {
-      color: #ff5677;
+      color: #ff5577;
 
       font-size: 8px;
-      font-weight: 900;
+      font-weight: bold;
 
-      letter-spacing: 2.5px;
+      letter-spacing: 2px;
     }
 
     .prize-info h3 {
       margin-top: 8px;
 
-      font-size: 24px;
+      font-size: 23px;
     }
 
     .prize-info p {
       margin-top: 7px;
 
-      color: #62626c;
+      color: #666;
 
       font-size: 10px;
 
@@ -842,39 +550,32 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
     .winner {
       text-align: center;
 
-      min-width: 110px;
+      padding-left: 20px;
 
-      padding-left: 25px;
-
-      border-left:
-        1px solid
-        rgba(255,255,255,.07);
+      border-left: 1px solid rgba(255,255,255,0.07);
     }
 
     .winner strong {
       display: block;
 
-      font-size: 28px;
+      font-size: 29px;
     }
 
     .winner span {
       color: #555;
 
       font-size: 8px;
-      font-weight: 800;
+      font-weight: bold;
 
-      letter-spacing: 1.5px;
+      letter-spacing: 2px;
     }
 
-    /* =========================================
-       COUNTDOWN
-    ========================================= */
+    /* COUNTDOWN */
 
     .countdown {
       display: grid;
 
-      grid-template-columns:
-        repeat(4, 1fr);
+      grid-template-columns: repeat(4, 1fr);
 
       gap: 10px;
 
@@ -882,51 +583,22 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
     }
 
     .time {
-      position: relative;
-
-      padding: 20px 10px;
+      padding: 19px 10px;
 
       text-align: center;
 
-      border-radius: 11px;
+      border-radius: 10px;
 
-      background:
-        rgba(255,255,255,.025);
+      background: rgba(255,255,255,0.025);
 
-      border:
-        1px solid
-        rgba(255,255,255,.065);
-
-      overflow: hidden;
-    }
-
-    .time::before {
-      content: "";
-
-      position: absolute;
-
-      top: 0;
-      left: 20%;
-      right: 20%;
-
-      height: 1px;
-
-      background:
-        linear-gradient(
-          90deg,
-          transparent,
-          rgba(255,50,90,.45),
-          transparent
-        );
+      border: 1px solid rgba(255,255,255,0.06);
     }
 
     .time strong {
       display: block;
 
-      font-size: 31px;
+      font-size: 29px;
       font-weight: 900;
-
-      letter-spacing: -1px;
     }
 
     .time span {
@@ -937,15 +609,13 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
       color: #50505a;
 
       font-size: 8px;
-      font-weight: 800;
+      font-weight: bold;
 
       letter-spacing: 2px;
       text-transform: uppercase;
     }
 
-    /* =========================================
-       PROGRESS
-    ========================================= */
+    /* PROGRESS */
 
     .progress-section {
       margin-top: 20px;
@@ -970,17 +640,15 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
     .progress {
       height: 5px;
 
-      border-radius: 999px;
-
-      background:
-        rgba(255,255,255,.06);
-
       overflow: hidden;
+
+      border-radius: 20px;
+
+      background: rgba(255,255,255,0.06);
     }
 
     .progress-bar {
       width: 72%;
-
       height: 100%;
 
       border-radius: inherit;
@@ -988,28 +656,25 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
       background:
         linear-gradient(
           90deg,
-          #8d001e,
+          #85001e,
           #ff174d
         );
 
       box-shadow:
         0 0 15px
-        rgba(255,20,70,.45);
+        rgba(255,20,70,0.5);
     }
 
-    /* =========================================
-       STATS
-    ========================================= */
+    /* STATS */
 
     .stats {
       display: grid;
 
-      grid-template-columns:
-        repeat(3, 1fr);
+      grid-template-columns: repeat(3, 1fr);
 
       gap: 13px;
 
-      margin-bottom: 95px;
+      margin-bottom: 90px;
     }
 
     .stat {
@@ -1019,27 +684,21 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
 
       border-radius: 13px;
 
-      background:
-        var(--card);
+      background: rgba(255,255,255,0.04);
 
-      border:
-        1px solid var(--line);
+      border: 1px solid rgba(255,255,255,0.08);
 
-      transition: .3s;
+      transition: 0.25s;
     }
 
     .stat:hover {
-      transform: translateY(-6px);
+      transform: translateY(-5px);
 
-      border-color:
-        rgba(255,30,75,.28);
-
-      background:
-        rgba(255,20,60,.055);
+      border-color: rgba(255,20,70,0.3);
     }
 
     .stat-icon {
-      font-size: 17px;
+      font-size: 18px;
 
       margin-bottom: 10px;
     }
@@ -1048,7 +707,6 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
       display: block;
 
       font-size: 27px;
-      font-weight: 900;
     }
 
     .stat span {
@@ -1059,88 +717,74 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
       color: #555;
 
       font-size: 8px;
-      font-weight: 800;
+      font-weight: bold;
 
       letter-spacing: 2px;
-
       text-transform: uppercase;
     }
 
-    /* =========================================
-       HOW TO JOIN
-    ========================================= */
+    /* HOW */
 
     .how {
-      margin-bottom: 100px;
+      margin-bottom: 90px;
 
       text-align: center;
     }
 
     .section-label {
-      color: #ff5576;
+      color: #ff5577;
 
       font-size: 9px;
       font-weight: 900;
 
       letter-spacing: 3px;
-
-      text-transform: uppercase;
     }
 
     .how h2 {
       margin-top: 8px;
 
-      font-size: 35px;
-
-      letter-spacing: -1.5px;
+      font-size: 34px;
     }
 
     .steps {
       display: grid;
 
-      grid-template-columns:
-        repeat(3, 1fr);
+      grid-template-columns: repeat(3, 1fr);
 
       gap: 14px;
 
-      margin-top: 35px;
+      margin-top: 32px;
 
       text-align: left;
     }
 
     .step {
-      position: relative;
+      min-height: 190px;
 
-      min-height: 200px;
-
-      padding: 27px;
+      padding: 26px;
 
       border-radius: 14px;
 
       background:
         linear-gradient(
           145deg,
-          rgba(255,255,255,.055),
-          rgba(255,255,255,.018)
+          rgba(255,255,255,0.055),
+          rgba(255,255,255,0.018)
         );
 
-      border:
-        1px solid var(--line);
+      border: 1px solid rgba(255,255,255,0.08);
 
-      overflow: hidden;
-
-      transition: .3s;
+      transition: 0.3s;
     }
 
     .step:hover {
-      transform: translateY(-7px);
+      transform: translateY(-6px);
 
-      border-color:
-        rgba(255,30,75,.28);
+      border-color: rgba(255,20,70,0.3);
     }
 
     .step-number {
-      color: var(--red);
+      color: #ff174d;
 
       font-size: 9px;
       font-weight: 900;
@@ -1149,7 +793,7 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
     }
 
     .step h3 {
-      margin-top: 18px;
+      margin-top: 16px;
 
       font-size: 16px;
     }
@@ -1157,86 +801,38 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
     .step p {
       margin-top: 9px;
 
-      color: #62626b;
+      color: #62626c;
 
       font-size: 10px;
 
       line-height: 1.8;
     }
 
-    .step-decoration {
-      position: absolute;
-
-      right: -20px;
-      bottom: -25px;
-
-      font-size: 75px;
-
-      opacity: .025;
-    }
-
-    /* =========================================
-       FINAL CTA
-    ========================================= */
+    /* FINAL */
 
     .final {
-      position: relative;
+      margin-bottom: 80px;
 
-      padding: 75px 20px;
-
-      margin-bottom: 90px;
+      padding: 70px 20px;
 
       text-align: center;
 
       border-radius: 20px;
 
-      border:
-        1px solid
-        rgba(255,30,75,.14);
+      border: 1px solid rgba(255,30,75,0.15);
 
       background:
         radial-gradient(
-          circle at center,
-          rgba(255,0,55,.13),
-          transparent 68%
+          circle,
+          rgba(255,0,55,0.13),
+          transparent 65%
         );
-
-      overflow: hidden;
-    }
-
-    .final::before,
-    .final::after {
-      content: "";
-
-      position: absolute;
-
-      width: 180px;
-      height: 1px;
-
-      top: 50%;
-
-      background:
-        linear-gradient(
-          90deg,
-          transparent,
-          rgba(255,40,80,.5)
-        );
-    }
-
-    .final::before {
-      left: 0;
-    }
-
-    .final::after {
-      right: 0;
-
-      transform: rotate(180deg);
     }
 
     .final h2 {
       margin-top: 10px;
 
-      font-size: 38px;
+      font-size: 37px;
 
       letter-spacing: -2px;
     }
@@ -1244,7 +840,7 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
     .final p {
       max-width: 500px;
 
-      margin: 14px auto 28px;
+      margin: 13px auto 27px;
 
       color: #666;
 
@@ -1253,16 +849,14 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
       line-height: 1.8;
     }
 
-    /* =========================================
-       FOOTER
-    ========================================= */
+    /* FOOTER */
 
     footer {
       padding: 30px 0;
 
       border-top:
         1px solid
-        rgba(255,255,255,.05);
+        rgba(255,255,255,0.05);
 
       text-align: center;
 
@@ -1273,11 +867,9 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
       letter-spacing: 3px;
     }
 
-    /* =========================================
-       MOBILE
-    ========================================= */
+    /* MOBILE */
 
-    @media (max-width: 750px) {
+    @media (max-width: 700px) {
 
       .container {
         width: 90%;
@@ -1292,15 +884,14 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
       }
 
       .hero {
-        min-height: 600px;
+        min-height: 580px;
 
         padding:
           65px 0 80px;
       }
 
       .hero h1 {
-        font-size:
-          clamp(47px, 15vw, 82px);
+        font-size: 15vw;
 
         letter-spacing: -4px;
       }
@@ -1317,14 +908,13 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
 
       .btn {
         width: 100%;
-
         max-width: 340px;
       }
 
       .trust-strip {
         flex-wrap: wrap;
 
-        gap: 10px 18px;
+        line-height: 2;
       }
 
       .giveaway {
@@ -1332,6 +922,8 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
       }
 
       .giveaway-header {
+        align-items: flex-start;
+
         flex-direction: column;
       }
 
@@ -1351,18 +943,17 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
 
       .winner {
         padding:
-          17px 0 0;
+          15px 0 0;
 
         border-left: 0;
 
         border-top:
           1px solid
-          rgba(255,255,255,.07);
+          rgba(255,255,255,0.07);
       }
 
       .countdown {
-        grid-template-columns:
-          repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .stats,
@@ -1370,37 +961,19 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
         grid-template-columns: 1fr;
       }
 
-      .stats {
-        margin-bottom: 75px;
-      }
-
-      .how h2 {
+      .final h2 {
         font-size: 29px;
       }
-
-      .final h2 {
-        font-size: 30px;
-      }
-
-      .final::before,
-      .final::after {
-        display: none;
-      }
     }
-  </style></head><body>  <!-- =========================================
-       BACKGROUND
-  ========================================== -->  <div class="background"><div class="grid"></div>
-
-<div class="noise"></div>
+  </style></head><body>  <!-- BACKGROUND -->  <div class="background"><div class="grid"></div>
 
 <div class="orb red"></div>
+
 <div class="orb purple"></div>
 
 <div id="particles"></div>
 
-  </div>  <div class="container"><!-- =======================================
-     NAVBAR
-======================================== -->
+  </div>  <div class="container"><!-- NAVBAR -->
 
 <nav>
 
@@ -1408,31 +981,25 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
     <span>MM</span>2
   </div>
 
-  <div class="nav-right">
+  <div class="live">
 
-    <div class="live">
+    <div class="live-dot"></div>
 
-      <div class="live-dot"></div>
-
-      GIVEAWAY LIVE
-
-    </div>
+    GIVEAWAY LIVE
 
   </div>
 
 </nav>
 
 
-<!-- =======================================
-     HERO
-======================================== -->
+<!-- HERO -->
 
 <section class="hero">
 
   <div>
 
     <div class="event-badge">
-      🔥 <b>LIMITED</b> GIVEAWAY EVENT
+      🔥 LIMITED GIVEAWAY EVENT
     </div>
 
     <h1>
@@ -1488,9 +1055,7 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
 </section>
 
 
-<!-- =======================================
-     GIVEAWAY
-======================================== -->
+<!-- GIVEAWAY -->
 
 <section
   class="giveaway"
@@ -1511,14 +1076,12 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
 
     </div>
 
-    <div class="status-pill">
+    <div class="status">
       ● ACTIVE
     </div>
 
   </div>
 
-
-  <!-- PRIZE -->
 
   <div class="prize">
 
@@ -1621,12 +1184,11 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
 
 
   <div style="
-    display:flex;
-    justify-content:center;
+    text-align:center;
     margin-top:23px;
   ">
 
-    <!-- GANTI DENGAN LINK GIVEAWAY KAMU -->
+    <!-- GANTI LINK INI -->
 
     <a
       href="https://example.com"
@@ -1642,9 +1204,7 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
 </section>
 
 
-<!-- =======================================
-     STATS
-======================================== -->
+<!-- STATS -->
 
 <section class="stats">
 
@@ -1701,9 +1261,7 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
 </section>
 
 
-<!-- =======================================
-     HOW TO JOIN
-======================================== -->
+<!-- HOW TO JOIN -->
 
 <section
   class="how"
@@ -1733,12 +1291,8 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
 
       <p>
         Click the button and open the
-        official giveaway entry page.
+        giveaway entry page.
       </p>
-
-      <div class="step-decoration">
-        🎁
-      </div>
 
     </div>
 
@@ -1758,10 +1312,6 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
         on the giveaway page.
       </p>
 
-      <div class="step-decoration">
-        ⚡
-      </div>
-
     </div>
 
 
@@ -1780,10 +1330,6 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
         the winner will be announced.
       </p>
 
-      <div class="step-decoration">
-        🏆
-      </div>
-
     </div>
 
   </div>
@@ -1791,9 +1337,7 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
 </section>
 
 
-<!-- =======================================
-     FINAL CTA
-======================================== -->
+<!-- FINAL CTA -->
 
 <section class="final">
 
@@ -1820,28 +1364,23 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
 </section>
 
 
+<!-- FOOTER -->
+
 <footer>
   MM2 GIVEAWAY • COMMUNITY EVENT
 </footer>
 
-  </div>  <script>
+  </div>  <!-- JAVASCRIPT -->  <script>
 
-    /* =========================================
-       COUNTDOWN
-       
-       GANTI TANGGAL INI
-       ========================================= */
+    /* COUNTDOWN */
 
     const endDate =
-      new Date(
-        "2026-10-01T20:00:00"
-      ).getTime();
+      new Date("2026-10-01T20:00:00").getTime();
 
 
     function updateCountdown() {
 
-      const now =
-        Date.now();
+      const now = Date.now();
 
       const distance =
         endDate - now;
@@ -1849,13 +1388,10 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
 
       if (distance <= 0) {
 
-        ["days","hours","minutes","seconds"]
-          .forEach(id => {
-
-            document.getElementById(id)
-              .textContent = "00";
-
-          });
+        document.getElementById("days").textContent = "00";
+        document.getElementById("hours").textContent = "00";
+        document.getElementById("minutes").textContent = "00";
+        document.getElementById("seconds").textContent = "00";
 
         return;
       }
@@ -1922,9 +1458,7 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
     );
 
 
-    /* =========================================
-       PARTICLES
-    ========================================= */
+    /* PARTICLES */
 
     const particles =
       document.getElementById(
@@ -1932,79 +1466,40 @@ content="Enter the ultimate Murder Mystery 2 giveaway."
       );
 
 
-    for (let i = 0; i < 55; i++) {
+    for (
+      let i = 0;
+      i < 45;
+      i++
+    ) {
 
-      const p =
+      const particle =
         document.createElement("div");
 
-      p.className =
+      particle.className =
         "particle";
 
 
-      p.style.left =
+      particle.style.left =
         Math.random() * 100 + "%";
 
 
-      p.style.animationDuration =
-        (7 + Math.random() * 17) + "s";
+      particle.style.animationDuration =
+        (8 + Math.random() * 15) + "s";
 
 
-      p.style.animationDelay =
-        Math.random() * 12 + "s";
+      particle.style.animationDelay =
+        Math.random() * 10 + "s";
 
 
-      p.style.opacity =
-        .12 + Math.random() * .55;
+      particle.style.opacity =
+        0.1 + Math.random() * 0.5;
 
 
-      const size =
-        1 + Math.random() * 2;
-
-
-      p.style.width =
-        size + "px";
-
-      p.style.height =
-        size + "px";
-
-
-      particles.appendChild(p);
+      particles.appendChild(
+        particle
+      );
 
     }
 
-
-    /* =========================================
-       MOUSE PARALLAX
-    ========================================= */
-
-    const hero =
-      document.querySelector(".hero");
-
-
-    document.addEventListener(
-      "mousemove",
-      (e) => {
-
-        if (window.innerWidth < 750)
-          return;
-
-
-        const x =
-          (e.clientX /
-            window.innerWidth - .5) * 8;
-
-
-        const y =
-          (e.clientY /
-            window.innerHeight - .5) * 8;
-
-
-        hero.style.transform =
-          `translate(${x * .15}px,
-                     ${y * .15}px)`;
-
-      }
-    );
-
   </script></body>
-    </html>
+      </html>
