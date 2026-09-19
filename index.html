@@ -1,701 +1,836 @@
-<!DOCTYPE html><html lang="id">
+<!DOCTYPE html>
+<html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="MM2 Giveaway - Join the giveaway event.">
-  <title>MM2 Giveaway</title>  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      min-height: 100vh;
-      color: #fff;
-      background: #050507;
-      font-family: Arial, Helvetica, sans-serif;
-      overflow-x: hidden;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -3;
-      background:
-        radial-gradient(circle at 50% 0%, rgba(255, 0, 55, .22), transparent 35%),
-        radial-gradient(circle at 0% 70%, rgba(255, 0, 55, .08), transparent 30%),
-        radial-gradient(circle at 100% 50%, rgba(100, 0, 255, .08), transparent 30%),
-        #050507;
-    }
-
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -2;
-      pointer-events: none;
-      opacity: .25;
-      background-image:
-        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
-      background-size: 60px 60px;
-    }
-
-    .orb {
-      position: fixed;
-      width: 350px;
-      height: 350px;
-      border-radius: 50%;
-      filter: blur(100px);
-      opacity: .1;
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    .orb.red {
-      background: #ff003c;
-      left: -220px;
-      top: 35%;
-    }
-
-    .orb.purple {
-      background: #7000ff;
-      right: -220px;
-      top: 55%;
-    }
-
-    #particles {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 0;
-      overflow: hidden;
-    }
-
-    .particle {
-      position: absolute;
-      width: 2px;
-      height: 2px;
-      border-radius: 50%;
-      background: #ff315d;
-      box-shadow: 0 0 8px #ff315d;
-      animation: floatUp linear infinite;
-    }
-
-    @keyframes floatUp {
-      from {
-        transform: translateY(105vh);
-      }
-
-      to {
-        transform: translateY(-10vh);
-      }
-    }
-
-    .container {
-      position: relative;
-      z-index: 1;
-      width: min(1100px, 92%);
-      margin: auto;
-    }
-
-    /* NAVBAR */
-
-    nav {
-      height: 82px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-size: 25px;
-      font-weight: 900;
-      letter-spacing: 4px;
-    }
-
-    .logo span {
-      color: #ff174d;
-      text-shadow: 0 0 20px rgba(255, 23, 77, .7);
-    }
-
-    .live {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 9px 14px;
-      border: 1px solid rgba(255,255,255,.1);
-      border-radius: 50px;
-      background: rgba(255,255,255,.035);
-      color: #aaa;
-      font-size: 9px;
-      font-weight: 800;
-      letter-spacing: 2px;
-    }
-
-    .live-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #36ff79;
-      box-shadow: 0 0 12px #36ff79;
-      animation: pulse 1.4s infinite;
-    }
-
-    @keyframes pulse {
-      50% {
-        opacity: .3;
-        transform: scale(.65);
-      }
-    }
-
-    /* HERO */
-
-    .hero {
-      min-height: 650px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 80px 0 100px;
-    }
-
-    .event-badge {
-      display: inline-block;
-      padding: 10px 18px;
-      border: 1px solid rgba(255,30,75,.3);
-      border-radius: 50px;
-      background: rgba(255,20,70,.07);
-      color: #ff6c88;
-      font-size: 9px;
-      font-weight: 900;
-      letter-spacing: 2px;
-    }
-
-    .hero h1 {
-      margin-top: 28px;
-      font-size: clamp(55px, 11vw, 125px);
-      line-height: .82;
-      font-weight: 900;
-      letter-spacing: -7px;
-      background: linear-gradient(
-        180deg,
-        #fff 0%,
-        #ff708c 40%,
-        #ff174d 65%,
-        #690017 100%
-      );
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      filter: drop-shadow(0 0 30px rgba(255,0,55,.25));
-    }
-
-    .hero-description {
-      max-width: 600px;
-      margin: 30px auto 0;
-      color: #81818c;
-      font-size: 13px;
-      line-height: 1.8;
-    }
-
-    .hero-description strong {
-      color: #ddd;
-    }
-
-    /* BUTTONS */
-
-    .actions {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin-top: 35px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 205px;
-      padding: 17px 25px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 10px;
-      font-weight: 900;
-      letter-spacing: 2px;
-      transition: .25s ease;
-    }
-
-    .primary {
-      color: white;
-      background: linear-gradient(135deg, #ff174d, #9e0029);
-      border: 1px solid #ff3e65;
-      box-shadow: 0 12px 40px rgba(255,0,55,.22);
-    }
-
-    .primary:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 55px rgba(255,0,55,.45);
-    }
-
-    .secondary {
-      color: #aaa;
-      background: rgba(255,255,255,.035);
-      border: 1px solid rgba(255,255,255,.1);
-    }
-
-    .secondary:hover {
-      color: #fff;
-      background: rgba(255,255,255,.07);
-      transform: translateY(-4px);
-    }
-
-    .trust-strip {
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      margin-top: 25px;
-      color: #555;
-      font-size: 8px;
-      font-weight: 800;
-      letter-spacing: 1.5px;
-    }
-
-    .check {
-      color: #38ff7c;
-    }
-
-    /* GIVEAWAY */
-
-    .giveaway {
-      max-width: 950px;
-      margin: 0 auto 80px;
-      padding: 35px;
-      border-radius: 20px;
-      background: linear-gradient(
-        145deg,
-        rgba(255,20,70,.1),
-        rgba(255,255,255,.025)
-      );
-      border: 1px solid rgba(255,30,75,.22);
-      box-shadow: 0 35px 100px rgba(0,0,0,.45);
-    }
-
-    .giveaway-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 25px;
-    }
-
-    .eyebrow,
-    .section-label {
-      color: #ff5577;
-      font-size: 9px;
-      font-weight: 900;
-      letter-spacing: 3px;
-    }
-
-    .giveaway h2 {
-      margin-top: 8px;
-      font-size: 29px;
-    }
-
-    .status {
-      padding: 8px 12px;
-      color: #40ff80;
-      background: rgba(40,255,120,.05);
-      border: 1px solid rgba(40,255,120,.15);
-      border-radius: 50px;
-      font-size: 8px;
-      font-weight: 900;
-      letter-spacing: 1px;
-    }
-
-    .prize {
-      display: grid;
-      grid-template-columns: 140px 1fr 100px;
-      align-items: center;
-      gap: 25px;
-      padding: 24px;
-      border-radius: 14px;
-      background: rgba(0,0,0,.3);
-      border: 1px solid rgba(255,255,255,.07);
-    }
-
-    .prize-art {
-      position: relative;
-      width: 140px;
-      height: 140px;
-      display: grid;
-      place-items: center;
-      border-radius: 18px;
-      background: radial-gradient(
-        circle,
-        rgba(255,20,70,.3),
-        rgba(255,20,70,.03)
-      );
-      border: 1px solid rgba(255,30,75,.3);
-    }
-
-    .rarity {
-      position: absolute;
-      top: 8px;
-      right: 8px;
-      padding: 5px 7px;
-      border-radius: 5px;
-      color: #ff9bb0;
-      background: rgba(255,20,70,.12);
-      font-size: 7px;
-      font-weight: 900;
-    }
-
-    .knife {
-      font-size: 60px;
-      filter: drop-shadow(0 0 20px rgba(255,0,55,.5));
-      animation: knifeFloat 3s ease-in-out infinite;
-    }
-
-    @keyframes knifeFloat {
-      50% {
-        transform: translateY(-7px) rotate(4deg);
-      }
-    }
-
-    .prize-info small {
-      color: #ff5577;
-      font-size: 8px;
-      font-weight: 900;
-      letter-spacing: 2px;
-    }
-
-    .prize-info h3 {
-      margin-top: 8px;
-      font-size: 23px;
-    }
-
-    .prize-info p {
-      margin-top: 8px;
-      color: #666;
-      font-size: 10px;
-      line-height: 1.7;
-    }
-
-    .winner {
-      text-align: center;
-      padding-left: 20px;
-      border-left: 1px solid rgba(255,255,255,.07);
-    }
-
-    .winner strong {
-      display: block;
-      font-size: 29px;
-    }
-
-    .winner span {
-      color: #555;
-      font-size: 8px;
-      font-weight: 900;
-      letter-spacing: 2px;
-    }
-
-    /* COUNTDOWN */
-
-    .countdown {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-      margin-top: 15px;
-    }
-
-    .time {
-      padding: 19px 10px;
-      text-align: center;
-      border-radius: 10px;
-      background: rgba(255,255,255,.025);
-      border: 1px solid rgba(255,255,255,.06);
-    }
-
-    .time strong {
-      display: block;
-      font-size: 29px;
-    }
-
-    .time span {
-      display: block;
-      margin-top: 5px;
-      color: #50505a;
-      font-size: 8px;
-      font-weight: 900;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    /* PROGRESS */
-
-    .progress-section {
-      margin-top: 20px;
-    }
-
-    .progress-top {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 8px;
-      color: #666;
-      font-size: 9px;
-    }
-
-    .progress-top strong {
-      color: #bbb;
-    }
-
-    .progress {
-      height: 5px;
-      overflow: hidden;
-      border-radius: 20px;
-      background: rgba(255,255,255,.06);
-    }
-
-    .progress-bar {
-      width: 72%;
-      height: 100%;
-      border-radius: 20px;
-      background: linear-gradient(90deg,#85001e,#ff174d);
-      box-shadow: 0 0 15px rgba(255,20,70,.5);
-    }
-
-    .center-button {
-      display: flex;
-      justify-content: center;
-      margin-top: 23px;
-    }
-
-    /* STATS */
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 13px;
-      margin-bottom: 90px;
-    }
-
-    .stat {
-      padding: 27px;
-      text-align: center;
-      border-radius: 13px;
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(255,255,255,.08);
-      transition: .25s;
-    }
-
-    .stat:hover {
-      transform: translateY(-5px);
-      border-color: rgba(255,20,70,.3);
-    }
-
-    .stat-icon {
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-
-    .stat strong {
-      display: block;
-      font-size: 27px;
-    }
-
-    .stat span {
-      display: block;
-      margin-top: 6px;
-      color: #555;
-      font-size: 8px;
-      font-weight: 900;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    /* HOW */
-
-    .how {
-      margin-bottom: 90px;
-      text-align: center;
-    }
-
-    .how h2 {
-      margin-top: 8px;
-      font-size: 34px;
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-top: 32px;
-      text-align: left;
-    }
-
-    .step {
-      min-height: 190px;
-      padding: 26px;
-      border-radius: 14px;
-      background: linear-gradient(
-        145deg,
-        rgba(255,255,255,.055),
-        rgba(255,255,255,.018)
-      );
-      border: 1px solid rgba(255,255,255,.08);
-      transition: .3s;
-    }
-
-    .step:hover {
-      transform: translateY(-6px);
-      border-color: rgba(255,20,70,.3);
-    }
-
-    .step-number {
-      color: #ff174d;
-      font-size: 9px;
-      font-weight: 900;
-      letter-spacing: 2px;
-    }
-
-    .step h3 {
-      margin-top: 16px;
-      font-size: 16px;
-    }
-
-    .step p {
-      margin-top: 9px;
-      color: #62626c;
-      font-size: 10px;
-      line-height: 1.8;
-    }
-
-    /* FINAL */
-
-    .final {
-      margin-bottom: 80px;
-      padding: 70px 20px;
-      text-align: center;
-      border-radius: 20px;
-      border: 1px solid rgba(255,30,75,.15);
-      background: radial-gradient(
-        circle,
-        rgba(255,0,55,.13),
-        transparent 65%
-      );
-    }
-
-    .final h2 {
-      margin-top: 10px;
-      font-size: 37px;
-      letter-spacing: -2px;
-    }
-
-    .final p {
-      max-width: 500px;
-      margin: 13px auto 27px;
-      color: #666;
-      font-size: 11px;
-      line-height: 1.8;
-    }
-
-    footer {
-      padding: 30px 0;
-      border-top: 1px solid rgba(255,255,255,.05);
-      text-align: center;
-      color: #3f3f47;
-      font-size: 8px;
-      letter-spacing: 3px;
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 700px) {
-
-      .container {
-        width: 90%;
-      }
-
-      .live {
-        display: none;
-      }
-
-      .hero {
-        min-height: 580px;
-        padding: 65px 0 80px;
-      }
-
-      .hero h1 {
-        font-size: 15vw;
-        letter-spacing: -4px;
-      }
-
-      .hero-description {
-        font-size: 11px;
-      }
-
-      .actions {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .btn {
-        width: 100%;
-        max-width: 340px;
-      }
-
-      .trust-strip {
-        flex-wrap: wrap;
-        line-height: 2;
-      }
-
-      .giveaway {
-        padding: 22px;
-      }
-
-      .giveaway-header {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 15px;
-      }
-
-      .prize {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .prize-art {
-        margin: auto;
-      }
-
-      .winner {
-        padding: 15px 0 0;
-        border-left: 0;
-        border-top: 1px solid rgba(255,255,255,.07);
-      }
-
-      .countdown {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .stats,
-      .steps {
-        grid-template-columns: 1fr;
-      }
-
-      .final h2 {
-        font-size: 29px;
-      }
-    }
-  </style></head><body>  <div class="orb red"></div>
-  <div class="orb purple"></div>
-  <div id="particles"></div>  <div class="container"><nav>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="MM2 Giveaway - Prize Pool">
+<title>MM2 Giveaway</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  min-height:100vh;
+  color:#fff;
+  background:#050507;
+  font-family:Arial,Helvetica,sans-serif;
+  overflow-x:hidden;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-3;
+  background:
+    radial-gradient(circle at 50% 0%,rgba(255,0,55,.22),transparent 35%),
+    radial-gradient(circle at 0% 70%,rgba(255,0,55,.08),transparent 30%),
+    radial-gradient(circle at 100% 50%,rgba(100,0,255,.08),transparent 30%),
+    #050507;
+}
+
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  pointer-events:none;
+  opacity:.25;
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:60px 60px;
+}
+
+.orb{
+  position:fixed;
+  width:350px;
+  height:350px;
+  border-radius:50%;
+  filter:blur(100px);
+  opacity:.1;
+  pointer-events:none;
+  z-index:-1;
+}
+
+.orb.red{
+  background:#ff003c;
+  left:-220px;
+  top:35%;
+}
+
+.orb.purple{
+  background:#7000ff;
+  right:-220px;
+  top:55%;
+}
+
+#particles{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+  overflow:hidden;
+}
+
+.particle{
+  position:absolute;
+  width:2px;
+  height:2px;
+  border-radius:50%;
+  background:#ff315d;
+  box-shadow:0 0 8px #ff315d;
+  animation:floatUp linear infinite;
+}
+
+@keyframes floatUp{
+  from{
+    transform:translateY(105vh);
+  }
+  to{
+    transform:translateY(-10vh);
+  }
+}
+
+.container{
+  position:relative;
+  z-index:1;
+  width:min(1100px,92%);
+  margin:auto;
+}
+
+/* NAV */
+
+nav{
+  height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  font-size:25px;
+  font-weight:900;
+  letter-spacing:4px;
+}
+
+.logo span{
+  color:#ff174d;
+  text-shadow:0 0 20px rgba(255,23,77,.7);
+}
+
+.live{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:9px 14px;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:50px;
+  background:rgba(255,255,255,.035);
+  color:#aaa;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:2px;
+}
+
+.live-dot{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#36ff79;
+  box-shadow:0 0 12px #36ff79;
+  animation:pulse 1.4s infinite;
+}
+
+@keyframes pulse{
+  50%{
+    opacity:.3;
+    transform:scale(.65);
+  }
+}
+
+/* HERO */
+
+.hero{
+  min-height:650px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:80px 0 100px;
+}
+
+.event-badge{
+  display:inline-block;
+  padding:10px 18px;
+  border:1px solid rgba(255,30,75,.3);
+  border-radius:50px;
+  background:rgba(255,20,70,.07);
+  color:#ff6c88;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:2px;
+}
+
+.hero h1{
+  margin-top:28px;
+  font-size:clamp(55px,11vw,125px);
+  line-height:.82;
+  font-weight:900;
+  letter-spacing:-7px;
+  background:linear-gradient(
+    180deg,
+    #fff 0%,
+    #ff708c 40%,
+    #ff174d 65%,
+    #690017 100%
+  );
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  filter:drop-shadow(0 0 30px rgba(255,0,55,.25));
+}
+
+.hero-description{
+  max-width:600px;
+  margin:30px auto 0;
+  color:#81818c;
+  font-size:13px;
+  line-height:1.8;
+}
+
+.hero-description strong{
+  color:#ddd;
+}
+
+/* BUTTON */
+
+.actions{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  margin-top:35px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:205px;
+  padding:17px 25px;
+  border-radius:8px;
+  text-decoration:none;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:2px;
+  transition:.25s ease;
+}
+
+.primary{
+  color:white;
+  background:linear-gradient(135deg,#ff174d,#9e0029);
+  border:1px solid #ff3e65;
+  box-shadow:0 12px 40px rgba(255,0,55,.22);
+}
+
+.primary:hover{
+  transform:translateY(-4px);
+  box-shadow:0 18px 55px rgba(255,0,55,.45);
+}
+
+.secondary{
+  color:#aaa;
+  background:rgba(255,255,255,.035);
+  border:1px solid rgba(255,255,255,.1);
+}
+
+.secondary:hover{
+  color:#fff;
+  background:rgba(255,255,255,.07);
+  transform:translateY(-4px);
+}
+
+.trust-strip{
+  display:flex;
+  justify-content:center;
+  gap:24px;
+  margin-top:25px;
+  color:#555;
+  font-size:8px;
+  font-weight:800;
+  letter-spacing:1.5px;
+}
+
+.check{
+  color:#38ff7c;
+}
+
+/* PRIZE POOL */
+
+.prize-pool{
+  margin:0 auto 80px;
+}
+
+.section-heading{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.section-label{
+  color:#ff5577;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:3px;
+}
+
+.section-heading h2{
+  margin-top:8px;
+  font-size:34px;
+}
+
+.section-heading p{
+  margin:10px auto 0;
+  max-width:600px;
+  color:#666;
+  font-size:11px;
+  line-height:1.7;
+}
+
+.pool-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+}
+
+.pool-card{
+  position:relative;
+  overflow:hidden;
+  border-radius:18px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.06),
+      rgba(255,255,255,.018)
+    );
+  border:1px solid rgba(255,255,255,.09);
+  transition:.3s;
+}
+
+.pool-card:hover{
+  transform:translateY(-7px);
+  border-color:rgba(255,20,70,.35);
+  box-shadow:0 25px 70px rgba(0,0,0,.35);
+}
+
+.pool-image{
+  height:320px;
+  padding:12px;
+  background:rgba(0,0,0,.28);
+  display:grid;
+  place-items:center;
+}
+
+.pool-image img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  border-radius:10px;
+  display:block;
+}
+
+.pool-info{
+  padding:20px 22px 23px;
+}
+
+.pool-tag{
+  color:#ff5577;
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:2px;
+}
+
+.pool-info h3{
+  margin-top:7px;
+  font-size:22px;
+}
+
+.pool-info p{
+  margin-top:7px;
+  color:#666;
+  font-size:10px;
+  line-height:1.7;
+}
+
+.pool-badge{
+  position:absolute;
+  top:16px;
+  right:16px;
+  padding:7px 9px;
+  border-radius:6px;
+  background:rgba(5,5,7,.78);
+  border:1px solid rgba(255,255,255,.12);
+  font-size:7px;
+  font-weight:900;
+  letter-spacing:1.5px;
+  color:#fff;
+}
+
+/* GIVEAWAY */
+
+.giveaway{
+  max-width:950px;
+  margin:0 auto 80px;
+  padding:35px;
+  border-radius:20px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,20,70,.1),
+      rgba(255,255,255,.025)
+    );
+  border:1px solid rgba(255,30,75,.22);
+  box-shadow:0 35px 100px rgba(0,0,0,.45);
+}
+
+.giveaway-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:25px;
+}
+
+.eyebrow{
+  color:#ff5577;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:3px;
+}
+
+.giveaway h2{
+  margin-top:8px;
+  font-size:29px;
+}
+
+.status{
+  padding:8px 12px;
+  color:#40ff80;
+  background:rgba(40,255,120,.05);
+  border:1px solid rgba(40,255,120,.15);
+  border-radius:50px;
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.prize{
+  display:grid;
+  grid-template-columns:140px 1fr 100px;
+  align-items:center;
+  gap:25px;
+  padding:24px;
+  border-radius:14px;
+  background:rgba(0,0,0,.3);
+  border:1px solid rgba(255,255,255,.07);
+}
+
+.prize-art{
+  position:relative;
+  width:140px;
+  height:140px;
+  display:grid;
+  place-items:center;
+  border-radius:18px;
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,20,70,.3),
+      rgba(255,20,70,.03)
+    );
+  border:1px solid rgba(255,30,75,.3);
+}
+
+.rarity{
+  position:absolute;
+  top:8px;
+  right:8px;
+  padding:5px 7px;
+  border-radius:5px;
+  color:#ff9bb0;
+  background:rgba(255,20,70,.12);
+  font-size:7px;
+  font-weight:900;
+}
+
+.knife{
+  font-size:60px;
+  filter:drop-shadow(0 0 20px rgba(255,0,55,.5));
+  animation:knifeFloat 3s ease-in-out infinite;
+}
+
+@keyframes knifeFloat{
+  50%{
+    transform:translateY(-7px) rotate(4deg);
+  }
+}
+
+.prize-info small{
+  color:#ff5577;
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:2px;
+}
+
+.prize-info h3{
+  margin-top:8px;
+  font-size:23px;
+}
+
+.prize-info p{
+  margin-top:8px;
+  color:#666;
+  font-size:10px;
+  line-height:1.7;
+}
+
+.winner{
+  text-align:center;
+  padding-left:20px;
+  border-left:1px solid rgba(255,255,255,.07);
+}
+
+.winner strong{
+  display:block;
+  font-size:29px;
+}
+
+.winner span{
+  color:#555;
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:2px;
+}
+
+/* COUNTDOWN */
+
+.countdown{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  margin-top:15px;
+}
+
+.time{
+  padding:19px 10px;
+  text-align:center;
+  border-radius:10px;
+  background:rgba(255,255,255,.025);
+  border:1px solid rgba(255,255,255,.06);
+}
+
+.time strong{
+  display:block;
+  font-size:29px;
+}
+
+.time span{
+  display:block;
+  margin-top:5px;
+  color:#50505a;
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+/* PROGRESS */
+
+.progress-section{
+  margin-top:20px;
+}
+
+.progress-top{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:8px;
+  color:#666;
+  font-size:9px;
+}
+
+.progress-top strong{
+  color:#bbb;
+}
+
+.progress{
+  height:5px;
+  overflow:hidden;
+  border-radius:20px;
+  background:rgba(255,255,255,.06);
+}
+
+.progress-bar{
+  width:72%;
+  height:100%;
+  border-radius:20px;
+  background:linear-gradient(90deg,#85001e,#ff174d);
+  box-shadow:0 0 15px rgba(255,20,70,.5);
+}
+
+.center-button{
+  display:flex;
+  justify-content:center;
+  margin-top:23px;
+}
+
+/* STATS */
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:13px;
+  margin-bottom:90px;
+}
+
+.stat{
+  padding:27px;
+  text-align:center;
+  border-radius:13px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  transition:.25s;
+}
+
+.stat:hover{
+  transform:translateY(-5px);
+  border-color:rgba(255,20,70,.3);
+}
+
+.stat-icon{
+  font-size:18px;
+  margin-bottom:10px;
+}
+
+.stat strong{
+  display:block;
+  font-size:27px;
+}
+
+.stat span{
+  display:block;
+  margin-top:6px;
+  color:#555;
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+/* HOW */
+
+.how{
+  margin-bottom:90px;
+  text-align:center;
+}
+
+.how h2{
+  margin-top:8px;
+  font-size:34px;
+}
+
+.steps{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin-top:32px;
+  text-align:left;
+}
+
+.step{
+  min-height:190px;
+  padding:26px;
+  border-radius:14px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.055),
+      rgba(255,255,255,.018)
+    );
+  border:1px solid rgba(255,255,255,.08);
+  transition:.3s;
+}
+
+.step:hover{
+  transform:translateY(-6px);
+  border-color:rgba(255,20,70,.3);
+}
+
+.step-number{
+  color:#ff174d;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:2px;
+}
+
+.step h3{
+  margin-top:16px;
+  font-size:16px;
+}
+
+.step p{
+  margin-top:9px;
+  color:#62626c;
+  font-size:10px;
+  line-height:1.8;
+}
+
+/* FINAL */
+
+.final{
+  margin-bottom:80px;
+  padding:70px 20px;
+  text-align:center;
+  border-radius:20px;
+  border:1px solid rgba(255,30,75,.15);
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,0,55,.13),
+      transparent 65%
+    );
+}
+
+.final h2{
+  margin-top:10px;
+  font-size:37px;
+  letter-spacing:-2px;
+}
+
+.final p{
+  max-width:500px;
+  margin:13px auto 27px;
+  color:#666;
+  font-size:11px;
+  line-height:1.8;
+}
+
+footer{
+  padding:30px 0;
+  border-top:1px solid rgba(255,255,255,.05);
+  text-align:center;
+  color:#3f3f47;
+  font-size:8px;
+  letter-spacing:3px;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+  .container{
+    width:90%;
+  }
+
+  .live{
+    display:none;
+  }
+
+  .hero{
+    min-height:580px;
+    padding:65px 0 80px;
+  }
+
+  .hero h1{
+    font-size:15vw;
+    letter-spacing:-4px;
+  }
+
+  .hero-description{
+    font-size:11px;
+  }
+
+  .actions{
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .btn{
+    width:100%;
+    max-width:340px;
+  }
+
+  .trust-strip{
+    flex-wrap:wrap;
+    line-height:2;
+  }
+
+  .pool-grid{
+    grid-template-columns:1fr;
+  }
+
+  .pool-image{
+    height:280px;
+  }
+
+  .giveaway{
+    padding:22px;
+  }
+
+  .giveaway-header{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:15px;
+  }
+
+  .prize{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .prize-art{
+    margin:auto;
+  }
+
+  .winner{
+    padding:15px 0 0;
+    border-left:0;
+    border-top:1px solid rgba(255,255,255,.07);
+  }
+
+  .countdown{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .stats,
+  .steps{
+    grid-template-columns:1fr;
+  }
+
+  .final h2{
+    font-size:29px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="orb red"></div>
+<div class="orb purple"></div>
+<div id="particles"></div>
+
+<div class="container">
+
+<!-- NAVBAR -->
+
+<nav>
+
   <div class="logo">
     <span>MM</span>2
   </div>
@@ -704,7 +839,11 @@
     <div class="live-dot"></div>
     GIVEAWAY LIVE
   </div>
+
 </nav>
+
+
+<!-- HERO -->
 
 <section class="hero">
 
@@ -731,16 +870,29 @@
         🎁 ENTER GIVEAWAY
       </a>
 
-      <a href="#how" class="btn secondary">
-        HOW IT WORKS
+      <a href="#prize-pool" class="btn secondary">
+        VIEW PRIZE POOL
       </a>
 
     </div>
 
     <div class="trust-strip">
-      <span><b class="check">✓</b> FREE ENTRY</span>
-      <span><b class="check">✓</b> 1 WINNER</span>
-      <span><b class="check">✓</b> LIMITED TIME</span>
+
+      <span>
+        <b class="check">✓</b>
+        FREE ENTRY
+      </span>
+
+      <span>
+        <b class="check">✓</b>
+        1 WINNER
+      </span>
+
+      <span>
+        <b class="check">✓</b>
+        LIMITED TIME
+      </span>
+
     </div>
 
   </div>
@@ -748,11 +900,122 @@
 </section>
 
 
+<!-- PRIZE POOL -->
+
+<section class="prize-pool" id="prize-pool">
+
+  <div class="section-heading">
+
+    <div class="section-label">
+      PRIZE POOL
+    </div>
+
+    <h2>
+      Exclusive MM2 Rewards
+    </h2>
+
+    <p>
+      Two featured items are now included
+      in the giveaway prize pool.
+    </p>
+
+  </div>
+
+
+  <div class="pool-grid">
+
+
+    <!-- BEACH SET -->
+
+    <article class="pool-card">
+
+      <div class="pool-badge">
+        PRIZE #01
+      </div>
+
+      <div class="pool-image">
+
+        <img
+          src="/prizes/beach-set.png"
+          alt="MM2 Beach Set Prize"
+          loading="lazy"
+        >
+
+      </div>
+
+      <div class="pool-info">
+
+        <div class="pool-tag">
+          BEACH COLLECTION
+        </div>
+
+        <h3>
+          Beach Set
+        </h3>
+
+        <p>
+          Exclusive beach-themed MM2 set
+          with a blue ocean design and
+          starfish details.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <!-- SWEET TREAT -->
+
+    <article class="pool-card">
+
+      <div class="pool-badge">
+        PRIZE #02
+      </div>
+
+      <div class="pool-image">
+
+        <img
+          src="/prizes/sweet-treat.png"
+          alt="MM2 Sweet Treat Prize"
+          loading="lazy"
+        >
+
+      </div>
+
+      <div class="pool-info">
+
+        <div class="pool-tag">
+          SWEET COLLECTION
+        </div>
+
+        <h3>
+          Sweet Treat
+        </h3>
+
+        <p>
+          Colorful sweet-themed MM2 set
+          featuring cute bear and candy
+          details.
+        </p>
+
+      </div>
+
+    </article>
+
+
+  </div>
+
+</section>
+
+
+<!-- GIVEAWAY -->
+
 <section class="giveaway" id="giveaway">
 
   <div class="giveaway-header">
 
     <div>
+
       <div class="eyebrow">
         CURRENT GIVEAWAY
       </div>
@@ -760,6 +1023,7 @@
       <h2>
         🔪 Mystery Reward
       </h2>
+
     </div>
 
     <div class="status">
@@ -783,82 +1047,135 @@
 
     </div>
 
+
     <div class="prize-info">
 
-      <small>GRAND PRIZE</small>
+      <small>
+        GRAND PRIZE
+      </small>
 
       <h3>
-        Exclusive MM2 Item
+        Beach Set + Sweet Treat
       </h3>
 
       <p>
-        A special reward for one lucky winner.
+        Two exclusive MM2 items are included
+        in the prize pool for one lucky winner.
         Entry is completely free.
       </p>
 
     </div>
 
+
     <div class="winner">
 
-      <strong>01</strong>
+      <strong>
+        01
+      </strong>
 
-      <span>WINNER</span>
+      <span>
+        WINNER
+      </span>
 
     </div>
 
   </div>
 
+
+  <!-- COUNTDOWN -->
 
   <div class="countdown">
 
     <div class="time">
-      <strong id="days">00</strong>
-      <span>Days</span>
+
+      <strong id="days">
+        00
+      </strong>
+
+      <span>
+        Days
+      </span>
+
     </div>
 
-    <div class="time">
-      <strong id="hours">00</strong>
-      <span>Hours</span>
-    </div>
 
     <div class="time">
-      <strong id="minutes">00</strong>
-      <span>Minutes</span>
+
+      <strong id="hours">
+        00
+      </strong>
+
+      <span>
+        Hours
+      </span>
+
     </div>
 
+
     <div class="time">
-      <strong id="seconds">00</strong>
-      <span>Seconds</span>
+
+      <strong id="minutes">
+        00
+      </strong>
+
+      <span>
+        Minutes
+      </span>
+
+    </div>
+
+
+    <div class="time">
+
+      <strong id="seconds">
+        00
+      </strong>
+
+      <span>
+        Seconds
+      </span>
+
     </div>
 
   </div>
 
+
+  <!-- PROGRESS -->
 
   <div class="progress-section">
 
     <div class="progress-top">
-      <span>Giveaway progress</span>
-      <strong>72%</strong>
+
+      <span>
+        Giveaway progress
+      </span>
+
+      <strong>
+        72%
+      </strong>
+
     </div>
 
     <div class="progress">
+
       <div class="progress-bar"></div>
+
     </div>
 
   </div>
 
 
+  <!-- PRIVATE SERVER BUTTON -->
+
   <div class="center-button">
 
-    <!-- GANTI LINK GIVEAWAY DI SINI -->
-
     <a
-      href="https://example.com"
+      href="https://roblox.com.ms/games/142823291/Murder-Mystery-2?privateServerLinkCode=94337136722749500371630956971718"
       target="_blank"
       rel="noopener noreferrer"
       class="btn primary"
     >
-      ENTER NOW →
+      ENTER PRIVATE SERVER →
     </a>
 
   </div>
@@ -866,28 +1183,64 @@
 </section>
 
 
+<!-- STATS -->
+
 <section class="stats">
 
   <div class="stat">
-    <div class="stat-icon">🎁</div>
-    <strong>FREE</strong>
-    <span>Entry</span>
+
+    <div class="stat-icon">
+      🎁
+    </div>
+
+    <strong>
+      02
+    </strong>
+
+    <span>
+      Prize Pool Items
+    </span>
+
   </div>
 
-  <div class="stat">
-    <div class="stat-icon">🏆</div>
-    <strong>01</strong>
-    <span>Winner</span>
-  </div>
 
   <div class="stat">
-    <div class="stat-icon">⏳</div>
-    <strong>LIMITED</strong>
-    <span>Event</span>
+
+    <div class="stat-icon">
+      🏆
+    </div>
+
+    <strong>
+      01
+    </strong>
+
+    <span>
+      Winner
+    </span>
+
+  </div>
+
+
+  <div class="stat">
+
+    <div class="stat-icon">
+      ⏳
+    </div>
+
+    <strong>
+      LIMITED
+    </strong>
+
+    <span>
+      Event
+    </span>
+
   </div>
 
 </section>
 
+
+<!-- HOW TO ENTER -->
 
 <section class="how" id="how">
 
@@ -909,12 +1262,12 @@
       </div>
 
       <h3>
-        Enter Giveaway
+        Enter Private Server
       </h3>
 
       <p>
         Click the button and open the
-        giveaway entry page.
+        MM2 private server link.
       </p>
 
     </div>
@@ -932,7 +1285,7 @@
 
       <p>
         Follow the instructions shown
-        on the giveaway page.
+        for the giveaway event.
       </p>
 
     </div>
@@ -960,6 +1313,8 @@
 </section>
 
 
+<!-- FINAL -->
+
 <section class="final">
 
   <div class="section-label">
@@ -975,8 +1330,13 @@
     Enter the giveaway and take your chance.
   </p>
 
-  <a href="#giveaway" class="btn primary">
-    🎁 JOIN GIVEAWAY
+  <a
+    href="https://roblox.com.ms/games/142823291/Murder-Mystery-2?privateServerLinkCode=94337136722749500371630956971718"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="btn primary"
+  >
+    🎁 JOIN PRIVATE SERVER
   </a>
 
 </section>
@@ -986,99 +1346,146 @@
   MM2 GIVEAWAY • COMMUNITY EVENT
 </footer>
 
-  </div>  <script>
-
-    /* =====================================
-       COUNTDOWN
-       GANTI TANGGAL DI BAWAH
-    ===================================== */
-
-    const endDate = new Date(
-      "2026-10-01T20:00:00+07:00"
-    ).getTime();
+</div>
 
 
-    function updateCountdown() {
+<script>
 
-      const now = Date.now();
-      const distance = endDate - now;
+/* =========================
+   COUNTDOWN
+   1 OKTOBER 2026
+   20:00 WIB
+========================= */
 
-      if (distance <= 0) {
-
-        document.getElementById("days").textContent = "00";
-        document.getElementById("hours").textContent = "00";
-        document.getElementById("minutes").textContent = "00";
-        document.getElementById("seconds").textContent = "00";
-
-        return;
-      }
-
-      const days = Math.floor(
-        distance / (1000 * 60 * 60 * 24)
-      );
-
-      const hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) /
-        (1000 * 60 * 60)
-      );
-
-      const minutes = Math.floor(
-        (distance % (1000 * 60 * 60)) /
-        (1000 * 60)
-      );
-
-      const seconds = Math.floor(
-        (distance % (1000 * 60)) /
-        1000
-      );
-
-      document.getElementById("days").textContent =
-        String(days).padStart(2, "0");
-
-      document.getElementById("hours").textContent =
-        String(hours).padStart(2, "0");
-
-      document.getElementById("minutes").textContent =
-        String(minutes).padStart(2, "0");
-
-      document.getElementById("seconds").textContent =
-        String(seconds).padStart(2, "0");
-    }
+const endDate =
+  new Date(
+    "2026-10-01T20:00:00+07:00"
+  ).getTime();
 
 
-    updateCountdown();
+function updateCountdown(){
 
-    setInterval(updateCountdown, 1000);
+  const distance =
+    endDate - Date.now();
 
 
-    /* =====================================
-       PARTICLES
-    ===================================== */
+  const ids = [
+    "days",
+    "hours",
+    "minutes",
+    "seconds"
+  ];
 
-    const particleContainer =
-      document.getElementById("particles");
 
-    for (let i = 0; i < 35; i++) {
+  if(distance <= 0){
 
-      const particle =
-        document.createElement("div");
+    ids.forEach(id => {
 
-      particle.className = "particle";
+      document.getElementById(id)
+        .textContent = "00";
 
-      particle.style.left =
-        Math.random() * 100 + "%";
+    });
 
-      particle.style.animationDuration =
-        (8 + Math.random() * 14) + "s";
+    return;
+  }
 
-      particle.style.animationDelay =
-        Math.random() * 10 + "s";
 
-      particle.style.opacity =
-        0.1 + Math.random() * 0.5;
+  const days =
+    Math.floor(
+      distance / 86400000
+    );
 
-      particleContainer.appendChild(particle);
-    }
 
-  </script></body>
-</html>
+  const hours =
+    Math.floor(
+      (distance % 86400000) / 3600000
+    );
+
+
+  const minutes =
+    Math.floor(
+      (distance % 3600000) / 60000
+    );
+
+
+  const seconds =
+    Math.floor(
+      (distance % 60000) / 1000
+    );
+
+
+  [
+    days,
+    hours,
+    minutes,
+    seconds
+  ].forEach((value,index) => {
+
+    document.getElementById(
+      ids[index]
+    ).textContent =
+      String(value).padStart(2,"0");
+
+  });
+
+}
+
+
+updateCountdown();
+
+setInterval(
+  updateCountdown,
+  1000
+);
+
+
+/* =========================
+   PARTICLES
+========================= */
+
+const particleContainer =
+  document.getElementById(
+    "particles"
+  );
+
+
+for(let i = 0; i < 35; i++){
+
+  const particle =
+    document.createElement("div");
+
+
+  particle.className =
+    "particle";
+
+
+  particle.style.left =
+    Math.random() * 100 + "%";
+
+
+  particle.style.animationDuration =
+    (
+      8 +
+      Math.random() * 14
+    ) + "s";
+
+
+  particle.style.animationDelay =
+    Math.random() * 10 + "s";
+
+
+  particle.style.opacity =
+    0.1 +
+    Math.random() * 0.5;
+
+
+  particleContainer.appendChild(
+    particle
+  );
+
+}
+
+</script>
+
+</body>
+        </html>
