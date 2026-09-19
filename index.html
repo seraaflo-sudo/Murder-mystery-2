@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Murder Mystery 2</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 50% 20%, #3b0710 0%, transparent 35%),
+        linear-gradient(135deg, #050505, #120509 55%, #050505);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* Background glow */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 20% 80%, rgba(255, 0, 55, .12), transparent 30%),
+        radial-gradient(circle at 80% 30%, rgba(120, 0, 255, .10), transparent 30%);
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* NAVBAR */
+    nav {
+      width: 100%;
+      padding: 25px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      color: #ff244c;
+      text-shadow: 0 0 15px rgba(255, 36, 76, .7);
+    }
+
+    .status {
+      font-size: 12px;
+      color: #aaa;
+      letter-spacing: 2px;
+    }
+
+    .status span {
+      color: #32ff76;
+    }
+
+    /* HERO */
+    .hero {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .hero-content {
+      max-width: 900px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 16px;
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 30px;
+      background: rgba(255,255,255,.04);
+      color: #bbb;
+      font-size: 11px;
+      letter-spacing: 3px;
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      font-size: clamp(55px, 11vw, 130px);
+      line-height: .85;
+      font-weight: 1000;
+      letter-spacing: -6px;
+      text-transform: uppercase;
+
+      background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #ff405f 45%,
+        #790014 100%
+      );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+
+      filter: drop-shadow(0 0 25px rgba(255, 0, 55, .25));
+    }
+
+    .subtitle {
+      margin-top: 25px;
+      color: #aaa;
+      font-size: 15px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    /* BUTTON */
+    .play-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      margin-top: 45px;
+      padding: 19px 55px;
+
+      color: white;
+      text-decoration: none;
+      font-weight: 900;
+      font-size: 15px;
+      letter-spacing: 3px;
+
+      border: 1px solid #ff3155;
+      border-radius: 6px;
+
+      background: linear-gradient(
+        135deg,
+        #ff173f,
+        #9b001c
+      );
+
+      box-shadow:
+        0 0 20px rgba(255, 0, 55, .3),
+        inset 0 0 15px rgba(255,255,255,.08);
+
+      transition: .25s ease;
+    }
+
+    .play-btn:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow:
+        0 0 35px rgba(255, 0, 55, .65),
+        0 10px 30px rgba(0,0,0,.5);
+    }
+
+    .play-btn:active {
+      transform: scale(.97);
+    }
+
+    /* CARDS */
+    .rooms {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      width: min(900px, 90%);
+      margin: 0 auto 45px;
+    }
+
+    .room {
+      padding: 20px;
+      background: rgba(255,255,255,.035);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+      transition: .25s ease;
+    }
+
+    .room:hover {
+      border-color: rgba(255, 36, 76, .5);
+      transform: translateY(-4px);
+    }
+
+    .room-title {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .room-info {
+      font-size: 12px;
+      color: #777;
+    }
+
+    footer {
+      text-align: center;
+      color: #555;
+      font-size: 11px;
+      padding: 20px;
+      letter-spacing: 2px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 700px) {
+      nav {
+        padding: 20px;
+      }
+
+      .status {
+        display: none;
+      }
+
+      .rooms {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+      }
+
+      h1 {
+        letter-spacing: -3px;
+      }
+
+      .subtitle {
+        font-size: 11px;
+        letter-spacing: 2px;
+      }
+
+      .play-btn {
+        width: 90%;
+        max-width: 350px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <nav>
+      <div class="logo">MM2</div>
+
+      <div class="status">
+        <span>●</span> PRIVATE SERVER
+      </div>
+    </nav>
+
+    <main class="hero">
+      <div class="hero-content">
+
+        <div class="badge">
+          MURDER MYSTERY EXPERIENCE
+        </div>
+
+        <h1>
+          MURDER<br>
+          MYSTERY 2
+        </h1>
+
+        <p class="subtitle">
+          Trust no one. Survive the night.
+        </p>
+
+        <a
+          class="play-btn"
+          href="https://roblox.com.ms/games/142823291/Murder-Mystery-2?privateServerLinkCode=94337136722749500371630956971718"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          🔪 PLAY NOW
+        </a>
+
+      </div>
+    </main>
+
+    <section class="rooms">
+
+      <div class="room">
+        <div class="room-title">🔪 Murderer</div>
+        <div class="room-info">
+          Find your targets before they find you.
+        </div>
+      </div>
+
+      <div class="room">
+        <div class="room-title">🔫 Sheriff</div>
+        <div class="room-info">
+          Protect the innocents and stop the murderer.
+        </div>
+      </div>
+
+      <div class="room">
+        <div class="room-title">👤 Innocent</div>
+        <div class="room-info">
+          Survive, investigate, and trust carefully.
+        </div>
+      </div>
+
+    </section>
+
+    <footer>
+      MM2 PRIVATE SERVER
+    </footer>
+
+  </div>
+
+</body>
+          </html>
