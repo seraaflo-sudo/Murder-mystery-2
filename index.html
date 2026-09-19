@@ -381,6 +381,7 @@ nav{
   font-weight:900;
   letter-spacing:1.5px;
   color:#fff;
+  z-index:2;
 }
 
 /* GIVEAWAY */
@@ -936,9 +937,8 @@ footer{
       <div class="pool-image">
 
         <img
-          src="/prizes/beach-set.png"
+          src="data:image/png;base64,REPLACE_BEACH_IMAGE_HERE"
           alt="MM2 Beach Set Prize"
-          loading="lazy"
         >
 
       </div>
@@ -975,9 +975,8 @@ footer{
       <div class="pool-image">
 
         <img
-          src="/prizes/sweet-treat.png"
+          src="data:image/png;base64,REPLACE_SWEET_IMAGE_HERE"
           alt="MM2 Sweet Treat Prize"
-          loading="lazy"
         >
 
       </div>
@@ -1165,7 +1164,7 @@ footer{
   </div>
 
 
-  <!-- PRIVATE SERVER BUTTON -->
+  <!-- PRIVATE SERVER -->
 
   <div class="center-button">
 
@@ -1351,11 +1350,7 @@ footer{
 
 <script>
 
-/* =========================
-   COUNTDOWN
-   1 OKTOBER 2026
-   20:00 WIB
-========================= */
+/* COUNTDOWN */
 
 const endDate =
   new Date(
@@ -1368,7 +1363,6 @@ function updateCountdown(){
   const distance =
     endDate - Date.now();
 
-
   const ids = [
     "days",
     "hours",
@@ -1376,43 +1370,35 @@ function updateCountdown(){
     "seconds"
   ];
 
-
   if(distance <= 0){
 
     ids.forEach(id => {
-
       document.getElementById(id)
         .textContent = "00";
-
     });
 
     return;
   }
-
 
   const days =
     Math.floor(
       distance / 86400000
     );
 
-
   const hours =
     Math.floor(
       (distance % 86400000) / 3600000
     );
-
 
   const minutes =
     Math.floor(
       (distance % 3600000) / 60000
     );
 
-
   const seconds =
     Math.floor(
       (distance % 60000) / 1000
     );
-
 
   [
     days,
@@ -1430,7 +1416,6 @@ function updateCountdown(){
 
 }
 
-
 updateCountdown();
 
 setInterval(
@@ -1439,29 +1424,23 @@ setInterval(
 );
 
 
-/* =========================
-   PARTICLES
-========================= */
+/* PARTICLES */
 
 const particleContainer =
   document.getElementById(
     "particles"
   );
 
-
 for(let i = 0; i < 35; i++){
 
   const particle =
     document.createElement("div");
 
-
   particle.className =
     "particle";
 
-
   particle.style.left =
     Math.random() * 100 + "%";
-
 
   particle.style.animationDuration =
     (
@@ -1469,15 +1448,12 @@ for(let i = 0; i < 35; i++){
       Math.random() * 14
     ) + "s";
 
-
   particle.style.animationDelay =
     Math.random() * 10 + "s";
-
 
   particle.style.opacity =
     0.1 +
     Math.random() * 0.5;
-
 
   particleContainer.appendChild(
     particle
@@ -1488,4 +1464,4 @@ for(let i = 0; i < 35; i++){
 </script>
 
 </body>
-        </html>
+</html>
