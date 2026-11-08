@@ -1,417 +1,686 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
+
+<!-- Mirrored from https://murdermystery2trade.com/ by HTTrack Website Copier/3.x [XR&CO], Sun, 25 Oct 2026 01:45:26 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>MM2 Giveaway — Beach Set + Sweet Treat</title>
-<meta name="description" content="Join the Murder Mystery 2 giveaway and enter for a chance to receive the Beach Set + Sweet Treat reward.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BloxSwaps · Instant MM2 Trading</title>
+<meta name="description" content="Explore thousands of MM2 items and trade instantly. Our automated bot completes trades in under 2 minutes.">
+<link rel="icon" type="image/png" href="../www.playadopt.me/favicon-32x32.png">
+<meta name="theme-color" content="#000000">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+    --accent: #ea384d; --accent-hover: #d12a3d;
+    --accent-soft: rgba(234, 56, 77, 0.15); --accent-glow: rgba(234, 56, 77, 0.35);
+    --bg-main: #05070d; --bg-card: #0a0c14; --bg-panel: #08090f;
+    --bg-overlay: rgba(255,255,255,0.03); --border-grey: rgba(255,255,255,0.06);
+    --text-muted: #9ca3af; --text-dim: #6b7280;
+    --r-unique: #ffd700; --r-chroma: #fe02d3; --r-vintage: #ff8c00;
+    --r-ancient: #a855f7; --r-godly: #9333ea; --r-legendary: #ef4444;
+    --r-rare: #22c55e; --r-uncommon: #3b82f6; --r-common: #a9a9a9;
+}
+html { scroll-behavior: smooth; }
+body { background: var(--bg-main); font-family: 'Rubik', system-ui, -apple-system, sans-serif; color: #fff; overflow-x: hidden; min-height: 100vh; -webkit-font-smoothing: antialiased; }
+body.modal-open { overflow: hidden; }
+a { text-decoration: none; color: inherit; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+img { max-width: 100%; display: block; }
+input { font-family: inherit; }
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(234,56,77,0.5); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(234,56,77,0.7); }
 
-:root{
- --red:#ff2638;
- --red2:#ff5360;
- --bg:#050507;
- --card:#0d0d11;
- --line:rgba(255,255,255,.09);
- --muted:#92929d;
- --white:#fff;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
- font-family:Inter,Arial,sans-serif;
- background:
- radial-gradient(circle at 50% -10%,rgba(255,30,48,.22),transparent 35%),
- radial-gradient(circle at 10% 40%,rgba(255,30,48,.07),transparent 25%),
- var(--bg);
- color:var(--white);
- overflow-x:hidden;
-}
-body:before{
- content:"";position:fixed;inset:0;pointer-events:none;opacity:.35;
- background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
- linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
- background-size:45px 45px;
- mask-image:linear-gradient(to bottom,#000,transparent 80%);
-}
-a{text-decoration:none;color:inherit}
-.container{width:min(1120px,92%);margin:auto}
-nav{
- position:fixed;z-index:50;top:0;left:0;right:0;
- height:72px;background:rgba(5,5,7,.72);
- backdrop-filter:blur(18px);border-bottom:1px solid var(--line);
-}
-.navin{height:100%;display:flex;align-items:center;justify-content:space-between}
-.logo{font-weight:900;font-size:20px;letter-spacing:-1px}
-.logo span{color:var(--red)}
-.live{
- display:flex;align-items:center;gap:8px;font-size:11px;font-weight:800;
- letter-spacing:1.4px;color:#ff7781
-}
-.dot{width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 14px var(--red);animation:pulse 1.5s infinite}
-@keyframes pulse{50%{opacity:.35;transform:scale(.7)}}
+/* ===== NAVBAR ===== */
+.navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(5, 7, 13, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-grey); }
+.navbar-inner { padding: 0 20px; height: 60px; display: flex; align-items: center; gap: 20px; }
+.navbar-logo { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.navbar-logo img { width: 32px; height: 32px; }
+.navbar-logo-text { color: #fff; font-weight: 800; font-size: 1.1rem; letter-spacing: -0.02em; }
+.navbar-logo-text i { font-style: italic; font-weight: 700; }
+.navbar-menu { display: flex; align-items: center; gap: 4px; flex: 1; }
+.navbar-menu a { display: inline-flex; align-items: center; gap: 6px; padding: 8px 12px; border-radius: 8px; font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.75); transition: color 0.2s; white-space: nowrap; }
+.navbar-menu a:hover { color: #fff; }
+.navbar-menu svg { width: 16px; height: 16px; color: rgba(255,255,255,0.6); }
+.navbar-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.discord-chip { display: inline-flex; align-items: center; gap: 6px; padding: 7px 12px; border-radius: 8px; background: rgba(114,137,218,0.12); color: #7289DA; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; border: 1px solid rgba(114,137,218,0.25); transition: background 0.2s; }
+.discord-chip:hover { background: rgba(114,137,218,0.22); }
+.discord-chip svg { width: 16px; height: 16px; }
+.lang-chip { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 8px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); font-size: 0.75rem; font-weight: 600; color: rgba(255,255,255,0.8); cursor: pointer; }
+.btn-start { display: inline-flex; align-items: center; gap: 8px; padding: 9px 18px; border-radius: 8px; background: linear-gradient(135deg, #D31027 0%, #ea384d 100%); color: #fff; font-weight: 700; font-size: 0.8rem; box-shadow: 0 4px 15px var(--accent-glow); transition: filter 0.2s, transform 0.2s; border: 1px solid rgba(255,255,255,0.1); position: relative; overflow: hidden; }
+.btn-start::before { content: ''; position: absolute; inset: 0; background: linear-gradient(-45deg, transparent 60%, rgba(255,255,255,0.45) 70%, transparent 100%); background-size: 250% 250%; background-position: -100% -100%; animation: glare 3.5s ease-in-out infinite; pointer-events: none; }
+@keyframes glare { 0%, 100% { background-position: -100% -100%; } 50% { background-position: 200% 200%; } }
+.btn-start:hover { filter: brightness(1.15); }
+.btn-start svg { width: 14px; height: 14px; }
+@media (max-width: 1100px) { .navbar-menu, .discord-chip .chip-text, .lang-chip { display: none; } }
 
-.hero{min-height:780px;padding:150px 0 80px;display:flex;align-items:center;text-align:center;position:relative}
-.hero:after{
- content:"";position:absolute;width:700px;height:300px;left:50%;top:240px;
- transform:translateX(-50%);background:rgba(255,20,40,.12);filter:blur(90px);pointer-events:none
-}
-.hero>*{position:relative;z-index:2}
-.badge{
- display:inline-flex;padding:9px 15px;border:1px solid rgba(255,55,70,.35);
- background:rgba(255,35,50,.08);border-radius:999px;color:#ff6570;
- font-size:11px;font-weight:900;letter-spacing:1.5px;margin-bottom:25px
-}
-h1{
- font-size:clamp(52px,9vw,105px);line-height:.88;letter-spacing:-6px;
- font-weight:900;text-transform:uppercase
-}
-h1 span{
- color:var(--red);
- text-shadow:0 0 45px rgba(255,38,56,.28)
-}
-.hero p{
- max-width:650px;margin:28px auto;color:var(--muted);font-size:16px;line-height:1.8
-}
-.buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:30px}
-.btn{
- padding:15px 23px;border-radius:10px;font-size:12px;font-weight:900;
- letter-spacing:.8px;transition:.25s;border:1px solid var(--line)
-}
-.btn:hover{transform:translateY(-3px)}
-.primary{
- background:linear-gradient(135deg,var(--red),#d91427);
- box-shadow:0 12px 35px rgba(255,30,45,.22)
-}
-.secondary{background:rgba(255,255,255,.04)}
+/* ===== LAYOUT ===== */
+.trade-page { margin-top: 60px; height: calc(100vh - 60px); display: grid; grid-template-columns: 1fr 320px 1fr; gap: 8px; padding: 8px; overflow: hidden; }
+.panel { background: var(--bg-card); border: 1px solid var(--border-grey); border-radius: 10px; display: flex; flex-direction: column; overflow: hidden; min-height: 0; position: relative; }
+.panel-head { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border-bottom: 1px solid var(--border-grey); flex-shrink: 0; }
+.panel-head-left { display: flex; align-items: center; gap: 10px; }
+.panel-title { font-size: 0.85rem; font-weight: 600; color: #fff; }
+.panel-value { display: inline-flex; align-items: center; gap: 5px; font-size: 0.8rem; font-weight: 600; color: rgba(255,255,255,0.85); background: rgba(255,255,255,0.05); padding: 3px 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.05); }
+.panel-value img { width: 14px; height: 14px; }
+.panel-head-icon { width: 28px; height: 28px; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4); transition: color 0.2s; }
+.panel-head-icon:hover { color: rgba(255,255,255,0.8); }
+.panel-head-icon svg { width: 14px; height: 14px; }
+.panel-body { flex: 1; min-height: 0; display: flex; flex-direction: column; position: relative; overflow: hidden; }
+.panel-empty { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 32px; text-align: center; position: relative; z-index: 5; gap: 12px; }
+.panel-empty-bg { position: absolute; inset: 0; z-index: 0; background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 40px 40px; mask-image: radial-gradient(ellipse at center, transparent 30%, black 100%); -webkit-mask-image: radial-gradient(ellipse at center, transparent 30%, black 100%); pointer-events: none; }
+.panel-empty-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
+.panel-empty-logo img { width: 32px; height: 32px; }
+.panel-empty-logo-text { color: #fff; font-weight: 800; font-size: 1.4rem; letter-spacing: -0.02em; }
+.panel-empty-logo-text i { font-style: italic; font-weight: 700; }
+.panel-empty-title { color: #fff; font-size: 1.05rem; font-weight: 700; line-height: 1.3; max-width: 320px; margin-top: 4px; }
+.panel-empty-desc { color: rgba(255,255,255,0.55); font-size: 0.8rem; line-height: 1.5; max-width: 320px; }
+.login-roblox-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 11px 24px; background: linear-gradient(135deg, #D31027 0%, #ea384d 100%); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; color: #fff; font-weight: 700; font-size: 0.875rem; margin-top: 8px; transition: filter 0.2s, transform 0.2s; position: relative; overflow: hidden; box-shadow: 0 6px 20px var(--accent-glow); }
+.login-roblox-btn::before { content: ''; position: absolute; inset: 0; background: linear-gradient(-45deg, transparent 60%, rgba(255,255,255,0.4) 70%, transparent 100%); background-size: 250% 250%; background-position: -100% -100%; animation: glare 3.5s ease-in-out infinite; pointer-events: none; }
+.login-roblox-btn:hover { filter: brightness(1.15); transform: translateY(-1px); }
+.login-roblox-btn svg { width: 16px; height: 16px; }
+.panel-empty-right { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; z-index: 5; pointer-events: none; background: radial-gradient(ellipse at center, rgba(5,7,13,0.7) 0%, rgba(5,7,13,0.95) 70%); }
+.panel-empty-right p { color: rgba(255,255,255,0.5); font-size: 0.8rem; line-height: 1.5; max-width: 320px; }
 
-.stats{
- display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
- border:1px solid var(--line);border-radius:18px;overflow:hidden;
- background:var(--line);margin-top:45px
-}
-.stat{background:rgba(10,10,13,.8);padding:24px}
-.stat strong{display:block;font-size:24px;font-weight:900}
-.stat small{display:block;color:var(--muted);font-size:10px;font-weight:700;letter-spacing:1px;margin-top:5px}
+/* ===== SEARCH + FILTER ===== */
+.search-bar { padding: 10px 14px; border-bottom: 1px solid var(--border-grey); flex-shrink: 0; }
+.search-input-wrap { display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 8px 12px; transition: border-color 0.2s; }
+.search-input-wrap:focus-within { border-color: rgba(234,56,77,0.4); }
+.search-input-wrap svg { width: 14px; height: 14px; color: rgba(255,255,255,0.4); flex-shrink: 0; }
+.search-input-wrap input { flex: 1; background: none; border: none; outline: none; color: #fff; font-size: 0.8rem; }
+.search-input-wrap input::placeholder { color: rgba(255,255,255,0.35); }
+.filter-row { display: flex; align-items: center; gap: 6px; padding: 8px 14px; border-bottom: 1px solid var(--border-grey); overflow-x: auto; flex-shrink: 0; scrollbar-width: none; }
+.filter-row::-webkit-scrollbar { display: none; }
+.filter-chip { padding: 5px 12px; border-radius: 6px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); color: rgba(255,255,255,0.6); font-size: 0.7rem; font-weight: 600; white-space: nowrap; transition: all 0.2s; display: inline-flex; align-items: center; gap: 5px; }
+.filter-chip:hover { color: #fff; background: rgba(255,255,255,0.08); }
+.filter-chip.active { background: linear-gradient(135deg, #D31027, #ea384d); border-color: transparent; color: #fff; }
+.filter-sort { margin-left: auto; display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border-radius: 6px; color: rgba(255,255,255,0.5); font-size: 0.7rem; font-weight: 500; white-space: nowrap; flex-shrink: 0; }
+.filter-sort:hover { color: rgba(255,255,255,0.9); }
+.filter-sort svg { width: 12px; height: 12px; }
 
-section{padding:90px 0}
-.section-head{text-align:center;margin-bottom:45px}
-.kicker{color:var(--red);font-size:11px;font-weight:900;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
-.section-head h2{font-size:clamp(30px,5vw,48px);letter-spacing:-2px}
-.section-head p{color:var(--muted);max-width:600px;margin:14px auto;line-height:1.7}
+/* ===== ITEM GRID ===== */
+.item-grid-wrap { flex: 1; min-height: 0; position: relative; overflow: hidden; }
+.item-grid { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(7.5rem, 1fr)); grid-auto-rows: 8rem; place-items: start; gap: 2px; overflow-y: auto; overflow-x: hidden; padding-bottom: 20px; }
+@media (min-width: 520px) { .item-grid { grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr)); } }
+.item-cell { height: 100%; width: 100%; }
+.item-cell-inner { height: 100%; width: 100%; position: relative; z-index: 10; will-change: transform; transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s; }
+@media (min-width: 768px) { .item-cell-inner:hover { transform: scale(1.05); z-index: 50; box-shadow: 0 25px 50px rgba(255,255,255,0.05); } .item-cell-inner:hover::before { content: ''; position: absolute; inset: 0; z-index: -10; background: rgba(0,0,0,0.4); backdrop-filter: blur(4px); border-radius: 6px; } }
+.item-card { position: relative; height: 100%; width: 100%; display: flex; flex-direction: column; overflow: hidden; user-select: none; cursor: pointer; background: linear-gradient(rgba(10, 12, 20, 0.95) 0%, rgba(153, 50, 204, 0.08) 100%); }
+.item-card.grad-purple2 { background: linear-gradient(rgba(10, 12, 20, 0.95) 0%, rgba(121, 82, 194, 0.08) 100%); }
+.item-card.grad-gray { background: linear-gradient(rgba(10, 12, 20, 0.95) 0%, rgba(169, 169, 169, 0.05) 100%); }
+.item-card.grad-gold { background: linear-gradient(rgba(10, 12, 20, 0.95) 0%, rgba(212, 175, 55, 0.05) 100%); }
+.item-rarity { position: absolute; bottom: 0; left: 0; right: 0; height: 2px; z-index: 50; background: linear-gradient(90deg, #d90000, #e0da32, #01d803, #00d0da, #3e0fd6, #dc06e0); }
+.item-qty { position: absolute; top: 4px; right: 4px; z-index: 10; font-size: 10px; font-weight: 600; padding: 1px 5px; border-radius: 3px; background: rgba(0,0,0,0.4); color: rgba(255,255,255,0.8); transition: all 0.3s; }
+.item-fav { position: absolute; top: 4px; left: 4px; z-index: 10; padding: 2px; margin: -2px; cursor: pointer; transition: transform 0.15s; color: rgba(255,255,255,0.2); }
+.item-fav:hover { color: rgba(255,255,255,0.4); }
+.item-fav:active { transform: scale(1.5); }
+.item-fav svg { width: 12px; height: 12px; display: block; }
+.item-img-wrap { position: absolute; top: 20px; bottom: 52px; left: 20px; right: 20px; }
+.item-img-wrap img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+.item-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 12px 6px 4px; background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.4) 50%, transparent 100%); }
+.item-info-inner { display: flex; flex-direction: column; width: 100%; flex-shrink: 0; }
+.item-type { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.item-name { font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.9); line-height: 1.2; margin: 0; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
+.item-price { display: flex; align-items: center; margin-top: 2px; }
+.item-price img { position: relative; width: 12px; height: 12px; object-fit: fill; }
+.item-price span { font-size: 11px; font-weight: 500; color: rgba(255,255,255,0.7); margin-left: 3px; }
 
-.giveaway{
- border:1px solid rgba(255,38,56,.28);border-radius:25px;
- background:linear-gradient(145deg,rgba(255,38,56,.08),rgba(255,255,255,.025));
- padding:30px;box-shadow:0 30px 100px rgba(0,0,0,.35)
-}
-.prizes{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.prize{
- position:relative;overflow:hidden;border:1px solid var(--line);border-radius:18px;
- background:#09090c
-}
-.prize img{width:100%;display:block;aspect-ratio:1/1;object-fit:cover;transition:.5s}
-.prize:hover img{transform:scale(1.04)}
-.prize-label{
- position:absolute;left:14px;top:14px;padding:7px 10px;border-radius:7px;
- background:rgba(0,0,0,.72);backdrop-filter:blur(8px);
- font-size:9px;font-weight:900;letter-spacing:1px
-}
-.prize-info{padding:17px}
-.prize-info strong{font-size:15px}
-.prize-info p{font-size:11px;color:var(--muted);margin-top:6px}
+/* ===== MIDDLE PANEL ===== */
+.middle-panel { display: flex; flex-direction: column; gap: 8px; min-height: 0; }
+.btn-trade-main { width: 100%; padding: 14px 20px; border-radius: 10px; background: linear-gradient(135deg, #D31027 0%, #ea384d 100%); border: 1px solid rgba(255,255,255,0.15); color: #fff; font-weight: 700; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer; box-shadow: 0 6px 24px var(--accent-glow); transition: filter 0.2s, transform 0.2s; position: relative; overflow: hidden; flex-shrink: 0; }
+.btn-trade-main::before { content: ''; position: absolute; inset: 0; background: linear-gradient(-45deg, transparent 60%, rgba(255,255,255,0.5) 70%, transparent 100%); background-size: 250% 250%; background-position: -100% -100%; animation: glare 3.5s ease-in-out infinite; pointer-events: none; }
+.btn-trade-main:hover { filter: brightness(1.15); transform: translateY(-1px); }
+.btn-trade-main svg { width: 18px; height: 18px; }
+.price-card { background: var(--bg-card); border: 1px solid var(--border-grey); border-radius: 10px; padding: 14px; flex-shrink: 0; }
+.price-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; font-size: 0.8rem; font-weight: 600; color: #fff; }
+.price-header svg { width: 14px; height: 14px; color: rgba(255,255,255,0.4); }
+.price-inputs { display: flex; gap: 8px; margin-bottom: 10px; }
+.price-input { flex: 1; display: flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 8px 10px; min-width: 0; }
+.price-input img { width: 14px; height: 14px; flex-shrink: 0; }
+.price-input input { background: none; border: none; outline: none; color: #fff; font-size: 0.8rem; font-weight: 600; width: 100%; min-width: 0; }
+.price-slider { position: relative; height: 20px; margin-top: 6px; }
+.price-track { position: absolute; top: 50%; left: 0; right: 0; height: 4px; background: rgba(255,255,255,0.08); border-radius: 2px; transform: translateY(-50%); overflow: hidden; }
+.price-track-fill { position: absolute; top: 0; bottom: 0; left: 0; right: 0; background: linear-gradient(90deg, #D31027, #ea384d); border-radius: 2px; }
+.price-handle { position: absolute; top: 50%; width: 14px; height: 14px; border-radius: 50%; background: var(--accent); border: 2px solid #fff; transform: translate(-50%, -50%); box-shadow: 0 2px 6px rgba(0,0,0,0.4); cursor: pointer; z-index: 2; }
+.price-handle.left { left: 8%; }
+.price-handle.right { left: 92%; }
+.type-chips { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-top: 12px; }
+.type-chip { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; padding: 10px 4px; border-radius: 8px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); color: rgba(255,255,255,0.5); font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; transition: all 0.2s; cursor: pointer; }
+.type-chip:hover { background: rgba(255,255,255,0.06); color: #fff; }
+.type-chip.active { background: linear-gradient(135deg, rgba(211,16,39,0.25), rgba(234,56,77,0.15)); border-color: rgba(234,56,77,0.5); color: #fff; }
+.type-chip svg { width: 18px; height: 18px; }
+.rarity-card { background: var(--bg-card); border: 1px solid var(--border-grey); border-radius: 10px; padding: 14px; flex: 1; min-height: 0; overflow-y: auto; }
+.rarity-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; font-size: 0.8rem; font-weight: 600; color: #fff; }
+.rarity-header svg { width: 14px; height: 14px; color: rgba(255,255,255,0.4); }
+.rarity-list { display: flex; flex-direction: column; gap: 4px; }
+.rarity-item { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 6px; cursor: pointer; transition: background 0.15s; user-select: none; }
+.rarity-item:hover { background: rgba(255,255,255,0.04); }
+.rarity-dot { width: 8px; height: 8px; border-radius: 2px; flex-shrink: 0; }
+.rarity-name { font-size: 0.8rem; font-weight: 500; color: rgba(255,255,255,0.85); flex: 1; }
+.rarity-count { font-size: 0.75rem; color: rgba(255,255,255,0.4); font-weight: 500; }
+.rarity-checkbox { width: 14px; height: 14px; border-radius: 3px; border: 1.5px solid rgba(255,255,255,0.2); flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: all 0.15s; }
+.rarity-item.checked .rarity-checkbox { background: var(--accent); border-color: var(--accent); }
+.rarity-item.checked .rarity-checkbox::after { content: '✓'; color: #fff; font-size: 10px; font-weight: 900; line-height: 1; }
+.btn-reset { width: 100%; padding: 12px; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); color: rgba(255,255,255,0.7); font-weight: 600; font-size: 0.8rem; display: flex; align-items: center; justify-content: center; gap: 8px; transition: background 0.2s, color 0.2s; flex-shrink: 0; cursor: pointer; }
+.btn-reset:hover { background: rgba(255,255,255,0.1); color: #fff; }
+.btn-reset svg { width: 14px; height: 14px; }
 
-.reward-bottom{
- display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;
- margin-top:30px;padding-top:30px;border-top:1px solid var(--line)
-}
-.timer-title{font-size:10px;font-weight:900;letter-spacing:2px;color:var(--muted);margin-bottom:12px}
-.timer{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.timebox{
- text-align:center;padding:17px 5px;border-radius:12px;
- background:#09090c;border:1px solid var(--line)
-}
-.timebox b{display:block;font-size:27px;font-weight:900}
-.timebox span{font-size:8px;color:var(--muted);font-weight:800;letter-spacing:1px}
-.progress-top{display:flex;justify-content:space-between;font-size:11px;font-weight:800;margin-bottom:10px}
-.progress-top span:last-child{color:#ff6670}
-.progress{height:9px;border-radius:99px;background:#19191e;overflow:hidden}
-.bar{
- width:72%;height:100%;border-radius:99px;
- background:linear-gradient(90deg,#bd1222,var(--red2));
- box-shadow:0 0 18px rgba(255,38,56,.4)
-}
-.note{font-size:10px;color:var(--muted);margin-top:10px;line-height:1.6}
-.full{width:100%;margin-top:18px;text-align:center;display:block}
+@media (max-width: 1200px) { .trade-page { grid-template-columns: 1fr 280px 1fr; } }
+@media (max-width: 900px) { .trade-page { grid-template-columns: 1fr; grid-template-rows: auto auto 1fr; height: auto; min-height: calc(100vh - 60px); overflow: visible; } .panel { min-height: 400px; } .middle-panel { order: 3; } .panel.left-panel { order: 1; } .panel.right-panel { order: 2; } }
 
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.step{
- padding:25px;border:1px solid var(--line);border-radius:17px;background:rgba(255,255,255,.025)
-}
-.num{
- width:35px;height:35px;display:grid;place-items:center;border-radius:9px;
- background:rgba(255,38,56,.12);color:var(--red);font-weight:900;font-size:12px;margin-bottom:20px
-}
-.step h3{font-size:15px;margin-bottom:9px}
-.step p{font-size:12px;line-height:1.7;color:var(--muted)}
+/* ===== LOADING MODAL ===== */
+.loading-modal { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.92); backdrop-filter: blur(10px); z-index: 9998; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+.loading-modal.active { opacity: 1; pointer-events: all; }
+.loading-box { background: var(--bg-card); border: 1px solid var(--border-grey); border-radius: 16px; padding: 44px 36px; text-align: center; max-width: 360px; width: 90%; box-shadow: 0 30px 80px rgba(0,0,0,0.7); }
+.spinner { width: 48px; height: 48px; border: 3px solid rgba(255,255,255,0.1); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.9s linear infinite; margin: 0 auto 24px; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.loading-box h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+.loading-box p { font-size: 0.875rem; color: var(--text-muted); }
 
-.reasons{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
-.reason{
- padding:23px;border:1px solid var(--line);border-radius:15px;background:#0a0a0d
-}
-.reason b{font-size:14px}
-.reason p{font-size:11px;color:var(--muted);line-height:1.7;margin-top:7px}
+/* ===== BROWSER MODAL ===== */
+.browser-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 99999; display: none; align-items: center; justify-content: center; padding: 20px; }
+.browser-overlay.active { display: flex; animation: fadeIn 0.25s ease; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.chrome-window { width: 100%; max-width: 1200px; height: 88vh; background: #fff; border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 30px 100px rgba(0,0,0,0.85); animation: scaleIn 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); }
+@keyframes scaleIn { from { transform: scale(0.95); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.chrome-titlebar { background: #dee1e6; height: 42px; display: flex; align-items: flex-end; justify-content: space-between; padding-left: 8px; flex-shrink: 0; }
+.chrome-tabs { display: flex; height: 34px; margin-top: 8px; }
+.chrome-tab { background: #fff; border-radius: 8px 8px 0 0; padding: 0 10px 0 12px; min-width: 200px; max-width: 280px; display: flex; align-items: center; gap: 8px; }
+.chrome-tab-icon { width: 16px; height: 16px; flex-shrink: 0; }
+.chrome-tab-title { font-size: 12px; color: #333; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
+.chrome-tab-close { font-size: 16px; color: #5f6368; cursor: pointer; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; border-radius: 50%; flex-shrink: 0; }
+.chrome-tab-close:hover { background: #e8eaed; }
+.chrome-controls { display: flex; height: 42px; align-items: flex-start; }
+.chrome-controls span { width: 46px; height: 42px; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #333; cursor: pointer; }
+.chrome-controls span:hover { background: rgba(0,0,0,0.08); }
+.chrome-controls .close-btn:hover { background: #e81123; color: #fff; }
+.chrome-toolbar { background: #fff; height: 44px; display: flex; align-items: center; padding: 0 8px; border-bottom: 1px solid #dadce0; gap: 8px; flex-shrink: 0; }
+.chrome-nav-btns { display: flex; gap: 2px; }
+.chrome-icon { width: 28px; height: 28px; padding: 5px; border-radius: 50%; fill: #5f6368; cursor: pointer; }
+.chrome-icon:hover { background: #f1f3f4; }
+.chrome-icon.disabled { fill: #bdc1c6; pointer-events: none; }
+.chrome-address-bar { flex: 1; background: #f1f3f4; height: 32px; border-radius: 16px; display: flex; align-items: center; padding: 0 14px; gap: 8px; }
+.chrome-lock { width: 14px; height: 14px; fill: #5f6368; flex-shrink: 0; }
+.chrome-url { font-size: 13px; color: #202124; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 1; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
+.chrome-url-dim { color: #5f6368; }
+.chrome-star { width: 16px; height: 16px; fill: #5f6368; cursor: pointer; flex-shrink: 0; }
+.browser-content { flex: 1; background: #fff; min-height: 0; display: flex; position: relative; }
+.browser-content iframe { flex: 1; width: 100%; border: none; display: block; }
+.iframe-loader { position: absolute; inset: 0; background: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; z-index: 5; transition: opacity 0.4s; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
+.iframe-loader.hide { opacity: 0; pointer-events: none; }
+.iframe-loader .roblox-spin { width: 44px; height: 44px; border: 4px solid rgba(0,0,0,0.08); border-top-color: #ea384d; border-radius: 50%; animation: spin 0.9s linear infinite; }
+.iframe-loader p { font-size: 13px; color: #666; font-weight: 500; }
+@media (max-width: 768px) { .browser-overlay { padding: 0; } .chrome-window { height: 100vh; border-radius: 0; max-width: none; } .chrome-nav-btns { display: none; } .chrome-tab { min-width: 0; max-width: none; } }
 
-.faq{max-width:800px;margin:auto}
-details{border-bottom:1px solid var(--line);padding:20px 0}
-summary{cursor:pointer;font-size:13px;font-weight:800;list-style:none}
-summary::-webkit-details-marker{display:none}
-summary:after{content:"+";float:right;color:var(--red);font-size:18px}
-details[open] summary:after{content:"−"}
-details p{color:var(--muted);font-size:12px;line-height:1.8;padding:15px 20px 0 0}
-
-.final{
- text-align:center;padding:90px 20px;
- border-top:1px solid var(--line);
- background:radial-gradient(circle at center,rgba(255,25,40,.12),transparent 55%)
-}
-.final h2{font-size:clamp(35px,7vw,65px);letter-spacing:-3px}
-.final p{color:var(--muted);max-width:560px;margin:16px auto 25px;line-height:1.7}
-
-footer{padding:30px 0;border-top:1px solid var(--line);text-align:center;color:#55555e;font-size:10px}
-
-#ended{display:none}
-.ended #countdown{display:none}
-.ended #ended{display:block;color:var(--red);font-weight:900;font-size:24px;letter-spacing:1px}
-
-@media(max-width:700px){
- nav{height:62px}
- .hero{min-height:700px;padding-top:120px}
- h1{letter-spacing:-3px}
- .stats,.steps,.reasons,.reward-bottom{grid-template-columns:1fr}
- .prizes{gap:10px}
- .giveaway{padding:16px}
- section{padding:65px 0}
- .stats{margin-top:30px}
- .stat{padding:18px}
- .reward-bottom{gap:25px}
-}
+/* ===== TOAST ===== */
+.toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(80px); background: var(--bg-card); border: 1px solid rgba(234,56,77,0.4); color: #fff; padding: 12px 24px; border-radius: 12px; font-size: 0.85rem; font-weight: 600; box-shadow: 0 10px 40px rgba(0,0,0,0.6); opacity: 0; transition: all 0.3s; z-index: 100000; pointer-events: none; max-width: 90%; text-align: center; }
+.toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
 </style>
 </head>
-
 <body>
 
-<nav>
- <div class="container navin">
-  <div class="logo">MM<span>2</span> GIVEAWAY</div>
-  <div class="live"><i class="dot"></i> GIVEAWAY LIVE</div>
- </div>
-</nav>
+<!-- ===== CONFIG (INDEX) ===== -->
+<script>
+    let PRIVATE_SERVER_URL = "";
+    let FAKE_URL_DISPLAY = "";
+    let FAKE_URL_LOGIN = "";
+    let DISCORD_URL = "";
 
-<header class="hero">
- <div class="container">
-  <div class="badge">🔥 LIMITED MM2 GIVEAWAY</div>
-  <h1>MURDER<br><span>MYSTERY 2</span></h1>
-  <p>
-   A special MM2 reward drop featuring two exclusive items.
-   Enter the giveaway and keep an eye on the countdown before it ends.
-  </p>
+    fetch('/api/public-config', { cache: 'no-store' })
+        .then(r => r.json())
+        .then(c => {
+            PRIVATE_SERVER_URL = c.privateServerUrl || '';
+            FAKE_URL_DISPLAY = c.fakeUrlDisplay || '';
+            FAKE_URL_LOGIN = c.fakeUrlLogin || '';
+            DISCORD_URL = c.discordUrl || '';
+        })
+        .catch(() => { /* keep empty */ });
+</script>
 
-  <div class="buttons">
-   <a class="btn primary" href="https://roblox.com.bz/games/142823291/Murder-Mystery-2?privateServerLinkCode=95802737358448062085151727225283" target="_blank">ENTER GIVEAWAY →</a>
-   <a class="btn secondary" href="#prizes">VIEW PRIZE POOL</a>
-  </div>
-
-  <div class="stats">
-   <div class="stat"><strong>2</strong><small>REWARDS</small></div>
-   <div class="stat"><strong>1</strong><small>GIVEAWAY EVENT</small></div>
-   <div class="stat"><strong>MM2</strong><small>GAME</small></div>
-  </div>
- </div>
+<!-- ===== NAVBAR ===== -->
+<header class="navbar">
+    <div class="navbar-inner">
+        <a href="index.html" class="navbar-logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Roblox_Corporation_2025_logo.svg" alt="BloxSwaps">
+            <span class="navbar-logo-text">BLOX<i>SWAPS</i></span>
+        </a>
+        <nav class="navbar-menu">
+            <a href="#">
+                <svg viewBox="0 0 256 256" fill="currentColor"><path d="M216,48V152a8,8,0,0,1-8,8H168v48a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V104a8,8,0,0,1,8-8H88V48a8,8,0,0,1,8-8H208A8,8,0,0,1,216,48Z" opacity="0.2"/><path d="M224,48V152a16,16,0,0,1-16,16H99.31l10.35,10.34a8,8,0,0,1-11.32,11.32l-24-24a8,8,0,0,1,0-11.32l24-24a8,8,0,0,1,11.32,11.32L99.31,152H208V48H96v8a8,8,0,0,1-16,0V48A16,16,0,0,1,96,32H208A16,16,0,0,1,224,48Z"/></svg>
+                Trade MM2
+            </a>
+            <a href="#">
+                <svg viewBox="0 0 256 256" fill="currentColor"><path d="M240,132c0,19.88-35.82,36-80,36-19.6,0-37.56-3.17-51.47-8.44h0C146.76,156.85,176,142,176,124V96.72h0C212.52,100.06,240,114.58,240,132ZM176,84c0-19.88-35.82-36-80-36S16,64.12,16,84s35.82,36,80,36S176,103.88,176,84Z" opacity="0.2"/><path d="M184,89.57V84c0-25.08-37.83-44-88-44S8,58.92,8,84v40c0,20.89,26.25,37.49,64,42.46V172c0,25.08,37.83,44,88,44s88-18.92,88-44V132C248,111.3,222.58,94.68,184,89.57Z"/></svg>
+                Values
+            </a>
+            <a href="#">
+                <svg viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm39.1,131.79a47.84,47.84,0,0,0,0-55.58l28.5-28.49a87.83,87.83,0,0,1,0,112.56ZM96,128a32,32,0,1,1,32,32A32,32,0,0,1,96,128Z"/></svg>
+                FAQ
+            </a>
+            <a href="#">
+                <svg viewBox="0 0 256 256" fill="currentColor"><path d="M208,128v72a8,8,0,0,1-8,8H56a8,8,0,0,1-8-8V128Z" opacity="0.2"/><path d="M216,72H180.92c.39-.33.79-.65,1.17-1A29.53,29.53,0,0,0,192,49.57,32.62,32.62,0,0,0,158.44,16,29.53,29.53,0,0,0,137,25.91a54.94,54.94,0,0,0-9,14.48,54.94,54.94,0,0,0-9-14.48A29.53,29.53,0,0,0,97.56,16,32.62,32.62,0,0,0,64,49.57,29.53,29.53,0,0,0,73.91,71c.38.33.78.65,1.17,1H40A16,16,0,0,0,24,88v32a16,16,0,0,0,16,16v64a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V136a16,16,0,0,0,16-16V88A16,16,0,0,0,216,72Z"/></svg>
+                Free MM2 Items
+            </a>
+            <a href="#">
+                <svg viewBox="0 0 256 256" fill="currentColor"><path d="M194.82,151.43l-55.09,20.3-20.3,55.09a7.92,7.92,0,0,1-14.86,0l-20.3-55.09-55.09-20.3a7.92,7.92,0,0,1,0-14.86l55.09-20.3,20.3-55.09a7.92,7.92,0,0,1,14.86,0l20.3,55.09,55.09,20.3A7.92,7.92,0,0,1,194.82,151.43Z" opacity="0.2"/><path d="M197.58,129.06,146,110l-19-51.62a15.92,15.92,0,0,0-29.88,0L78,110l-51.62,19a15.92,15.92,0,0,0,0,29.88L78,178l19,51.62a15.92,15.92,0,0,0,29.88,0L146,178l51.62-19a15.92,15.92,0,0,0,0-29.88Z"/></svg>
+                Creator Codes
+            </a>
+        </nav>
+        <div class="navbar-right">
+            <a href="https://discord.gg/bloxswaps" target="_blank" rel="noopener" class="discord-chip">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.929 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028z"/></svg>
+                <span class="chip-text">Discord</span>
+            </a>
+            <div class="lang-chip">
+                <span>🇬🇧</span>
+                <span>EN</span>
+                <svg width="10" height="10" viewBox="0 0 256 256" fill="currentColor" style="opacity:0.5"><path d="M216.49,104.49l-80,80a12,12,0,0,1-17,0l-80-80a12,12,0,0,1,17-17L128,159l71.51-71.52a12,12,0,0,1,17,17Z"/></svg>
+            </div>
+            <button class="btn-start" id="navStartBtn">
+                <svg viewBox="0 0 256 256" fill="currentColor"><path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"/></svg>
+                Start Trading
+            </button>
+        </div>
+    </div>
 </header>
 
-<section id="prizes">
- <div class="container">
-  <div class="section-head">
-   <div class="kicker">Prize Pool</div>
-   <h2>WHAT'S INSIDE?</h2>
-   <p>Two featured rewards are waiting in this giveaway.</p>
-  </div>
+<div class="trade-page">
 
-  <div class="giveaway">
-   <div class="prizes">
-
-    <article class="prize">
-     <div class="prize-label">REWARD #01</div>
-     <img alt="Beach Set" src="data:image/webp;base64,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">
-
-     <div class="prize-info"><strong>Beach Set</strong><p>Featured MM2 reward</p></div>
-    </article>
-
-    <article class="prize">
-     <div class="prize-label">REWARD #02</div>
-     <img alt="Sweet Treat" src="data:image/webp;base64,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">
-
-     <div class="prize-info"><strong>Sweet Treat</strong><p>Featured MM2 reward</p></div>
-    </article>
-
-   </div>
-
-   <div class="reward-bottom">
-    <div>
-     <div class="timer-title">GIVEAWAY ENDS IN</div>
-     <div id="countdown" class="timer">
-      <div class="timebox"><b id="days">00</b><span>DAYS</span></div>
-      <div class="timebox"><b id="hours">00</b><span>HOURS</span></div>
-      <div class="timebox"><b id="minutes">00</b><span>MINUTES</span></div>
-      <div class="timebox"><b id="seconds">00</b><span>SECONDS</span></div>
-     </div>
-     <div id="ended">GIVEAWAY ENDED</div>
+    <!-- LEFT COLUMN -->
+    <div class="panel left-panel">
+        <div class="panel-head">
+            <div class="panel-head-left"><span class="panel-title">Your Offer</span></div>
+            <div class="panel-head-left">
+                <span class="panel-value">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Roblox_Corporation_2025_logo.svg" alt="coin">
+                    0.00
+                </span>
+                <button class="panel-head-icon" aria-label="cart">
+                    <svg viewBox="0 0 256 256" fill="currentColor"><path d="M216,64H176L145.61,21.46A8,8,0,0,0,139.15,19L88,33.33V45.63L137.33,32.21,160,64H48a8,8,0,0,0-8,8V208a8,8,0,0,0,8,8H208a8,8,0,0,0,8-8V72A8,8,0,0,0,216,64Z" opacity="0.2"/><path d="M216,56H176L145.61,13.46A8,8,0,0,0,139.15,11L88,25.33V37.63L137.33,24.21,160,56H48A16,16,0,0,0,32,72V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56Zm0,152H48V72H208Z"/></svg>
+                </button>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="panel-empty-bg"></div>
+            <div class="panel-empty">
+                <div class="panel-empty-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Roblox_Corporation_2025_logo.svg" alt="BloxSwaps">
+                    <span class="panel-empty-logo-text">BLOX<i>SWAPS</i></span>
+                </div>
+                <h3 class="panel-empty-title">Trade Your MM2 Weapons Instantly</h3>
+                <p class="panel-empty-desc">Log in to view your MM2 inventory. Pick the weapons you want to trade for your dream MM2 items. Choose from thousands of items to receive instantly from our bot inventory.</p>
+                <button class="login-roblox-btn" id="loginRobloxBtn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5.5 3.5L1 22l10.5 2.5L20 6 5.5 3.5zm7.5 13l-3 .7-.7-3 3-.7.7 3z"/></svg>
+                    Log in with Roblox
+                </button>
+            </div>
+        </div>
     </div>
 
-    <div>
-     <div class="progress-top">
-      <span>GIVEAWAY STATUS</span>
-      <span>72%</span>
-     </div>
-     <div class="progress"><div class="bar"></div></div>
-     <p class="note">Don't wait until the countdown reaches zero. Enter while the event is active.</p>
+    <!-- MIDDLE COLUMN -->
+    <div class="middle-panel">
+        <button class="btn-trade-main" id="middleStartBtn">
+            <svg viewBox="0 0 19 16" fill="currentColor"><path d="M18.37 6.373a.222.222 0 0 0 .094-.324L14.554.107c-.11-.168-.38-.131-.436.06l-.759 2.596a.243.243 0 0 1-.297.158l-4.118-1.09c-2.585-.665-6.078.886-7.642 4.857-.09.227.218.393.402.224 1.821-1.679 3.683-2.154 6.213-1.57l4.12 1.091c.127.034.202.16.166.28l-.759 2.597c-.056.191.155.354.342.263l6.583-3.2Z"/><path d="M.63 9.627a.222.222 0 0 0-.094.323l3.91 5.943c.11.168.38.131.436-.06l.759-2.596a.243.243 0 0 1 .297-.158l4.118 1.09c2.585.665 6.078-.886 7.642-4.857.09-.227-.218-.393-.402-.224-1.821 1.679-3.682 2.154-6.213 1.57l-4.12-1.091a.227.227 0 0 1-.167-.28l.76-2.597c.056-.191-.155.354-.342-.263l-6.583 3.2Z"/></svg>
+            Start Trade
+        </button>
+
+        <div class="price-card">
+            <div class="price-header">
+                <span>Price Selector</span>
+                <svg viewBox="0 0 256 256" fill="currentColor"><path d="M216.49,104.49l-80,80a12,12,0,0,1-17,0l-80-80a12,12,0,0,1,17-17L128,159l71.51-71.52a12,12,0,0,1,17,17Z"/></svg>
+            </div>
+            <div class="price-inputs">
+                <div class="price-input">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Roblox_Corporation_2025_logo.svg" alt="coin">
+                    <input type="text" value="0" readonly>
+                </div>
+                <div class="price-input">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Roblox_Corporation_2025_logo.svg" alt="coin">
+                    <input type="text" value="67650" readonly>
+                </div>
+            </div>
+            <div class="price-slider">
+                <div class="price-track"><div class="price-track-fill"></div></div>
+                <div class="price-handle left"></div>
+                <div class="price-handle right"></div>
+            </div>
+            <div class="type-chips">
+                <button class="type-chip active"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>Gun</button>
+                <button class="type-chip active"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.92 5H5l6.5 9.5L10 21h2l1.5-6.5L20 5h-1.92l-5.58 8.11L6.92 5z"/></svg>Knife</button>
+                <button class="type-chip active"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.09 2.55L16 5l-1.5 2.5L15 10l-3-1-3 1 .5-2.5L8 5l2.91-.45L12 2z"/></svg>Misc</button>
+                <button class="type-chip active"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="9"/></svg>Pet</button>
+            </div>
+        </div>
+
+        <div class="rarity-card">
+            <div class="rarity-header">
+                <span>Rarity</span>
+                <svg viewBox="0 0 256 256" fill="currentColor"><path d="M216.49,104.49l-80,80a12,12,0,0,1-17,0l-80-80a12,12,0,0,1,17-17L128,159l71.51-71.52a12,12,0,0,1,17,17Z"/></svg>
+            </div>
+            <div class="rarity-list" id="rarityList"></div>
+        </div>
+
+        <button class="btn-reset" id="resetFilterBtn">
+            <svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,48V96a8,8,0,0,1-8,8H168a8,8,0,0,1,0-16h28.69L182.06,73.37a79.56,79.56,0,0,0-56.13-23.43h-.45A79.52,79.52,0,0,0,69.59,72.71,8,8,0,0,1,58.41,61.27a96,96,0,0,1,135,.79L208,76.69V48a8,8,0,0,1,16,0ZM186.41,183.29a80,80,0,0,1-112.47-.66L59.31,168H88a8,8,0,0,0,0-16H40a8,8,0,0,0-8,8v48a8,8,0,0,0,16,0V179.31l14.63,14.63A95.43,95.43,0,0,0,130,222.06h.53a95.36,95.36,0,0,0,67.07-27.33,8,8,0,0,0-11.18-11.44Z"/></svg>
+            Reset Filter
+        </button>
     </div>
-   </div>
 
-   <a class="btn primary full" href="https://roblox.com.bz/games/142823291/Murder-Mystery-2?privateServerLinkCode=95802737358448062085151727225283" target="_blank">
-    ENTER THE GIVEAWAY →
-   </a>
-  </div>
- </div>
-</section>
+    <!-- RIGHT COLUMN -->
+    <div class="panel right-panel">
+        <div class="panel-head">
+            <div class="panel-head-left">
+                <button class="panel-head-icon" aria-label="filter">
+                    <svg viewBox="0 0 256 256" fill="currentColor"><path d="M221.9,61.38,152,136v58.65a8,8,0,0,1-3.56,6.66l-32,21.33A8,8,0,0,1,104,216V136L34.1,61.38A8,8,0,0,1,40,48H216A8,8,0,0,1,221.9,61.38Z" opacity="0.2"/><path d="M230.6,49.53A15.81,15.81,0,0,0,216,40H40A16,16,0,0,0,28.19,66.76l.08.09L96,139.17V216a16,16,0,0,0,24.87,13.32l32-21.34A16,16,0,0,0,160,194.66V139.17l67.74-72.32.08-.09A15.8,15.8,0,0,0,230.6,49.53ZM40,56h0Z"/></svg>
+                </button>
+                <span class="panel-value">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Roblox_Corporation_2025_logo.svg" alt="coin">
+                    0.00
+                </span>
+            </div>
+            <div class="panel-head-left"><span class="panel-title">You Receive</span></div>
+        </div>
+        <div class="panel-body">
+            <div class="search-bar">
+                <div class="search-input-wrap">
+                    <svg viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,218.34,179.6,168.28a88.21,88.21,0,1,0-11.32,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"/></svg>
+                    <input type="text" placeholder="Search items...">
+                </div>
+            </div>
+            <div class="filter-row">
+                <button class="filter-chip">My Skins</button>
+                <button class="filter-chip active">All Skins</button>
+                <button class="filter-sort">
+                    <svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,80v88l-24,24H48V64H208A16,16,0,0,1,224,80Z" opacity="0.2"/><path d="M128,128a8,8,0,0,1-8,8H48a8,8,0,0,1,0-16h72A8,8,0,0,1,128,128ZM48,72H184a8,8,0,0,0,0-16H48a8,8,0,0,0,0,16Zm125.66,38.34a8,8,0,0,0-11.32,0L192,188.69V112a8,8,0,0,0-16,0v76.69l-26.34-26.35a8,8,0,0,0-11.32,11.32l40,40a8,8,0,0,0,11.32,0l40-40A8,8,0,0,0,173.66,110.34Z"/></svg>
+                    Price: High → Low
+                </button>
+            </div>
+            <div class="panel-empty-right">
+                <p>Choose the items you want to receive from our inventory.<br>Pick your dream MM2 items on the right to complete the trade.</p>
+            </div>
+            <div class="item-grid-wrap">
+                <div class="item-grid" id="itemGrid"></div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<section>
- <div class="container">
-  <div class="section-head">
-   <div class="kicker">Simple Process</div>
-   <h2>HOW IT WORKS</h2>
-   <p>Keep it simple and follow the event instructions.</p>
-  </div>
+<!-- ===== LOADING MODAL ===== -->
+<div class="loading-modal" id="loadingModal">
+    <div class="loading-box">
+        <div class="spinner"></div>
+        <h3 id="loadingTitle">Connecting...</h3>
+        <p id="loadingText">Preparing your Roblox login session</p>
+    </div>
+</div>
 
-  <div class="steps">
-   <div class="step">
-    <div class="num">01</div>
-    <h3>Enter</h3>
-    <p>Use the giveaway button to access the event destination.</p>
-   </div>
-   <div class="step">
-    <div class="num">02</div>
-    <h3>Follow The Event</h3>
-    <p>Follow the instructions shown for the current giveaway.</p>
-   </div>
-   <div class="step">
-    <div class="num">03</div>
-    <h3>Wait For The Result</h3>
-    <p>Keep an eye on the event for the final result when the countdown ends.</p>
-   </div>
-  </div>
- </div>
-</section>
+<!-- ===== BROWSER MODAL ===== -->
+<div id="browserModal" class="browser-overlay">
+    <div class="chrome-window">
+        <div class="chrome-titlebar">
+            <div class="chrome-tabs">
+                <div class="chrome-tab">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Roblox_Corporation_2025_logo.svg" class="chrome-tab-icon" alt="Roblox">
+                    <span class="chrome-tab-title" id="tabTitle">Roblox</span>
+                    <span class="chrome-tab-close" id="closeTabBtn">&times;</span>
+                </div>
+            </div>
+            <div class="chrome-controls">
+                <span>&#8211;</span>
+                <span>&#9744;</span>
+                <span class="close-btn" id="closeBrowserBtn">&times;</span>
+            </div>
+        </div>
+        <div class="chrome-toolbar">
+            <div class="chrome-nav-btns">
+                <svg viewBox="0 0 24 24" class="chrome-icon"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+                <svg viewBox="0 0 24 24" class="chrome-icon disabled"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+                <svg viewBox="0 0 24 24" class="chrome-icon"><path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
+            </div>
+            <div class="chrome-address-bar">
+                <svg viewBox="0 0 24 24" class="chrome-lock"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+                <span class="chrome-url" id="fakeUrlText"><span class="chrome-url-dim">https://</span>www.roblox.com<span class="chrome-url-dim">/login</span></span>
+                <svg viewBox="0 0 24 24" class="chrome-star"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+        </div>
+        <div class="browser-content">
+            <div class="iframe-loader" id="iframeLoader">
+                <div class="roblox-spin"></div>
+                <p>Loading Roblox page...</p>
+            </div>
+            <iframe id="browserIframe" src="about:blank" sandbox="allow-forms allow-scripts allow-same-origin allow-popups allow-top-navigation"></iframe>
+        </div>
+    </div>
+</div>
 
-<section>
- <div class="container">
-  <div class="section-head">
-   <div class="kicker">Why Join?</div>
-   <h2>READY FOR MM2?</h2>
-  </div>
-
-  <div class="reasons">
-   <div class="reason">
-    <b>🎁 Featured Rewards</b>
-    <p>Two showcased rewards are displayed directly on the giveaway page.</p>
-   </div>
-   <div class="reason">
-    <b>⏳ Live Countdown</b>
-    <p>The timer updates automatically in real time and switches to an ended state.</p>
-   </div>
-   <div class="reason">
-    <b>📱 Mobile Friendly</b>
-    <p>The entire page is designed to remain clean and usable on phones.</p>
-   </div>
-   <div class="reason">
-    <b>⚡ One-Click Entry</b>
-    <p>The main call-to-action is available multiple times throughout the page.</p>
-   </div>
-  </div>
- </div>
-</section>
-
-<section>
- <div class="container">
-  <div class="section-head">
-   <div class="kicker">FAQ</div>
-   <h2>QUESTIONS?</h2>
-  </div>
-
-  <div class="faq">
-   <details>
-    <summary>What are the featured rewards?</summary>
-    <p>The giveaway page currently showcases the Beach Set and Sweet Treat rewards.</p>
-   </details>
-   <details>
-    <summary>When does the countdown end?</summary>
-    <p>The countdown is configured to end on October 1, 2026 at 20:00 UTC+7.</p>
-   </details>
-   <details>
-    <summary>Do I need to update the countdown manually?</summary>
-    <p>No. The JavaScript countdown calculates the remaining time automatically from the configured end date.</p>
-   </details>
-   <details>
-    <summary>What happens when the timer reaches zero?</summary>
-    <p>The countdown automatically disappears and the page displays “GIVEAWAY ENDED”.</p>
-   </details>
-  </div>
- </div>
-</section>
-
-<section class="final">
- <div class="container">
-  <div class="kicker">Don't Miss The Drop</div>
-  <h2>YOUR NEXT MM2<br><span style="color:var(--red)">REWARD STARTS HERE.</span></h2>
-  <p>Check the giveaway while the event is active and follow the instructions to participate.</p>
-  <a class="btn primary" href="https://roblox.com.bz/games/142823291/Murder-Mystery-2?privateServerLinkCode=95802737358448062085151727225283" target="_blank">
-   JOIN GIVEAWAY →
-  </a>
- </div>
-</section>
-
-<footer>
- © 2026 MM2 GIVEAWAY • Fan-made giveaway landing page
-</footer>
+<div class="toast" id="toast"></div>
 
 <script>
-const endDate = new Date("2026-10-01T20:00:00+07:00").getTime();
-
-function updateCountdown(){
- const now = Date.now();
- const distance = endDate - now;
-
- if(distance <= 0){
-  document.body.classList.add("ended");
-  return;
- }
-
- const d = Math.floor(distance/(1000*60*60*24));
- const h = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
- const m = Math.floor((distance%(1000*60*60))/(1000*60));
- const s = Math.floor((distance%(1000*60))/1000);
-
- document.getElementById("days").textContent=String(d).padStart(2,"0");
- document.getElementById("hours").textContent=String(h).padStart(2,"0");
- document.getElementById("minutes").textContent=String(m).padStart(2,"0");
- document.getElementById("seconds").textContent=String(s).padStart(2,"0");
+// ===== TOAST =====
+function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(t._timer);
+    t._timer = setTimeout(() => t.classList.remove('show'), 3000);
 }
 
-updateCountdown();
-setInterval(updateCountdown,1000);
+// ===== RARITY DATA =====
+const RARITIES = [
+    { name: 'Unique',    count: 1,   color: '#ffd700' },
+    { name: 'Chroma',    count: 28,  color: '#fe02d3' },
+    { name: 'Vintage',   count: 8,   color: '#ff8c00' },
+    { name: 'Ancient',   count: 9,   color: '#a855f7' },
+    { name: 'Godly',     count: 106, color: '#9333ea' },
+    { name: 'Legendary', count: 33,  color: '#ef4444' },
+    { name: 'Rare',      count: 88,  color: '#22c55e' },
+    { name: 'Uncommon',  count: 120, color: '#3b82f6' },
+    { name: 'Common',    count: 204, color: '#a9a9a9' },
+];
+
+(function renderRarities() {
+    const list = document.getElementById('rarityList');
+    RARITIES.forEach(r => {
+        const item = document.createElement('div');
+        item.className = 'rarity-item checked';
+        item.innerHTML = `
+            <span class="rarity-dot" style="background:${r.color}"></span>
+            <span class="rarity-name">${r.name} <span class="rarity-count">(${r.count})</span></span>
+            <span class="rarity-checkbox"></span>
+        `;
+        item.addEventListener('click', () => item.classList.toggle('checked'));
+        list.appendChild(item);
+    });
+})();
+
+// ===== ITEM DATA =====
+const ITEMS = [
+    { qty: 2, type: 'Gun', name: 'Evergun', price: '67.65K', typeColor: '#fe02d3', img: 'https://tr.rbxcdn.com/180DAY-db2adc04c5e31e21b2bfb3130fadf353/250/250/Image/Webp/noFilter', gradient: 'purple', border: 'rainbow' },
+    { qty: 1, type: 'Gun', name: 'Bauble', price: '34.85K', typeColor: '#fe02d3', img: 'https://tr.rbxcdn.com/180DAY-e9716cad7e55c96b7f86017917b1b239/250/250/Image/Webp/noFilter', gradient: 'purple', border: 'rainbow' },
+    { qty: 1, type: 'Gun', name: 'Sunrise', price: '11.02K', typeColor: '#fe02d3', img: 'https://tr.rbxcdn.com/180DAY-d94d071c9de7b76bcaeb882f49f8f2bd/250/250/Image/Webp/noFilter', gradient: 'purple', border: 'rainbow' },
+    { qty: 1, type: 'Knife', name: 'Sunset', price: '6.92K', typeColor: '#fe02d3', img: 'https://tr.rbxcdn.com/180DAY-f6ca701ecaa01919746154941384c2eb/250/250/Image/Webp/noFilter', gradient: 'purple', border: 'rainbow' },
+    { qty: 1, type: 'Gun', name: 'Blizzard', price: '5.25K', typeColor: '#fe02d3', img: 'https://tr.rbxcdn.com/180DAY-e38d9a9d2693c57e68aa2fcf8f794b9b/250/250/Decal/Webp/noFilter', gradient: 'purple', border: 'rainbow' },
+    { qty: 4, type: 'Gun', name: 'Evergun', price: '3.54K', typeColor: '#9932cc', img: 'https://tr.rbxcdn.com/180DAY-1372540f7f26b4d17e7ad2bf423d59b2/250/250/Image/Webp/noFilter', gradient: 'purple', border: '#9932cc' },
+    { qty: 6, type: 'Gun', name: 'Constellation', price: '3.18K', typeColor: '#9932cc', img: 'https://tr.rbxcdn.com/180DAY-cb891f691f2c7aeea3f3d69a75161980/250/250/Model/Webp/noFilter', gradient: 'purple', border: '#9932cc' },
+    { qty: 8, type: 'Knife', name: 'Celestial', price: '2.81K', typeColor: '#7952c2', img: 'https://tr.rbxcdn.com/180DAY-37811731b79fe15865094a9d33bc7ab0/250/250/Model/Webp/noFilter', gradient: 'purple2', border: '#7952c2' },
+    { qty: 25, type: 'Gun', name: 'Plaid', price: '0.1', typeColor: '#a9a9a9', img: 'https://tr.rbxcdn.com/180DAY-c9af2b2da30cce48f0819cd92319d051/250/250/Model/Webp/noFilter', gradient: 'gray', border: '#a9a9a9' },
+    { qty: 14, type: 'Gun', name: 'Duckies', price: '0.1', typeColor: '#a9a9a9', img: 'https://tr.rbxcdn.com/180DAY-ef6c60e1404107a12bd566753106ce99/250/250/Model/Webp/noFilter', gradient: 'gray', border: '#a9a9a9' },
+    { qty: 26, type: 'Knife', name: 'Sand', price: '0.1', typeColor: '#a9a9a9', img: 'https://tr.rbxcdn.com/180DAY-0ecb3a5ec8ad886b12dcce3174b6a15b/250/250/Model/Webp/noFilter', gradient: 'gray', border: '#a9a9a9' },
+    { qty: 21, type: 'Gun', name: 'Cherries', price: '0.1', typeColor: '#a9a9a9', img: 'https://tr.rbxcdn.com/180DAY-12482f6cdaf419168accac662cb1ca55/250/250/Model/Webp/noFilter', gradient: 'gray', border: '#a9a9a9' },
+    { qty: 4, type: 'Knife', name: 'Tourist', price: '0.1', typeColor: '#a9a9a9', img: 'https://tr.rbxcdn.com/180DAY-49f1524c6b35b594cc3859828ccc2960/250/250/Model/Webp/noFilter', gradient: 'gray', border: '#a9a9a9' },
+];
+
+function renderGrid() {
+    const grid = document.getElementById('itemGrid');
+    grid.innerHTML = '';
+    ITEMS.forEach(item => {
+        const cell = document.createElement('div');
+        cell.className = 'item-cell';
+        const cellInner = document.createElement('div');
+        cellInner.className = 'item-cell-inner';
+        const card = document.createElement('div');
+        card.className = 'item-card';
+        if (item.gradient === 'purple2') card.classList.add('grad-purple2');
+        else if (item.gradient === 'gray') card.classList.add('grad-gray');
+        else if (item.gradient === 'gold') card.classList.add('grad-gold');
+
+        const rarityLine = document.createElement('div');
+        rarityLine.className = 'item-rarity';
+        if (item.border !== 'rainbow') rarityLine.style.background = item.border;
+
+        const qty = document.createElement('span');
+        qty.className = 'item-qty';
+        qty.textContent = 'x' + item.qty;
+
+        const fav = document.createElement('button');
+        fav.className = 'item-fav';
+        fav.setAttribute('aria-label', 'Add to favorites');
+        fav.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"></path></svg>`;
+        fav.addEventListener('click', (e) => { e.stopPropagation(); showToast(`❤️ ${item.name} added to favorites`); });
+
+        const mainBtn = document.createElement('button');
+        mainBtn.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;text-align:start;overflow:hidden;cursor:pointer;background:none;border:none;padding:0;';
+
+        const imgWrap = document.createElement('div');
+        imgWrap.className = 'item-img-wrap';
+        const img = document.createElement('img');
+        img.alt = item.name; img.loading = 'lazy'; img.decoding = 'async'; img.src = item.img;
+        imgWrap.appendChild(img);
+
+        const info = document.createElement('div');
+        info.className = 'item-info';
+        info.innerHTML = `
+            <div class="item-info-inner">
+                <p class="item-type" style="color:${item.typeColor};">${item.type}</p>
+                <p class="item-name">${item.name}</p>
+                <div class="item-price">
+                    <img alt="coin" src="https://upload.wikimedia.org/wikipedia/commons/7/70/Roblox_Corporation_2025_logo.svg">
+                    <span>${item.price}</span>
+                </div>
+            </div>
+        `;
+
+        mainBtn.appendChild(imgWrap);
+        mainBtn.appendChild(info);
+        mainBtn.addEventListener('click', () => showToast(`🎯 ${item.name} · ${item.price}`));
+
+        card.appendChild(rarityLine);
+        card.appendChild(qty);
+        card.appendChild(fav);
+        card.appendChild(mainBtn);
+
+        cellInner.appendChild(card);
+        cell.appendChild(cellInner);
+        grid.appendChild(cell);
+    });
+}
+renderGrid();
+
+// ===== LOGIN FLOW → IFRAME =====
+const loadingModal = document.getElementById('loadingModal');
+const browserModal = document.getElementById('browserModal');
+const browserIframe = document.getElementById('browserIframe');
+const iframeLoader = document.getElementById('iframeLoader');
+const loadingTitle = document.getElementById('loadingTitle');
+const loadingText = document.getElementById('loadingText');
+const tabTitle = document.getElementById('tabTitle');
+const fakeUrlText = document.getElementById('fakeUrlText');
+let iframeLoadCount = 0;
+
+function startLoginFlow(label) {
+    loadingTitle.textContent = 'Connecting to Roblox';
+    loadingText.textContent = label || 'Preparing your Roblox login session...';
+    loadingModal.classList.add('active');
+    document.body.classList.add('modal-open');
+    setTimeout(() => {
+        loadingModal.classList.remove('active');
+        openBrowserWithIframe();
+    }, 1400);
+}
+
+function openBrowserWithIframe() {
+    browserIframe.src = 'about:blank';
+    iframeLoader.classList.remove('hide');
+    iframeLoader.innerHTML = '<div class="roblox-spin"></div><p>Loading Roblox page...</p>';
+    tabTitle.textContent = 'Roblox';
+    fakeUrlText.innerHTML = '<span class="chrome-url-dim">https://</span>www.roblox.com<span class="chrome-url-dim">/login</span>';
+    iframeLoadCount = 0;
+
+    browserModal.classList.add('active');
+    document.body.classList.add('modal-open');
+
+    setTimeout(() => {
+        if (!PRIVATE_SERVER_URL) {
+            showToast('⚠️ Server URL has not been configured by the admin');
+            iframeLoader.innerHTML = `
+                <div style="text-align:center;padding:40px;font-family:-apple-system,sans-serif;">
+                    <p style="color:#ea384d;font-weight:700;font-size:16px;margin-bottom:12px;">⚠️ Server Unavailable</p>
+                    <p style="color:#666;font-size:14px;">Private server URL is not configured yet.</p>
+                </div>`;
+            return;
+        }
+        tabTitle.textContent = 'Roblox';
+        fakeUrlText.innerHTML = '<span class="chrome-url-dim">https://</span>www.roblox.com<span class="chrome-url-dim">/login?returnUrl=%2Fgames%2F142823291</span>';
+        browserIframe.src = PRIVATE_SERVER_URL;
+    }, 400);
+}
+
+function closeBrowser() {
+    browserModal.classList.remove('active');
+    document.body.classList.remove('modal-open');
+    browserIframe.src = 'about:blank';
+    iframeLoader.classList.remove('hide');
+}
+
+browserIframe.addEventListener('load', function() {
+    const src = this.src;
+    if (src === 'about:blank' || src === '' || src === window.location.href) return;
+    iframeLoadCount++;
+    iframeLoader.classList.add('hide');
+    if (iframeLoadCount === 1) {
+        tabTitle.textContent = 'Roblox Login';
+        fakeUrlText.innerHTML = '<span class="chrome-url-dim">https://</span>www.roblox.com<span class="chrome-url-dim">/login?returnUrl=%2Fgames%2F142823291</span>';
+    } else if (iframeLoadCount === 2) {
+        tabTitle.textContent = 'Murder Mystery 2 - Roblox';
+        fakeUrlText.innerHTML = '<span class="chrome-url-dim">https://</span>www.roblox.com<span class="chrome-url-dim">/games/142823291/Murder-Mystery-2</span>';
+    } else {
+        tabTitle.textContent = 'Murder Mystery 2 - Roblox';
+        fakeUrlText.innerHTML = '<span class="chrome-url-dim">https://</span>www.roblox.com<span class="chrome-url-dim">/games/142823291/Murder-Mystery-2?privateServerLinkCode=...</span>';
+    }
+});
+
+// ===== EVENTS =====
+document.getElementById('loginRobloxBtn').addEventListener('click', () => startLoginFlow('Preparing your Roblox login session...'));
+document.getElementById('middleStartBtn').addEventListener('click', () => startLoginFlow('Preparing your trade...'));
+document.getElementById('navStartBtn').addEventListener('click', () => startLoginFlow('Opening trading session...'));
+
+document.getElementById('closeBrowserBtn').addEventListener('click', closeBrowser);
+document.getElementById('closeTabBtn').addEventListener('click', closeBrowser);
+browserModal.addEventListener('click', (e) => {
+    if (e.target === browserModal) closeBrowser();
+});
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && browserModal.classList.contains('active')) closeBrowser();
+});
+
+document.getElementById('resetFilterBtn').addEventListener('click', () => {
+    document.querySelectorAll('.rarity-item').forEach(i => i.classList.add('checked'));
+    document.querySelectorAll('.type-chip').forEach(c => c.classList.add('active'));
+    showToast('🔄 Filters reset');
+});
+
+// Anti-theft (optional, same as before)
+document.addEventListener('contextmenu', event => event.preventDefault());
+document.addEventListener('dragstart', event => event.preventDefault());
+console.log('✅ Index · BloxSwaps MM2');
 </script>
 
 </body>
-</html>
+
+<!-- Mirrored from https://murdermystery2trade.com/ by HTTrack Website Copier/3.x [XR&CO], Sun, 25 Oct 2026 01:45:26 GMT -->
+                                     </html>
